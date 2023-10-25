@@ -1,3 +1,16 @@
 # Overview
 
-A simple boilerplate that uses parcel to do some cool stuff.
+A landing page for the **Growing Together** conference in 2024. Built with Bootstrap and Parcel. 
+
+# Changelog
+
+## v0.1
+
+- init project
+- update bootstrap variables and add Accordion. 
+- hollow out k1 site assets (`styles` folder, mostly).
+
+### Still to do:
+
+- add assets from xd to repo
+- prep CI/CD to netlify
