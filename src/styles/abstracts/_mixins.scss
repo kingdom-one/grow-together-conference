@@ -1,15 +1,7 @@
-@use './variables';
-///////////////////
-// Gradients /////
-/////////////////
+@forward './bs_breakpoints';
+@forward './clip-paths';
+@use './variables' as v;
 
-@mixin linearGradientDarken($direction: 135deg) {
-	background-image: linear-gradient(
-		$direction,
-		transparent 30%,
-		rgba(black, 0.3)
-	);
-}
 @mixin displayFlex(
 	$direction: row,
 	$main: flex-start,
@@ -22,58 +14,54 @@
 	justify-content: $main;
 	align-items: $cross;
 }
-@mixin fadeIn {
-	animation: fadeInAnimation ease 0.5s;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
 
-	@keyframes fadeInAnimation {
-		0% {
-			opacity: 0;
-		}
-		100% {
-			opacity: 1;
-		}
+@mixin dropShadow($color: black) {
+	box-shadow: 2px 4px 8px rgba($color, 0.35);
+}
+
+@mixin fitMedia($selector: img, $fit: contain, $position: center) {
+	#{$selector} {
+		width: 100%;
+		height: 100%;
+		object-fit: $fit;
+		object-position: $position;
 	}
 }
 
-// MEDIA QUERY MANAGER
-// Assumes 1rem = 10px
-/*
-Desktop - 1200px
-Laptop - 979px
-Tablet - 767px
-iPhone - 480px
-Tiny - 320px
-*/
-@mixin respond($breakpoint) {
-	@if $breakpoint == Tiny {
-		@media only screen and (max-width: 20em) {
-			@content;
+@mixin absolute_100 {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+@mixin background-layers($color: black, $opacity: 0.75, $has-overlay: true) {
+	@include absolute_100;
+
+	& > :nth-child(1) {
+		@include absolute_100;
+		z-index: 1;
+	}
+
+	& > :nth-child(2) {
+		@include absolute_100;
+		@if ($has-overlay) {
+			z-index: 1;
+			background-position: center;
+			background-size: cover;
+		} @else {
+			z-index: 2;
 		}
 	}
-	@if $breakpoint == iPhone {
-		@media only screen and (max-width: 30em) {
-			@content;
-		}
+
+	& > :nth-child(3) {
+		@include absolute_100;
+		background-color: rgba($color, $opacity);
+		z-index: 2;
 	}
-	@if $breakpoint == Tablet {
-		@media only screen and (max-width: 48em) {
-			@content;
-		}
-	}
-	@if $breakpoint == Laptop {
-		@media only screen and (max-width: 61em) {
-			@content;
-		}
-	}
-	@if $breakpoint == Desktop {
-		@media only screen and (max-width: 75em) {
-			@content;
-		}
-	} @else {
-		@media only screen and (max-width: $breakpoint) {
-			@content;
-		}
-	}
+}
+
+@mixin box-shadow($color: black, $opacity: 0.05) {
+	box-shadow: 0px 4px 2rem 4px rgba($color, $opacity);
 }

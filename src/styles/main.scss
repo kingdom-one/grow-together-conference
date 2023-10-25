@@ -1,3 +1,12 @@
-@use './abstracts/variables';
-@use './abstracts/mixins';
-@use './base';
+// Base Theme Styles
+@use "./base/reset";
+@use "./base/base";
+@use "./base/typography";
+@use "./base/utilities";
+
+// Components
+@use "./components/footer";
+@use "./components/buttons";
+
+@use "./sections/hero-section";
+@use "./sections/teams";

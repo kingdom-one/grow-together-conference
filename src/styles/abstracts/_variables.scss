@@ -1,8 +1,27 @@
-$color-primary: #007aeb;
-$color-secondary: blue;
-$color-grey: #4b4b4b;
-$color-grey--light: #f5f5f5;
-$color-grey--dark: #545454;
+@forward "./clip-paths";
 
-$font-headings: Arial;
-$font-body: Arial;
+/* ////////////
+// TYPOGRAPHY
+///////////// */
+$font-poppins: "poppins", sans-serif;
+$font-headings: $font-poppins;
+$font-body: $font-poppins;
+
+/* //////////
+// COLORS
+/////////// */
+
+/* Utilities */
+$color-grey: #4b4b4b;
+$color-grey--light: #707070;
+$color-grey--lightest: #dbdbdb;
+
+$color-primary: #076049;
+$color-primary--dark: #2b3636;
+$color-primary--light: #00ae83;
+$color-secondary: #f4c063;
+
+/* //////////
+// MISC.
+/////////// */
+$transition--standard: 0.3s ease;

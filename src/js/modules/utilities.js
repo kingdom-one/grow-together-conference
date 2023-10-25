@@ -13,5 +13,5 @@ export function select(selector, all = false) {
 export function myCopyright() {
 	const copyright = document.getElementById('copyright');
 	const thisYear = new Date().getFullYear();
-	copyright.innerHTML = `<p>&copy; ${thisYear} K.J. Roelke <br/> All Rights Reserved.</p>`;
+	copyright.innerHTML = `<p class='text-white text-center'>&copy; ${thisYear} <a class='text-white text-center' href='https://kingdomone.co/' target='_blank'>Kingdom One</a> <br/> All Rights Reserved.</p>`;
 }

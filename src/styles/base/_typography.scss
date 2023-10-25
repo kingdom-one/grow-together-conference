@@ -1,0 +1,52 @@
+@use "../abstracts/variables" as v;
+
+%heading {
+	font-family: var(--font-poppins);
+	font-weight: 700;
+}
+
+h1,
+.h1 {
+	@extend %heading;
+	font-size: 4em;
+	text-transform: lowercase;
+}
+
+h2,
+.h2 {
+	@extend %heading;
+	font-size: 3em;
+}
+
+h3,
+.h3 {
+	@extend %heading;
+	font-weight: 700;
+	font-size: 2.4em;
+}
+
+h4,
+.h4 {
+	@extend %heading;
+	font-size: 1.75em;
+}
+
+h5,
+.h5,
+h6,
+.h6 {
+	@extend %heading;
+}
+
+.subheadline {
+	font-family: var(--font-poppins);
+	font-weight: 400;
+}
+
+ul {
+	margin-left: 3rem;
+}
+
+body {
+	font-family: var(--font-poppins);
+}

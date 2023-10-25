@@ -1,3 +1,4 @@
+import '../styles/main.scss';
 import { myCopyright } from './modules/utilities';
 
 function init() {

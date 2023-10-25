@@ -1,0 +1,103 @@
+@use '../abstracts/mixins' as m;
+
+.hide {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+.bg-color-primary {
+	background-color: var(--color-primary);
+	color: white;
+}
+
+.bg-color-primary--dark {
+	background-color: var(--color-primary--dark);
+	color: white;
+}
+
+.bg-color-primary--darkest {
+	background-color: var(--color-primary--darkest);
+	color: white;
+}
+
+.bg-color-ar-deep-blue {
+	background-color: var(--color-ar-deep-blue);
+	color: white;
+}
+
+.bg-color-ar-golden-yellow {
+	background-color: var(--color-ar-golden-yellow);
+	color: white;
+}
+
+.color-primary {
+	color: var(--color-primary);
+}
+
+.color-primary--dark {
+	color: var(--color-primary--dark);
+}
+
+.color-grey {
+	color: var(--color-grey);
+}
+
+.color-erc-purple {
+	color: var(--color-erc-purple);
+}
+
+.color-erc-blue {
+	color: var(--color-erc-blue);
+}
+
+.color-spark-yellow {
+	color: var(--color-spark-yellow);
+}
+
+.color-ar-golden-yellow {
+	color: var(--color-ar-golden-yellow);
+}
+
+.color-ar-deep-blue {
+	color: var(--color-ar-deep-blue);
+}
+
+.color-ar-yellow {
+	color: var(--color-ar-yellow);
+}
+
+.text-roie {
+	font-family: var(--font-headings) !important;
+	letter-spacing: 0.2em;
+}
+.text-poppins {
+	font-family: var(--font-body) !important;
+}
+.text-primary--dark {
+	color: var(--color-primary--dark);
+}
+
+.clip-color-left {
+	@include m.background-layers;
+	@include m.clip-path('left');
+}
+
+.clip-color-right {
+	@include m.background-layers;
+	@include m.clip-path('right');
+}
+
+.clip-color-left-top {
+	@include m.background-layers;
+	@include m.clip-path('left-top');
+}
+
+.clip-color-zig-zag-left {
+	@include m.background-layers;
+	@include m.clip-path('zig-zag-left');
+}
+
+.clip-color-zig-zag-right {
+	@include m.background-layers;
+	@include m.clip-path('zig-zag-right');
+}
