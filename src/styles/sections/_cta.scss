@@ -7,6 +7,7 @@
 
 	&__background {
 		@include m.background-layers($opacity: 0.35);
+		z-index: 1;
 
 		&--gradient {
 			z-index: 1;
@@ -42,6 +43,18 @@
 
 		&.color-left {
 			@include m.clip-path("left-bottom");
+		}
+	}
+
+	&__content {
+		z-index: 5;
+
+		lite-youtube {
+			margin: 0 auto;
+
+			&::before {
+				background-image: unset;
+			}
 		}
 	}
 }

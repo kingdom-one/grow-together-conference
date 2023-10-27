@@ -15,10 +15,10 @@
 
 <body>
 	<article>
-		<section class="hero text-white">
+		<section id="hero" class="hero text-white">
 			<div class="hero__background color-right">
 				<div class="hero__background--color"></div>
-				<div class="hero__background--lower"></div>
+				<div class="hero__background--lower" style="background-image: url('./assets/hero-bg.jpg?as=webp');"></div>
 				<div class="hero__background--upper"></div>
 			</div>
 			<div class="hero__content container position-relative z-3">
@@ -71,12 +71,14 @@
 			<div class="cta__content container">
 				<div class="row">
 					<div class="col">
-						<p class="fw-bold text-white">To actualize your mission</p>
+						<p class="fw-bold fs-2 text-white text-center">To actualize your mission, ministries must seek growth together. Lack of continuing development and a community of
+							like-minded leaders
+							leads to stagnation, loneliness and </p>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col">
-						<video src="#" class="cta__video">The video</video>
+				<div class="row justify-content-center my-5">
+					<div class="col-xl-10">
+						<lite-youtube videoid="ln57UDtpws8"></lite-youtube>
 					</div>
 				</div>
 				<div class="row row-cols-1 row-cols-lg-3 plan">
@@ -99,11 +101,12 @@
 			</div>
 		</section>
 		<section id="team-members" class="teams text-bg-primary">
-			<div class="teams__background"></div>
+			<div class="teams__background "></div>
 			<div class="container">
 				<div class="row justify-content-center">
-					<div class="col-xl-8">
+					<div class="col-xl-8 d-flex flex-column align-items-center">
 						<h2 class="text-white text-center">Strong Teams <br />Grow <span class="text-secondary">Together</span></h2>
+						<img class='teams__squiggle w-75' src="./assets/svg/squiggle.svg" alt="">
 					</div>
 				</div>
 				<div class="row justify-content-center my-5 py-5">
@@ -221,15 +224,15 @@
 				</div>
 			</div>
 		</section>
-		<section id="testimonial" class="text-bg-dark">
+		<section id="testimonial" class="testimonial text-bg-dark">
 			<div class="container">
-				<div class="row">
+				<div class="row align-items-center">
 					<div class="col-xl-3 d-flex flex-column justify-content-center">
-						<picture class="h-100 w-100">
-							<img class='placeholder border rounded-circle h-100 w-100' src='#' alt='' />
+						<picture class="h-100 w-100 ratio ratio-1x1">
+							<img class='rounded-circle h-100 w-100' src='./assets/png/dr-kev.png?as=webp' alt='Dr. Kevin Mannoia' />
 						</picture>
 					</div>
-					<div class="col-xl-9 testimonial">
+					<div class="col-xl-8 testimonial">
 						<div class="testimonial__meta row justify-content-between">
 							<div class="col">
 								<span class="fw-bold">Dr. Kevin Mannoia</span>
@@ -239,7 +242,8 @@
 							</div>
 						</div>
 						<h2 class="testimonial__headline mt-5">Be Ahead of the Curve</h2>
-						<p class="testimonial__quote text-white mt-4">“The work that Kingdom One is doing to brief Christian organizations on California legal matters and new legislative
+						<p class="testimonial__quote text-white mt-4 fs-5">“The work that Kingdom One is doing to brief Christian organizations on California legal matters and new
+							legislative
 							initiatives keeps
 							us aware and equipped for relevant ministry. Unlike other sources, they are helping pastors and churches be ahead of the curve in proactively addressing matters
 							that can affect their ministry. It represents responsible engagement and I hope every pastor will ensure that their church is represented at this Legal Update.”
