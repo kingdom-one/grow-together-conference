@@ -7,6 +7,7 @@
 // Components
 @use "./components/footer";
 @use "./components/buttons";
+@use "./components/accordion";
 
 @use "./sections/hero-section";
 @use "./sections/about";
@@ -14,12 +15,3 @@
 @use "./sections/track-info";
 @use "./sections/testimonial";
 @use "./sections/teams";
-
-.accordion-button {
-    background-color: transparent;
-    border-left: none;
-    border-right: none;
-    border-top-color: white;
-    border-bottom-color: white !important;
-    font-size: 0.5em !important;
-}
