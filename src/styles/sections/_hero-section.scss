@@ -3,22 +3,22 @@
 
 .hero {
 	position: relative;
-	display: block;
-	height: unset;
-	padding-top: 30rem;
-	padding-bottom: 4rem;
+	padding: 6.5rem 0;
 
-	@include m.media-breakpoint-up(lg) {
-		min-height: 80rem;
-		padding-top: 15.6rem;
-		padding-bottom: 4rem;
+	.logo {
+		height: 30rem;
 	}
 
 	&__background {
-		@include m.background-layers($opacity: 0.75);
+		@include m.background-layers($opacity: 0.35);
 
 		&--color {
-			background-color: var(--color-spark-yellow);
+			background: var(--color-primary);
+			background: linear-gradient(
+				155deg,
+				rgba(v.$color-primary, 1) 80%,
+				rgba(v.$color-secondary, 1) 90%
+			);
 		}
 
 		&--lower {
@@ -28,7 +28,7 @@
 		}
 
 		&--upper {
-			background-color: rgba(black, 0.65);
+			background-color: rgba(black, 0.35);
 		}
 
 		&.color-right {
@@ -56,6 +56,18 @@
 		&--btn {
 			display: block;
 			align-self: flex-start;
+		}
+	}
+
+	&__words {
+		.col {
+			display: flex;
+			align-items: center;
+		}
+		&--word {
+			font-weight: 700;
+			font-size: 2.5rem;
+			margin-inline-end: 10px;
 		}
 	}
 }

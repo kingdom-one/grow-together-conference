@@ -62,10 +62,24 @@
 			}
 		}
 	}
+	&__secondary {
+		&--outline {
+			@extend %btn;
+			border-color: var(--color-secondary);
+			color: var(--color-secondary);
+
+			&:hover,
+			&:active,
+			&:focus {
+				background-color: var(--color-secondary);
+				color: white;
+			}
+		}
+	}
 
 	&__white {
 		&--outline {
-			@extend .btn;
+			@extend %btn;
 			background-color: transparent;
 			border-color: white;
 			color: white;

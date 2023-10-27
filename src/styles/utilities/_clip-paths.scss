@@ -1,0 +1,26 @@
+@use "../abstracts/mixins" as m;
+
+.clip-color-left {
+	@include m.background-layers;
+	@include m.clip-path("left");
+}
+
+.clip-color-right {
+	@include m.background-layers;
+	@include m.clip-path("right");
+}
+
+.clip-color-left-top {
+	@include m.background-layers;
+	@include m.clip-path("left-top");
+}
+
+.clip-color-zig-zag-left {
+	@include m.background-layers;
+	@include m.clip-path("zig-zag-left");
+}
+
+.clip-color-zig-zag-right {
+	@include m.background-layers;
+	@include m.clip-path("zig-zag-right");
+}
