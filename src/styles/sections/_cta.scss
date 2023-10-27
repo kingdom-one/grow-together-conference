@@ -53,6 +53,7 @@
 
 		lite-youtube {
 			margin: 0 auto;
+			max-width: unset;
 
 			&::before {
 				background-image: unset;
@@ -119,6 +120,5 @@
 
 	&__description {
 		font-size: 1.35em;
-
 	}
 }
