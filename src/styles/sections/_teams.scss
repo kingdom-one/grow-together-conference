@@ -1,1 +1,19 @@
+@use "../abstracts/variables" as v;
 @use "../components/roles-grid";
+.teams {
+	&__background {
+		&--gradient {
+			background: var(--color-primary);
+			background-image: linear-gradient(
+				330deg,
+				rgba(v.$color-primary--light, 1) 80%,
+				rgba(v.$color-secondary, 1) 100%
+			);
+		}
+	}
+	&__content {
+		padding: 6.5rem 0;
+		position: relative;
+		z-index: 5;
+	}
+}

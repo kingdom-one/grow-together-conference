@@ -21,4 +21,12 @@
 		height: 10rem;
 		width: 0.2rem;
 	}
+
+	&__image {
+		img {
+			height: 8rem;
+			aspect-ratio: 1;
+			object-fit: contain;
+		}
+	}
 }
