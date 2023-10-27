@@ -1,47 +1,124 @@
 @use "../abstracts/mixins" as m;
 @use "../abstracts/variables" as v;
 
+%clip-path {
+	clip-path: var(--lift-left-bottom);
+}
+
 .cta {
 	position: relative;
 	padding: 6.5rem 0;
 
 	&__background {
-		@include m.background-layers($opacity: 0.35);
+		position: absolute;
+		height: 50%;
+		width: 100%;
+		top: 0;
 
 		&--gradient {
+			@include m.absolute_100;
 			z-index: 1;
 			background-image: linear-gradient(
 				to bottom,
 				rgba(v.$color-primary, 1) 30%,
 				rgba(v.$color-secondary, 1) 90%
 			);
+			@extend %clip-path;
 		}
 
 		&--color {
+			@include m.absolute_100;
 			z-index: 2;
 			background: linear-gradient(
 				to right,
 				var(--color-primary--light) 30%,
 				transparent 90%
 			);
+			@extend %clip-path;
 		}
 
 		&--lower {
+			@include m.absolute_100;
+			z-index: 3;
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
+			@extend %clip-path;
+		}
+	}
+
+	&__content {
+		position: relative;
+		z-index: 5;
+
+		lite-youtube {
+			margin: 0 auto;
+			max-width: unset;
+
+			&::before {
+				background-image: unset;
+			}
+		}
+	}
+
+	&__video {
+		min-height: 40rem;
+		width: 100%;
+		border: 2px solid red;
+		aspect-ratio: 16 / 9;
+	}
+}
+
+%plan_steps {
+	@include m.displayFlex(column, $cross: center);
+	text-align: center;
+	position: relative;
+}
+.plan {
+	&__step {
+		&--1 {
+			@extend %plan_steps;
 		}
 
-		&--upper {
-			background-color: rgba(black, 0.35);
+		&--2 {
+			@extend %plan_steps;
+
+			.plan {
+				&__icon {
+					img {
+						aspect-ratio: 1;
+						height: 33.8rem;
+						position: absolute;
+						top: -5rem;
+						left: 0;
+					}
+				}
+			}
 		}
 
-		&.color-right {
-			@include m.clip-path("right-bottom");
+		&--3 {
+			@extend %plan_steps;
 		}
+	}
 
-		&.color-left {
-			@include m.clip-path("left-bottom");
+	&__icon {
+		height: 25.7rem;
+
+		img {
+			height: 100%;
+			width: 100%;
+			object-fit: contain;
 		}
+	}
+	&__headline {
+		margin-top: 2rem;
+		margin-bottom: 1.5rem;
+		font-weight: 700;
+		color: var(--color-secondary);
+		font-size: 2.4rem;
+	}
+
+	&__description {
+		font-size: 1.35em;
 	}
 }

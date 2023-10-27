@@ -1,0 +1,10 @@
+@use "../abstracts/mixins" as m;
+.testimonial {
+	&__background {
+		@include m.background-layers;
+	}
+	&__content {
+		z-index: 5;
+		position: relative;
+	}
+}

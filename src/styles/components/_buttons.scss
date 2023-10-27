@@ -87,7 +87,8 @@
 			&:hover,
 			&:active,
 			&:focus {
-				background-color: var(--color-primary);
+				background-color: white;
+				color: var(--color-primary);
 				border-color: var(--color-primary);
 			}
 		}

@@ -10,7 +10,7 @@
 	}
 
 	&__background {
-		@include m.background-layers($opacity: 0.35);
+		@include m.background-layers($opacity: 0.5);
 
 		&--color {
 			background: var(--color-primary);

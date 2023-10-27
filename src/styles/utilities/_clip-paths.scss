@@ -10,6 +10,11 @@
 	@include m.clip-path("right");
 }
 
+.clip-color-right-top {
+	@include m.background-layers;
+	@include m.clip-path("right-top");
+}
+
 .clip-color-left-top {
 	@include m.background-layers;
 	@include m.clip-path("left-top");
