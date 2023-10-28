@@ -47,17 +47,22 @@
 			</div>
 		</section>
 		<section id="about" class="about">
-			<div class="container">
-				<div class="row justify-content-end">
-					<div class="col-xl-9">
-						<h2 class="text-secondary col-xl-9">Growing together is crucial for ministries</h2>
-						<ul class="about-list">
-							<li class="about-list__item">Struggling with continuing education that aligns with ministry values</li>
-							<li class="about-list__item">Uninpsired teams</li>
-							<li class="about-list__item">Loneliness of not having a professional community</li>
-							<li class="about-list__item">Coming back from a conference with no action items</li>
-							<li class="about-list__item">Lack of exposure t onew ministry opportunites</li>
-						</ul>
+			<div class="about__background">
+				<div class="about__background" style="background-image: url('/src/assets/The\ Plan\ -\ Section\ Background.png');"></div>
+			</div>
+			<div class="about__content">
+				<div class="container">
+					<div class="row justify-content-end">
+						<div class="col-xl-9">
+							<h2 class="text-secondary col-xl-9">Growing together is crucial for ministries</h2>
+							<ul class="about-list">
+								<li class="about-list__item">Struggling with continuing education that aligns with ministry values</li>
+								<li class="about-list__item">Uninpsired teams</li>
+								<li class="about-list__item">Loneliness of not having a professional community</li>
+								<li class="about-list__item">Coming back from a conference with no action items</li>
+								<li class="about-list__item">Lack of exposure t onew ministry opportunites</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -81,21 +86,28 @@
 						<lite-youtube videoid="ln57UDtpws8"></lite-youtube>
 					</div>
 				</div>
-				<div class="row row-cols-1 row-cols-md-3 plan">
-					<div class="col plan__step--1">
-						<div class="plan__icon"><img src="./assets/svg/step-1-icon.svg" alt=""></div>
-						<p class="plan__headline">Get Tickets</p>
-						<p class="plan__description">Purchase your team's tickets today</p>
-					</div>
-					<div class="col plan__step--2">
-						<div class="plan__icon"><img src="./assets/svg/step-2-icon.svg" alt=""></div>
-						<p class="plan__headline">Join Us</p>
-						<p class="plan__description">Join us on Conference Day</p>
-					</div>
-					<div class="col plan__step--3">
-						<div class="plan__icon"><img src="./assets/svg/step-3-icon.svg" alt=""></div>
-						<p class="plan__headline">Jump Start 2024</p>
-						<p class="plan__description">Apply your learnings and jump start 2024</p>
+				<div class="plan__background">
+					<div class="plan__background--color" style="background-image: url('/src/assets/The\ Stakes\ -\ Section\ Background.png');"></div>
+				</div>
+				<div class="plan__content">
+					<div class="container">
+						<div class="row row-cols-1 row-cols-md-3 plan">
+							<div class="col plan__step--1">
+								<div class="plan__icon"><img src="./assets/svg/step-1-icon.svg" alt=""></div>
+								<p class="plan__headline">Get Tickets</p>
+								<p class="plan__description">Purchase your team's tickets today</p>
+							</div>
+							<div class="col plan__step--2">
+								<div class="plan__icon"><img src="./assets/svg/step-2-icon.svg" alt=""></div>
+								<p class="plan__headline">Join Us</p>
+								<p class="plan__description">Join us on Conference Day</p>
+							</div>
+							<div class="col plan__step--3">
+								<div class="plan__icon"><img src="./assets/svg/step-3-icon.svg" alt=""></div>
+								<p class="plan__headline">Jump Start 2024</p>
+								<p class="plan__description">Apply your learnings and jump start 2024</p>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="row justify-content-center my-5">
@@ -195,11 +207,11 @@
 			</div>
 			<div class="track-info__content">
 				<img src="./assets/png/icons-row.png?as=webp" alt="" class="track-info__icons-row">
-				<div class="container">
+				<div class="container col-xl-10">
 					<div class="row my-5">
 						<div class="col">
 							<h2 class="color-primary w-25">Track Information</h2>
-							<p class="subheadline text-center">Lorem Ipsum</p>
+							<p class="subheadline text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
 						</div>
 					</div>
 					<div class="row">
@@ -209,9 +221,9 @@
 									<h3 class="accordion-header">
 										<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
 												aria-controls="collapseOne">Hiring
-											& Onboarding 101</button>
+											& Onboarding 101 <div class="accordion-expander">+</div></button>
 									</h3>
-									<div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#track-info-accordion">
+									<div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion">
 										<div class="accordion-body">
 											<strong>Presenter: Julia Swanson</strong><br>
 											Learn the essentials for recruiting, selecting, and integrating new staff into your ministry. We’ll cover job descriptions, interviewing, and
@@ -221,32 +233,31 @@
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-xl-6">
-						<div class="accordion" id="track-info-accordion-two">
-							<div class="accordion-item">
-								<h3 class="accordion-header">
-									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true"
-											aria-controls="collapseTwo">Employee Relations 101</button>
-								</h3>
-								<div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-two">
-									<div class="accordion-body">
-										<strong>Presenter: Treena Meyers</strong><br>
-										Get introduced to the fundamental practices of managing positive relationships between your ministry and the staff through courageous conflict
-										resolution, communication, and foster a healthy ministry.
+						<div class="col-xl-6">
+							<div class="accordion" id="track-info-accordion-two">
+								<div class="accordion-item">
+									<h3 class="accordion-header">
+										<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true"
+												aria-controls="collapseTwo">Employee Relations 101 <div class="accordion-expander">+</div></button>
+									</h3>
+									<div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-two">
+										<div class="accordion-body">
+											<strong>Presenter: Treena Meyers</strong><br>
+											Get introduced to the fundamental practices of managing positive relationships between your ministry and the staff through courageous conflict
+											resolution, communication, and foster a healthy ministry.
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 				<div class="row">
 					<div class="col-xl-6">
 						<div class="accordion" id="track-info-accordion-three">
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true"
-											aria-controls="collapseThree">Healthy Staff Transitions</button>
+											aria-controls="collapseThree">Healthy Staff Transitions <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-three">
 									<div class="accordion-body">
@@ -262,7 +273,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true"
-											aria-controls="collapseFour">Talent Planning 101</button>
+											aria-controls="collapseFour">Talent Planning 101 <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-four">
 									<div class="accordion-body">
@@ -280,7 +291,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true"
-											aria-controls="collapseFive">Compensation 201</button>
+											aria-controls="collapseFive">Compensation 201 <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-five">
 									<div class="accordion-body">
@@ -296,7 +307,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true"
-											aria-controls="collapseSix">Designing & Maximizing Benefits</button>
+											aria-controls="collapseSix">Designing & Maximizing Benefits <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-six">
 									<div class="accordion-body">
@@ -315,7 +326,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="true"
-											aria-controls="collapseSeven">Universal Chart of Accounts</button>
+											aria-controls="collapseSeven">Universal Chart of Accounts <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-seven">
 									<div class="accordion-body">
@@ -332,7 +343,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="true"
-											aria-controls="collapseEight">Budget Busters vs. Budget Builders</button>
+											aria-controls="collapseEight">Budget Busters vs. Budget Builders <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-eight">
 									<div class="accordion-body">
@@ -351,7 +362,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="true"
-											aria-controls="collapseNine">Generosity Journey</button>
+											aria-controls="collapseNine">Generosity Journey <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseNine" class="accordion-collapse collapse " data-bs-parent="#track-info-accordion-nine">
 									<div class="accordion-body">
@@ -368,7 +379,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="true"
-											aria-controls="collapseTen">How Storybrand Amplifies Your Mission</button>
+											aria-controls="collapseTen">How Storybrand Amplifies Your Mission <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseTen" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-ten">
 									<div class="accordion-body">
@@ -387,7 +398,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="true"
-											aria-controls="collapseEleven">Easy to Use Website Process for Targeting New Guests</button>
+											aria-controls="collapseEleven">Easy to Use Website Process for Targeting New Guests <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseEleven" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-eleven">
 									<div class="accordion-body">
@@ -404,7 +415,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="true"
-											aria-controls="collapseTwelve">5 A.I. Tools Your Ministry Needs</button>
+											aria-controls="collapseTwelve">5 A.I. Tools Your Ministry Needs <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseTwelve" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-twelve">
 									<div class="accordion-body">
@@ -423,7 +434,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="true"
-											aria-controls="collapseThirteen">Change Management 101</button>
+											aria-controls="collapseThirteen">Change Management 101 <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseThirteen" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-thirteen">
 									<div class="accordion-body">
@@ -439,7 +450,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourteen" aria-expanded="true"
-											aria-controls="collapseFourteen">Influencing 101</button>
+											aria-controls="collapseFourteen">Influencing 101 <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseFourteen" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-fourteen">
 									<div class="accordion-body">
@@ -457,7 +468,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifteen" aria-expanded="true"
-											aria-controls="collapseFifteen">The Downward Path</button>
+											aria-controls="collapseFifteen">The Downward Path <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseFifteen" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-fifteen">
 									<div class="accordion-body">
@@ -473,7 +484,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSixteen" aria-expanded="true"
-											aria-controls="collapseSixteen">Fighting Disengagement</button>
+											aria-controls="collapseSixteen">Fighting Disengagement <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseSixteen" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-sixteen">
 									<div class="accordion-body">
@@ -491,7 +502,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeventeen" aria-expanded="true"
-											aria-controls="collapseSeventeen">Leadership Formation</button>
+											aria-controls="collapseSeventeen">Leadership Formation <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseSeventeen" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-seventeen">
 									<div class="accordion-body">
@@ -507,7 +518,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEighteen" aria-expanded="true"
-											aria-controls="collapseEighteen">Assessing Church Health</button>
+											aria-controls="collapseEighteen">Assessing Church Health <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseEighteen" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-eighteen">
 									<div class="accordion-body">
@@ -525,7 +536,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNineteen" aria-expanded="true"
-											aria-controls="collapseNineteen">Property & Casualty 101</button>
+											aria-controls="collapseNineteen">Property & Casualty 101 <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseNineteen" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-nineteen">
 									<div class="accordion-body">
@@ -542,7 +553,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwenty" aria-expanded="true"
-											aria-controls="collapseTwenty">Ron Blue- Topic TBD</button>
+											aria-controls="collapseTwenty">Ron Blue- Topic TBD <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseTwenty" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-twenty">
 									<div class="accordion-body">
@@ -561,7 +572,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwentyOne" aria-expanded="true"
-											aria-controls="collapseTwentyOne">Employee Handbook Workshop</button>
+											aria-controls="collapseTwentyOne">Employee Handbook Workshop <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseTwentyOne" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-twentyone">
 									<div class="accordion-body">
@@ -577,7 +588,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwentyTwo" aria-expanded="true"
-											aria-controls="collapseTwentyTwo">Severance Agreement Workshop</button>
+											aria-controls="collapseTwentyTwo">Severance Agreement Workshop <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseTwentyTwo" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-twentytwo">
 									<div class="accordion-body">
@@ -596,7 +607,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwentyThree" aria-expanded="true"
-											aria-controls="collapseTwentyThree">Lawsuit Bound</button>
+											aria-controls="collapseTwentyThree">Lawsuit Bound<div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseTwentyThree" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-twentythree">
 									<div class="accordion-body">
@@ -612,7 +623,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwentyFour" aria-expanded="true"
-											aria-controls="collapseTwentyFour">Active Shooter Training</button>
+											aria-controls="collapseTwentyFour">Active Shooter Training <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseTwentyFour" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-twentyfour">
 									<div class="accordion-body">
@@ -631,7 +642,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwentyFive" aria-expanded="true"
-											aria-controls="collapseTwentyFive">Situational Awareness</button>
+											aria-controls="collapseTwentyFive">Situational Awareness <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseTwentyFive" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-twentyfive">
 									<div class="accordion-body">
@@ -647,7 +658,7 @@
 							<div class="accordion-item">
 								<h3 class="accordion-header">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwentySix" aria-expanded="true"
-											aria-controls="collapseTwentySix">FEMA Grant & More!</button>
+											aria-controls="collapseTwentySix">FEMA Grant & More! <div class="accordion-expander">+</div></button>
 								</h3>
 								<div id="collapseTwentySix" class="accordion-collapse collapse" data-bs-parent="#track-info-accordion-twentysix">
 									<div class="accordion-body">
@@ -660,14 +671,16 @@
 					</div>
 				</div>
 			</div>
+		</div>
 		</section>
 		<section id="testimonial" class="testimonial text-white">
 			<div class="testimonial__background clip-color-left-top">
 				<div class="testimonial__background--color bg-dark"></div>
 			</div>
 			<div class="testimonial__content">
-				<div class="container">
+				<div class="container col-xl-10">
 					<div class="row align-items-center">
+						<div class="col-xl-1"></div>
 						<div class="col-xl-3 d-flex flex-column justify-content-center">
 							<picture class="h-100 w-100 ratio ratio-1x1">
 								<img class='rounded-circle h-100 w-100' src='./assets/png/dr-kev.png?as=webp' alt='Dr. Kevin Mannoia' />
@@ -683,13 +696,7 @@
 								</div>
 							</div>
 							<h2 class="testimonial__headline mt-5">Be Ahead of the Curve</h2>
-							<p class="testimonial__quote text-white mt-4 fs-5">“The work that Kingdom One is doing to brief Christian organizations on California legal matters and new
-								legislative
-								initiatives keeps
-								us aware and equipped for relevant ministry. Unlike other sources, they are helping pastors and churches be ahead of the curve in proactively addressing
-								matters
-								that can affect their ministry. It represents responsible engagement and I hope every pastor will ensure that their church is represented at this Legal
-								Update.”
+							<p class="testimonial__quote text-white mt-4 fs-5">“The work that Kingdom One is doing to brief Christian <br> organizations on California legal matters and new legislative <br> initiatives keeps us aware and equipped for relevant ministry. <br> Unlike other sources, they are helping pastors and churches be <br> ahead of the curve in proactively addressing matters that can <br> affect their ministry. It represents responsible engagement and I <br> hope every pastor will ensure that their church is represented at <br> this Legal Update.”
 							</p>
 
 						</div>
@@ -698,12 +705,19 @@
 			</div>
 		</section>
 		<section class="final-cta container">
-			<div class="row my-5">
-				<div class="col-xl-9">
-					<p class="display-1 text-secondary fw-bold mb-5">
-						Get a headstart on your 2024 ministry goals, gain actionable insights, ad network with like-minded peers.
-					</p>
-					<a href="#" class="btn__black--outline">Get Tickets</a>
+			<div class="final-cta__background">
+				<div class="final-cta__background--color" style="background-image: url('/src/assets/Final\ CTA\ -\ Section\ Background.png');"></div>
+			</div>
+			<div class="final-cta__content">
+				<div class="container">
+					<div class="row my-5">
+						<div class="col-xl-9">
+							<p class="display-1 text-secondary fw-bold mb-5">
+								Get a headstart on your 2024 ministry goals, gain actionable insights, ad network with like-minded peers.
+							</p>
+							<a href="#" class="btn__black--outline">Get Tickets</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>

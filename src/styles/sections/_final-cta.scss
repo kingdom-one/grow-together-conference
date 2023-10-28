@@ -1,19 +1,13 @@
 @use "../abstracts/mixins" as m;
-
-.about {
+.final-cta {
 	&__background {
 		@include m.background-layers;
 		background-position: left;
-		background-size: contain;
+		background-size: cover;
 		background-repeat: no-repeat;
 	}
 	&__content {
 		z-index: 9;
 		position: relative;
 	}
-}
-
-.about-list {
-	margin-inline-start: 0;
-	font-size: 1.35em;
 }
