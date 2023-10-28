@@ -54,10 +54,6 @@
 		lite-youtube {
 			margin: 0 auto;
 			max-width: unset;
-
-			&::before {
-				background-image: unset;
-			}
 		}
 	}
 
@@ -120,5 +116,18 @@
 
 	&__description {
 		font-size: 1.35em;
+	}
+}
+
+.plan {
+	&__background {
+		@include m.background-layers;
+		background-position: right;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	&__content {
+		z-index: 9;
+		position: relative;
 	}
 }

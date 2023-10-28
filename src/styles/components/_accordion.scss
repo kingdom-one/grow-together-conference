@@ -1,8 +1,22 @@
 .accordion-button {
+	width: 100%;
+	text-align: left;
 	background-color: transparent;
 	border-left: none;
 	border-right: none;
-	border-top-color: white;
-	border-bottom-color: white !important;
+	border-bottom: none;
+	border-color: white;
 	font-size: 0.5em !important;
+	padding-top: 0.75em;
+	padding-bottom: 0.5em;
+}
+
+.accordion-expander {
+	color: white;
+	text-align: right!important;
+	margin-top: -1.2em;
+}
+
+.accordion-body {
+	padding-bottom: 1em;
 }
