@@ -1,8 +1,12 @@
+@use "../abstracts/mixins" as m;
 .roles-grid {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 2rem;
 	place-content: center;
+
+	@include m.media-breakpoint-up(md) {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+	}
 
 	&__container {
 		display: flex;
@@ -25,8 +29,6 @@
 	&__image {
 		img {
 			height: 8rem;
-			aspect-ratio: 1;
-			object-fit: contain;
 		}
 	}
 }

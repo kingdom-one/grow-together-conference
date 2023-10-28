@@ -7,7 +7,10 @@
 
 .cta {
 	position: relative;
-	padding: 6.5rem 0;
+	margin-bottom: -6rem;
+	@include m.media-breakpoint-up(md) {
+		@include m.bg-image("../assets/png/bg-images/cta.png?as=webp", cover);
+	}
 
 	&__background {
 		position: absolute;
@@ -56,21 +59,19 @@
 			max-width: unset;
 		}
 	}
-
-	&__video {
-		min-height: 40rem;
-		width: 100%;
-		border: 2px solid red;
-		aspect-ratio: 16 / 9;
-	}
 }
 
 %plan_steps {
 	@include m.displayFlex(column, $cross: center);
 	text-align: center;
 	position: relative;
+	@include m.media-breakpoint-down(md) {
+		margin-bottom: 3rem;
+	}
 }
+
 .plan {
+	margin-top: 8rem;
 	&__step {
 		&--1 {
 			@extend %plan_steps;
@@ -83,10 +84,10 @@
 				&__icon {
 					img {
 						aspect-ratio: 1;
-						height: 33.8rem;
 						position: absolute;
 						top: -5rem;
 						left: 0;
+						height: 33.8rem;
 					}
 				}
 			}

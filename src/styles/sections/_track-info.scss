@@ -1,29 +1,21 @@
 @use "../abstracts/mixins" as m;
 @use "../abstracts/variables" as v;
 
-%clip-path {
-	clip-path: var(--lift-left-bottom);
-}
-
 .track-info {
-	// margin-top: -9rem;
-	padding: 6.5rem 0;
-	padding-bottom: 3rem;
-	position: relative;
-
-	&__background {
-		@include m.background-layers($opacity: 0.35);
-		// height: 112%;
-
-		clip-path: var(--drop-left);
+	margin-top: -8rem;
+	@include m.media-breakpoint-up(lg) {
+		margin-top: -12rem;
 	}
 
 	&__icons-row {
 		height: 20rem;
 		margin: 6rem auto;
+		@include m.media-breakpoint-up(lg) {
+			margin-top: 14rem;
+		}
 		display: block;
 		max-width: 100%;
-		object-fit: contain;
+		object-fit: cover;
 	}
 
 	&__content {
