@@ -4,6 +4,17 @@ A landing page for the **Growing Together** conference in 2024. Built with Boots
 
 # Changelog
 
+## v1.0.3
+
+-   Update parcel build to include public url
+-   Fix button color on iOS safari
+-   Update lorem ipsum
+-   Fix spacing in `.teams` content headline when html is minified
+
+### Known issues
+
+-   Missing Real Button Links
+
 ## v1.0
 
 -   First build completed.
