@@ -6,7 +6,7 @@
 	"browserslist": "> 0.5%, last 2 versions, not dead",
 	"scripts": {
 		"start": "parcel src/index.html",
-		"build": "parcel build src/index.html"
+		"build": "parcel build src/index.html --public-url /grow-together-conference/"
 	},
 	"author": "Kingdom One",
 	"license": "MIT",
