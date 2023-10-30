@@ -1,6 +1,6 @@
 {
 	"name": "grow-together-conference",
-	"version": "1.0.4",
+	"version": "1.1.0",
 	"description": "A landing page for the Grow Together 2024 conference",
 	"prettier": "@wordpress/prettier-config",
 	"browserslist": "> 0.5%, last 2 versions, not dead",
@@ -11,6 +11,7 @@
 	"author": "Kingdom One",
 	"license": "MIT",
 	"dependencies": {
+		"aos": "^2.3.4",
 		"bootstrap": "^5.3.2"
 	},
 	"devDependencies": {
