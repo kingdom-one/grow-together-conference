@@ -1,6 +1,6 @@
 {
 	"name": "grow-together-conference",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "A landing page for the Grow Together 2024 conference",
 	"prettier": "@wordpress/prettier-config",
 	"browserslist": "> 0.5%, last 2 versions, not dead",
