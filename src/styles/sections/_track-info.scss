@@ -23,3 +23,17 @@
 		z-index: 5;
 	}
 }
+
+.track-accordion-list {
+	display: grid;
+	gap: 2rem;
+	place-content: center flex-start;
+
+	@include m.media-breakpoint-up(md) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include m.media-breakpoint-up(xl) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
