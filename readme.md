@@ -4,6 +4,10 @@ A landing page for the **Growing Together** conference in 2024. Built with Boots
 
 # Changelog
 
+## v1.1.2
+
+-   Refactor accordions to be single accordions with items inside (instead of multiple accordions stacked in a div)
+
 ## v1.1.1
 
 -   Fix links
