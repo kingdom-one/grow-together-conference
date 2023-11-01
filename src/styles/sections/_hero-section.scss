@@ -11,13 +11,20 @@
 	}
 
 	&__background {
-		@include m.background-layers($opacity: 0.5);
+		@include m.background-layers($opacity: 0.15);
 
+		&--gradient {
+			background: linear-gradient(
+				to right,
+				rgba(0, 255, 255, 0.4) 10%,
+				rgba(v.$color-primary--light, 1) 30%
+			);
+		}
 		&--color {
 			background: var(--color-primary);
 			background: linear-gradient(
 				155deg,
-				rgba(v.$color-primary, 1) 80%,
+				rgba(v.$color-primary, 1) 60%,
 				rgba(v.$color-secondary, 1) 90%
 			);
 		}
@@ -26,10 +33,6 @@
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
-		}
-
-		&--upper {
-			background-color: rgba(black, 0.35);
 		}
 
 		&.color-right {
