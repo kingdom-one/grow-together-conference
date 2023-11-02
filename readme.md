@@ -4,6 +4,15 @@ A landing page for the **Growing Together** conference in 2024. Built with Boots
 
 # Changelog
 
+## v1.1.4
+
+-   Bug fix accordions and modify copy
+
+## v1.1.3
+
+-   Add/edit copy
+-   Update hero to only have gradient background
+
 ## v1.1.2
 
 -   Refactor accordions to be single accordions with items inside (instead of multiple accordions stacked in a div)
