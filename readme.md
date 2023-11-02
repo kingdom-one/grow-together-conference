@@ -4,6 +4,10 @@ A landing page for the **Growing Together** conference in 2024. Built with Boots
 
 # Changelog
 
+## v1.1.5
+
+-   Update tesimonial
+
 ## v1.1.4
 
 -   Bug fix accordions and modify copy
