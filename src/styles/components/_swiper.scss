@@ -1,0 +1,25 @@
+@use "swiper/swiper-bundle.min.css";
+@use "../abstracts/mixins" as m;
+
+.sponsors {
+	.swiper {
+		max-height: 15rem;
+		--swiper-navigation-color: white;
+	}
+	.swiper-slide {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__logo {
+		max-width: 60%;
+		@include m.media-breakpoint-up(lg) {
+			max-width: 40%;
+		}
+		margin: 0 auto;
+		display: block;
+		object-fit: contain;
+		max-height: 50%;
+	}
+}
