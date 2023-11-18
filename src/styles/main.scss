@@ -3,16 +3,3 @@
 @use "./base/base";
 @use "./base/typography";
 @use "./base/utilities";
-
-// Components
-@use "./components/footer";
-@use "./components/buttons";
-@use "./components/accordion";
-
-@use "./sections/hero-section";
-@use "./sections/about";
-@use "./sections/cta";
-@use "./sections/track-info";
-@use "./sections/testimonial";
-@use "./sections/teams";
-@use "./sections/final-cta";

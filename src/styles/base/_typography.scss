@@ -8,27 +8,27 @@
 h1,
 .h1 {
 	@extend %heading;
-	font-size: 4em;
+	font-size: calc(4em - 1vw);
 	text-transform: lowercase;
 }
 
 h2,
 .h2 {
 	@extend %heading;
-	font-size: 3em;
+	font-size: calc(3em - 1vw);
 }
 
 h3,
 .h3 {
 	@extend %heading;
 	font-weight: 700;
-	font-size: 2.4em;
+	font-size: calc(2.4em - 1vw);
 }
 
 h4,
 .h4 {
 	@extend %heading;
-	font-size: 1.75em;
+	font-size: calc(1.75em - 1vw);
 }
 
 h5,

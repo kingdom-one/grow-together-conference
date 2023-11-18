@@ -1,0 +1,102 @@
+---
+import { Image } from 'astro:assets';
+
+// Logos
+import oneDigital from '../assets/png/slides/one-digital.png';
+import rag from '../assets/png/slides/RAG-logo-sm-white.png';
+import paylocity from '../assets/png/slides/paylocity.png';
+import ronaldBlue from '../assets/png/slides/RonaldBlueandCoCPAsLogo-2022.png';
+import fulcrum from '../assets/png/slides/fulcrum-logo.png';
+import snell from '../assets/png/slides/snell.svg';
+import beaconPointe from '../assets/png/slides/beacon-pointe--color.png';
+import acrisure from '../assets/png/slides/acrisurewebsite_logo_raster.png';
+import denison from '../assets/png/slides/Dennison-cpa.png';
+
+// Swiper
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
+
+const logos = [
+	{ logo: oneDigital, alt: 'one digital' },
+	{ logo: rag, alt: 'rag' },
+	{ logo: paylocity, alt: 'paylocity' },
+	{ logo: ronaldBlue, alt: 'ronald blue and co' },
+	{ logo: fulcrum, alt: 'Fulcrum Biometrics: a Fujistu company' },
+	{
+		logo: snell,
+		alt: 'Snell and Wilmer: Committed to being your perfect fit.',
+	},
+	{
+		logo: beaconPointe,
+		alt: 'Beacon Pointe: A wealth advisory firm',
+	},
+	{
+		logo: acrisure,
+		alt: 'acrisure: an extraordinary advantage',
+	},
+	{ logo: denison, alt: 'denison cpa: church and ministry advisor' },
+];
+---
+
+<style lang="scss" define:vars={{ 'swiper-navigation-color': 'white' }}>
+	@use '../styles/abstracts/mixins' as m;
+	.swiper {
+		max-height: 30rem;
+		height: auto;
+	}
+	.swiper-slide {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.logo {
+		max-width: 60%;
+		height: 100%;
+		margin: 2rem auto;
+		display: block;
+		object-fit: contain;
+	}
+</style>
+<div class="swiper" id="sponsor-swiper">
+	<div class="swiper-wrapper">
+		{
+			logos.map((logo) => (
+				<div class="swiper-slide">
+					<Image src={logo.logo} class="logo" alt={logo.alt} />
+					<div class="swiper-lazy-preloader swiper-lazy-preloader-white" />
+				</div>
+			))
+		}
+	</div>
+	<div class="swiper-button-prev"></div>
+	<div class="swiper-button-next"></div>
+</div>
+<script>
+	import Swiper from 'swiper';
+	import { Autoplay, Navigation } from 'swiper/modules';
+	const sponsorSwiper = document.getElementById('sponsor-swiper');
+	const swiper = new Swiper('#sponsor-swiper', {
+		loop: true,
+		modules: [Autoplay, Navigation],
+		lazyPreloadPrevNext: 1,
+		speed: 800,
+		autoplay: {
+			pauseOnMouseEnter: true,
+		},
+		breakpoints: {
+			640: {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
+			1024: {
+				slidesPerView: 3,
+				spaceBetween: 50,
+			},
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	});
+</script>

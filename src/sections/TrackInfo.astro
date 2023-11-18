@@ -1,0 +1,288 @@
+---
+import { Image } from 'astro:assets';
+import iconsRow from '../assets/png/icons-row.png';
+import Accordion from '../components/Accordion.astro';
+---
+
+<style lang="scss">
+	@use '../styles/abstracts/mixins' as m;
+	@use '../styles/abstracts/variables' as v;
+
+	.track-info {
+		margin-top: -8rem;
+		@include m.media-breakpoint-up(lg) {
+			margin-top: -12rem;
+		}
+
+		&__icons-row {
+			height: 20rem;
+			margin: 6rem auto;
+			@include m.media-breakpoint-up(lg) {
+				margin-top: 14rem;
+			}
+			display: block;
+			max-width: 100%;
+			object-fit: contain;
+		}
+
+		&__content {
+			position: relative;
+			overflow: hidden;
+			z-index: 5;
+		}
+	}
+
+	.track-accordion-list {
+		display: grid;
+		gap: 2rem;
+		place-content: center flex-start;
+
+		@include m.media-breakpoint-up(md) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include m.media-breakpoint-up(xl) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+</style>
+<section id="track-info" class="track-info">
+	<div class="track-info__background clip-color-left-top">
+		<div class="track-info__background--color bg-primary"></div>
+		<div class="track-info__background--color bg-secondary"></div>
+	</div>
+	<div class="track-info__content">
+		<Image src={iconsRow} alt="" class="track-info__icons-row" />
+		<div class="container col-xl-10">
+			<div class="row my-5 flex-column">
+				<div class="col-lg-6">
+					<h2 class="color-primary">Track Information</h2>
+				</div>
+				<div class="col">
+					<p class="subheadline fs-3 text-lg-center">
+						Our conference tracks will educate and inspire your team
+						to jump-start 2024 with action. There is something for
+						everyone at Grow Together 2024.
+					</p>
+				</div>
+			</div>
+			<div class="grid track-accordion-list">
+				<Accordion
+					accordionClass="hr-foundations"
+					accordionTitle="HR Foundations"
+					items={[
+						{
+							title: 'Hiring & Onboarding 101',
+							presenter: 'Julia Swanson',
+							content:
+								'Learn the essentials for recruiting, selecting, and integrating new staff into your ministry. We’ll cover job descriptions, interviewing, and successful onboarding.',
+						},
+						{
+							title: 'Employee Relations 101',
+							presenter: 'Treena Meyers',
+							content:
+								'Get introduced to the fundamental practices of managing positive relationships between your ministry and the staff through courageous conflict resolution, communication, and foster a healthy ministry.',
+						},
+						{
+							title: 'Healthy Staff Transitions',
+							presenter: 'Whitney Seifman',
+							content:
+								'Learn ways to support the well-being of your staff and organization as staff transition out of roles or off your ministry into their next calling.',
+						},
+					]}
+				/>
+				<Accordion
+					accordionClass="advanced-hr"
+					accordionTitle="Advanced HR"
+					items={[
+						{
+							title: 'Talent Planning 101',
+							presenter: 'Steven Bush',
+							content:
+								'Talent Stewardship is the key to developing and growing your ministry staff. Learn more about using tools to steward your people more effectively.',
+						},
+						{
+							title: 'Compensation 201',
+							presenter: 'Whitney Seifman',
+							content:
+								'Learn to design, implement, and manage competitive and equitable compensation structures to attract and retain talent for your ministry.',
+						},
+						{
+							title: 'Designing & Maximizing Benefits',
+							presenter: 'Treena Meyers & Kendra Holybee',
+							content:
+								'Creating a comprehensive package of perks and benefits that go beyond salary to attract and retain talent, enhance job satisfaction, and promote staff well-being.',
+						},
+					]}
+				/>
+				<Accordion
+					accordionClass="finance"
+					accordionTitle="Finance Track"
+					items={[
+						{
+							title: 'How to Build an Account System for the Future',
+							presenter: 'John Hughes',
+							content:
+								'Accounting systems can either confound or clarify financial reports and organizational stewardship. Let’s learn together how to design a thoughtful, simple, and well-designed Chart of Accounts that gives pastors peace of mind and board members easy-to-understand financials.',
+						},
+						{
+							title: 'Budget Busters vs. Budget Builders',
+							presenter: 'Rick Wentzel/ Chris Mannoia',
+							content:
+								'Budget Builders vs. Budget Busters is an excellent primer for wrangling out-of-control budgets into a health-building tool that supports your ministry.',
+						},
+						{
+							title: 'Generosity Journey',
+							presenter: 'Chris Mannoia',
+							content:
+								'Our Giving Journey Session is full of strategy, tactics, and application of discipling the hearts and wallets of your congregation to support the mission of your organization fully.',
+						},
+					]}
+				/>
+				<Accordion
+					accordionClass="marcom"
+					accordionTitle="Marcom Track"
+					items={[
+						{
+							title: 'How Storybrand Amplifies Your Mission',
+							presenter: 'Tim Finch',
+							content:
+								'Missional Communications Frameworks is the best starting point for ministry marketing and communications. We look at stories, psychology, and human motivations to build your reach and not be ignored in organizational communication.',
+						},
+						{
+							title: 'Easy to Use Website Process for Targeting New Guests',
+							presenter: 'Nick Ovalle',
+							content:
+								'Easy To Use Website Communications is the next level of applying your comms frameworks in website optimization. Get your donors, congregation, or key audience to take action with easy-to-use tools, no matter your platform.',
+						},
+						{
+							title: '5 A.I. Tools Your Ministry Needs',
+							presenter: 'Nick Ovalle',
+							content:
+								'The 5 AI tools your ministry needs to use are a great introduction to the world of AI and its uses in ministry. Understand the key differences between algorithms, AI, and self-learning systems and how they can play a role in saving you time and money in your operations.',
+						},
+					]}
+				/>
+				<Accordion
+					accordionClass="people-management"
+					accordionTitle="People Management"
+					items={[
+						{
+							title: 'Change Management 101',
+							presenter: 'Steven Bush',
+							content:
+								'Explore the best practices and strategies for successfully navigating organization change.',
+						},
+						{
+							title: "A Supervisor's Guide to Coaching Your Staff",
+							presenter: 'Steven Bush',
+							content:
+								'Develop effective coaching skills to enhance your staff performance and professional development to foster a more engaged ministry team.',
+						},
+						{
+							title: 'Influencing 101',
+							presenter: 'Julia Swanson',
+							content:
+								'Discover the fundamental concepts and techniques for effective influencing up, influencing down, and influencing across to your peers.',
+						},
+					]}
+				/>
+				<Accordion
+					accordionTitle="Senior Leadership Track"
+					items={[
+						{
+							title: 'Downward Path to Leadership',
+							presenter: 'Dr. Kevin Mannoia',
+							content:
+								'Join us on the journey downward through challenges, hardships, and self-discovery that leads to transformational change and growth.',
+						},
+						{
+							title: 'Fighting Disengagement',
+							presenter: 'Treena Meyers & Kendra Holybee',
+							content:
+								'Learn the pitfalls and strategies to re-engage and motivate staff who may be feeling disconnected or losing interest in their work.',
+						},
+						{
+							title: 'Developing the Next Generation of Leaders',
+							presenter: 'Dr. Kevin Mannoia & Treena Meyers',
+							content:
+								'Nurture and mentor your next generation of leaders by identifying strategies for equipping your staff with the skills needed for effective ministry.',
+						},
+					]}
+				/>
+				<Accordion
+					accordionTitle="Business Administration Track"
+					accordionClass="business-administration"
+					items={[
+						{
+							title: 'Assesing Church Health',
+							presenter: 'Chris Mannoia',
+							content:
+								'Assessing Church Health is a non-negotiable conversation on what health implies and how to measure your ministry efforts in organizational design.',
+						},
+						{
+							title: 'Risk Management',
+							presenter: 'Michael Garcia & Kevin Brown',
+							content:
+								'Special Guests Michael and Kevin will cover a variety of topics from the banking and legal perspectives surrounding how to manage legal and financial risks every ministry faces and ensure the long-term sustainability of your ministry.',
+						},
+						{
+							title: 'Should We Get An Audit?',
+							presenter: 'John Hughes',
+							content:
+								'Stewardship and being Above Reproach is the goal of every healthy ministry. In that pursuit, a common question is, "Do we need an audit"? Join Ron Blue CPA John Hughes as we explore 5 reasons you don’t need an audit, along with 2 reasons you do!',
+						},
+					]}
+				/>
+				<Accordion
+					accordionClass="legal"
+					accordionTitle="Legal Track"
+					items={[
+						{
+							title: 'Employee Handbook Workshop',
+							presenter: 'Jen Bursch, Attorney at Bursch Legal',
+							content:
+								'Bring your employee handbook with you as you engage with an attorney who will share ways to optimize your employee handbook.',
+						},
+						{
+							title: 'Severance Agreement Workshop',
+							presenter: 'Jen Bursch, Attorney at Bursch Legal',
+							content:
+								'Bring your severance agreement with you as you learn the legal requirements and best practices to develop fair and legally sound severance agreement templates and packages.',
+						},
+						{
+							title: 'Lawsuit Bound',
+							presenter: 'Jen Bursh, Attorney at Bursch Legal',
+							content:
+								'How to identify and avoid these risks by addressing the most common issues that are facing the ministry world today.',
+						},
+					]}
+				/>
+				<Accordion
+					accordionClass="safety"
+					accordionTitle="Safety Track"
+					items={[
+						{
+							title: 'Situational Awareness',
+							presenter: 'Gary Bush',
+							content:
+								'Learn more about how to perceive and anticipate events in your ministry that involve staying alert and making informed decisions.',
+						},
+						{
+							title: 'FEMA Grant & More!',
+							presenter: 'Brian Meyers',
+							content:
+								'Learn more about how the FEMA grant could provide financial assistance to enhance your ministry’s safety strategies.',
+						},
+						{
+							title: 'Building a Ministry Safety Team',
+							presenter: 'Stephen Holderfield',
+							content:
+								'Join special guest Stephen Holderfield, Safety Director at High Desert Church in learning how to establish, grow and optimize your ministries’ safety team.',
+						},
+					]}
+				/>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,12 +1,16 @@
 # Overview
 
-A landing page for the **Growing Together** conference in 2024. Built with Bootstrap and Parcel.
+A landing page for the **Growing Together** conference in 2024. Built with Bootstrap, Astro, Swiper and AOS.
 
 # Changelog
 
+## 2.0
+
+- Rebuilt in Astro!
+
 ## v1.1.5
 
--   Update tesimonial
+-   Update testimonial
 
 ## v1.1.4
 
@@ -64,3 +68,5 @@ A landing page for the **Growing Together** conference in 2024. Built with Boots
 
 -   add assets from xd to repo
 -   prep CI/CD to netlify
+
+# conference-v2

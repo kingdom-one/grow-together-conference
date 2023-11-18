@@ -1,0 +1,11 @@
+---
+import Button from "./Button.astro";
+interface Props {
+	color?: "primary"|"secondary"|"black"|"white";
+	variant?: "solid"|"outline";
+	classes?: string;
+}
+
+const { color, variant, classes } = Astro.props;
+---
+<Button href="https://www.eventbrite.com/e/grow-together-2024-conference-san-diego-tickets-738072864807" isExternal={true} color={color} variant={variant} text="Get Tickets (San Diego)" classes={classes} />

@@ -1,0 +1,148 @@
+---
+interface Props {
+	text: string;
+	href: string;
+	isExternal?: boolean;
+	color?: 'primary' | 'secondary' | 'black' | 'white';
+	variant?: 'solid' | 'outline';
+	classes?: string;
+}
+
+const { href, text, isExternal, color, variant, classes } = Astro.props;
+---
+
+{
+	isExternal ? (
+		<a
+			target="_blank"
+			href={href}
+			class={`btn__${color}--${variant} ${classes}`}
+		>
+			{text}
+		</a>
+	) : (
+		<a href={href} class={`btn__${color}--${variant} ${classes}`}>
+			{text}
+		</a>
+	)
+}
+
+<style lang="scss">
+	@use '../styles/abstracts/functions' as fn;
+
+	%btn {
+		border: 2px solid;
+		border-style: solid;
+		border-width: 2px;
+		border-radius: 999px;
+		padding: 1rem 2rem 0.8rem;
+		display: inline-block;
+		font-size: 2rem;
+		font-weight: 700;
+		letter-spacing: 0.1rem;
+		transform: translateY(0);
+		text-transform: capitalize;
+		width: auto;
+
+		transition: fn.transition(
+			(background-color, border-color, transform, box-shadow, color)
+		);
+
+		&:hover {
+			box-shadow: 2px 4px 8px rgba(black, 0.35);
+			transform: translateY(-4px);
+		}
+
+		a {
+			color: inherit;
+		}
+	}
+
+	.btn {
+		@extend %btn;
+
+		&__primary {
+			&--fill {
+				@extend %btn;
+				background-color: var(--color-primary);
+				color: white;
+
+				&:hover,
+				&:active,
+				&:focus {
+					background-color: transparent;
+					border-color: var(--color-primary);
+					color: var(--color-primary);
+
+					a {
+						color: var(--color-primary);
+					}
+				}
+			}
+
+			&--outline {
+				@extend %btn;
+				border-color: var(--color-primary);
+
+				&:hover,
+				&:active,
+				&:focus {
+					background-color: var(--color-primary);
+					color: white;
+				}
+			}
+		}
+		&__secondary {
+			&--outline {
+				@extend %btn;
+				border-color: var(--color-secondary);
+				color: var(--color-secondary);
+
+				&:hover,
+				&:active,
+				&:focus {
+					background-color: var(--color-secondary);
+					color: white;
+				}
+			}
+		}
+
+		&__white {
+			&--outline {
+				@extend %btn;
+				background-color: transparent;
+				border-color: white;
+				color: white;
+
+				&:hover,
+				&:active,
+				&:focus {
+					background-color: white;
+					color: var(--color-primary);
+					border-color: var(--color-primary);
+				}
+			}
+		}
+
+		&__black {
+			&--outline {
+				@extend .btn;
+				background-color: transparent;
+				border-color: black;
+				color: black;
+
+				a {
+					color: inherit;
+				}
+
+				&:hover,
+				&:active,
+				&:focus {
+					background-color: black;
+					border-color: black;
+					color: white;
+				}
+			}
+		}
+	}
+</style>

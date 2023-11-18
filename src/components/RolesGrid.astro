@@ -1,0 +1,108 @@
+---
+import { Image } from 'astro:assets';
+import mugWhite from '../assets/svg/icons/mug--white.svg';
+import badgeWhite from '../assets/svg/icons/badge--white.svg';
+import megaphoneWhite from '../assets/svg/icons/megaphone--white.svg';
+import chartWhite from '../assets/svg/icons/chart--white.svg';
+import paperWhite from '../assets/svg/icons/paper--white.svg';
+import paperclipWhite from '../assets/svg/icons/paperclip--white.svg';
+import phoneWhite from '../assets/svg/icons/phone--white.svg';
+import dollarWhite from '../assets/svg/icons/dollar--white.svg';
+import shieldWhite from '../assets/svg/icons/shield--white.svg';
+import lineGradient from '../assets/png/line-gradient.png';
+
+const roles = [
+	{
+		image: mugWhite,
+		role: 'Senior Leaders',
+	},
+	{
+		image: badgeWhite,
+		role: 'People Managers',
+	},
+	{
+		image: megaphoneWhite,
+		role: 'Marcom',
+	},
+	{
+		image: chartWhite,
+		role: 'Advanced HR',
+	},
+	{
+		image: paperWhite,
+		role: 'Legal',
+	},
+	{
+		image: paperclipWhite,
+		role: 'HR Foundations',
+	},
+	{
+		image: phoneWhite,
+		role: 'Business Admin',
+	},
+	{
+		image: dollarWhite,
+		role: 'Finance',
+	},
+	{
+		image: shieldWhite,
+		role: 'Safety',
+	},
+];
+
+const { classes } = Astro.props;
+---
+
+<style lang="scss">
+	@use '../styles/abstracts/mixins' as m;
+	.roles-grid {
+		display: grid;
+		place-content: center;
+
+		@include m.media-breakpoint-up(md) {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 2rem;
+		}
+
+		&__container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+
+		&__role {
+			margin: 2rem auto;
+			font-size: 3rem;
+			text-transform: uppercase;
+		}
+
+		&__line-gradient {
+			height: 10rem;
+			width: 0.2rem;
+		}
+
+		&__image {
+			img {
+				height: 8rem;
+			}
+		}
+	}
+</style>
+<div class={`${classes} roles-grid`}>
+	{
+		roles.map((role) => (
+			<div class="roles-grid__container">
+				<div class="roles-grid__image">
+					<Image src={role.image} alt="" data-aos="zoom-in" />
+				</div>
+				<p class="fw-bold roles-grid__role">{role.role}</p>
+				<Image src={lineGradient} alt="" />
+			</div>
+		))
+	}
+</div>
+<script>
+	import AOS from 'aos';
+	AOS.init();
+</script>

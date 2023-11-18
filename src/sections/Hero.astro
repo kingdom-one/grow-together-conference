@@ -1,0 +1,157 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/png/conference-logo.png';
+import SanDiegoButton from '../components/SanDiegoButton.astro';
+import InlandEmpireButton from '../components/InlandEmpireButton.astro';
+import leadership from '../assets/svg/Leadership.svg';
+import people from '../assets/svg/People.svg';
+import practices from '../assets/svg/practices.svg';
+
+const words = [
+	{ word: 'Courageous', svg: leadership, alt: 'leadership' },
+	{ word: 'Healthy', svg: people, alt: 'people' },
+	{ word: 'Effective', svg: practices, alt: 'practices' },
+];
+---
+
+<style lang="scss">
+	@use '../styles/abstracts/variables' as v;
+	@use '../styles/abstracts/mixins' as m;
+
+	.hero {
+		position: relative;
+		padding: 6.5rem 0;
+
+		.logo {
+			width: 40rem;
+			height: auto;
+			max-width: 100%;
+			max-height: 30rem;
+			object-fit: contain;
+		}
+
+		&__background {
+			@include m.background-layers($opacity: 0.15);
+
+			&--gradient {
+				background: linear-gradient(
+					to right,
+					rgba(0, 255, 255, 0.4) 10%,
+					rgba(v.$color-primary--light, 1) 30%
+				);
+			}
+			&--color {
+				background: var(--color-primary);
+				background: linear-gradient(
+					155deg,
+					rgba(v.$color-primary, 1) 60%,
+					rgba(v.$color-secondary, 1) 90%
+				);
+			}
+
+			&--lower {
+				background-position: center;
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+
+			&.color-right {
+				@include m.clip-path('right-bottom');
+			}
+
+			&.color-left {
+				@include m.clip-path('left-bottom');
+			}
+		}
+
+		&__content {
+			z-index: 4;
+
+			&--headline {
+				color: white;
+				font-family: var(--font-poppins);
+			}
+
+			&--subheadline {
+				font-size: 1.35em;
+				color: white;
+			}
+		}
+
+		&__words {
+			.col {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			&--word {
+				font-weight: 700;
+				font-size: 2.5rem;
+				margin-inline-end: 10px;
+			}
+		}
+	}
+</style>
+<section id="hero" class="hero text-white">
+	<div class="hero__background color-left">
+		<div class="hero__background--gradient"></div>
+		<div class="hero__background--color"></div>
+		<div class="hero__background--upper"></div>
+	</div>
+	<div class="hero__content container position-relative z-3 overflow-hidden">
+		<div class="row">
+			<div class="col">
+				<Image class="logo" src={logo} alt="Grow Together Conference" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col col-xl-11">
+				<h2>Inspire Your Ministry Team to Grow</h2>
+				<p class="fs-3">
+					Ministry has unique challenges; your team's engagement
+					shouldn't be one of them! The Grow Together conference gives
+					your ministry teams the right tools to stay engaged and meet
+					their goals together. How? We are so glad you asked! Grow
+					Together focuses on equipping your team with high-quality
+					training from ministry professionals who care about your
+					health, growth, and culture. We aim to grow the church by
+					providing best practices your team can easily implement.
+					Now's your chance to sign up for an event where your team
+					grows, stays united, and finds a helpful community committed
+					to seeing all ministries grow together.
+				</p>
+				<div class="row my-5 mx-0">
+					<SanDiegoButton
+						color="secondary"
+						variant="outline"
+						classes="me-5 mb-5 mb-lg-0"
+					/>
+					<InlandEmpireButton color="secondary" variant="outline" />
+				</div>
+			</div>
+		</div>
+		<div class="row row-cols-xl-3 my-5 hero__words justify-content-evenly">
+			{
+				words.map((word, index) => {
+					const delay = (index + 1) * 150;
+					return (
+						<div
+							class="col"
+							data-aos="fade-right"
+							data-aos-delay={delay}
+						>
+							<span class="hero__words--word">
+								{word.word}&nbsp;
+								<Image src={word.svg} alt={word.alt} />
+							</span>
+						</div>
+					);
+				})
+			}
+		</div>
+	</div>
+</section>
+<script>
+	import AOS from 'aos/dist/aos.js';
+	AOS.init();
+</script>
