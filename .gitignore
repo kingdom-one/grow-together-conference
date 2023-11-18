@@ -1,6 +1,3 @@
-/node_modules
-/v1
-
 # build output
 dist/
 

@@ -5,7 +5,7 @@ import SanDiegoButton from '../components/SanDiegoButton.astro';
 import InlandEmpireButton from '../components/InlandEmpireButton.astro';
 import leadership from '../assets/svg/Leadership.svg';
 import people from '../assets/svg/People.svg';
-import practices from '../assets/svg/Practices.svg';
+import practices from '../assets/svg/practices.svg';
 
 const words = [
 	{ word: 'Courageous', svg: leadership, alt: 'leadership' },
@@ -151,3 +151,7 @@ const words = [
 		</div>
 	</div>
 </section>
+<script>
+	import AOS from 'aos/dist/aos.js';
+	AOS.init();
+</script>
