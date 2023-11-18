@@ -1,0 +1,49 @@
+---
+import RolesGrid from '../components/RolesGrid.astro';
+import squiggle from '../assets/svg/squiggle.svg';
+import { Image } from 'astro:assets';
+---
+
+<style lang="scss">
+	@use '../styles/abstracts/variables' as v;
+	.teams {
+		&__background {
+			&--gradient {
+				background: var(--color-primary);
+				background-image: linear-gradient(
+					330deg,
+					rgba(v.$color-primary--light, 1) 80%,
+					rgba(v.$color-secondary, 1) 100%
+				);
+			}
+		}
+		&__content {
+			padding: 6.5rem 0;
+			position: relative;
+			z-index: 5;
+		}
+	}
+</style>
+<section id="team-members" class="teams text-white">
+	<div class="teams__background clip-color-left-top">
+		<div class="teams__background--gradient"></div>
+		<div class="teams__background--color bg-primary"></div>
+	</div>
+	<div class="teams__content">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-xl-8 d-flex flex-column align-items-center">
+					<h2 class="text-white text-center">
+						Strong Teams <br />Grow&nbsp;<span
+							class="text-secondary">Together</span
+						>
+					</h2>
+					<Image src={squiggle} alt="" class="teams__squiggle w-75" />
+				</div>
+			</div>
+			<div class="row justify-content-center my-5 py-5">
+				<RolesGrid classes={'col-xl-8'} />
+			</div>
+		</div>
+	</div>
+</section>

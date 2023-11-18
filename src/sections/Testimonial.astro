@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import headshot from '../assets/laura.jpg';
+---
+
+<section id="testimonial" class="testimonial text-white">
+	<div class="testimonial__background clip-color-right-top">
+		<div class="testimonial__background--color bg-secondary"></div>
+		<div class="testimonial__background--color bg-dark"></div>
+	</div>
+	<div class="testimonial__content">
+		<div class="container col-xl-10">
+			<div class="row">
+				<div class="col-xl-10 testimonial__grid">
+					<Image
+						data-aos="fade-right"
+						class="testimonial__image rounded-circle"
+						src={headshot}
+						alt="Laura Di Conti"
+					/>
+					<div class="testimonial__grid--content">
+						<div
+							class="testimonial__meta d-flex justify-content-between"
+						>
+							<span class="fw-bold me-5">Calvary West Lake</span>
+							<span class="testimonial__meta--rating"
+								>⭐️⭐️⭐️⭐️⭐️</span
+							>
+						</div>
+						<h2 class="testimonial__headline mt-5">
+							Laura Di Conti
+						</h2>
+						<p class="testimonial__quote text-white mt-4 fs-5">
+							“The experience was great. From the arrival to the
+							fellowship to the sessions to the food. Felt well
+							cared for, and also the information was exactly what
+							I was hoping for when I signed up.”
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../sections/Hero.astro';
+import About from '../sections/About.astro';
+import CTA from '../sections/CTA.astro';
+import TeamMembers from '../sections/TeamMembers.astro';
+import TrackInfo from '../sections/TrackInfo.astro';
+import FinalCTA from '../sections/FinalCTA.astro';
+import Sponsors from '../sections/Sponsors.astro';
+import Footer from '../sections/Footer.astro';
+---
+
+<script>
+	import AOS from 'aos/dist/aos.js';
+	import 'aos/dist/aos.css';
+	AOS.init();
+</script>
+
+<Layout title="Grow Together Conference 2024">
+	<article>
+		<Hero />
+		<About />
+		<CTA />
+		<TeamMembers />
+		<TrackInfo />
+		<FinalCTA />
+		<Sponsors />
+		<Footer />
+	</article>
+</Layout>

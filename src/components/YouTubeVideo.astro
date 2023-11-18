@@ -1,0 +1,14 @@
+---
+const { videoId, coverImage } = Astro.props;
+---
+
+<style>
+	lite-youtube {
+		margin: 0 auto;
+		max-width: unset;
+	}
+</style>
+<lite-youtube videoid={videoId} posterquality="maxresdefault"></lite-youtube>
+<script>
+	import '@justinribeiro/lite-youtube';
+</script>

@@ -1,0 +1,212 @@
+---
+// Components
+import { Image } from 'astro:assets';
+import YouTubeVideo from '../components/YouTubeVideo.astro';
+import SanDiegoButton from '../components/SanDiegoButton.astro';
+import InlandEmpireButton from '../components/InlandEmpireButton.astro';
+
+// Images
+import ctaBgImage from '../assets/png/bg-images/cta.png';
+import ytCover from '../assets/png/video-bg-3.png';
+import stepOne from '../assets/svg/step-1-icon.svg';
+import stepTwo from '../assets/svg/step-2-icon.svg';
+import stepThree from '../assets/svg/step-3-icon.svg';
+
+const plan = [
+	{
+		icon: stepOne,
+		headline: 'Get Tickets',
+		description: "Purchase your team's tickets today!",
+	},
+	{
+		icon: stepTwo,
+		headline: 'Join Us',
+		description: 'Join us on one of two conference days!',
+	},
+	{
+		icon: stepThree,
+		headline: 'Jump Start 2024',
+		description:
+			'Begin 2024 feeling more courageous, healthy and effective!',
+	},
+];
+---
+
+<style lang="scss">
+	@use '../styles/abstracts/variables' as v;
+	@use '../styles/abstracts/mixins' as m;
+
+	%clip-path {
+		clip-path: var(--lift-left-bottom);
+	}
+
+	.cta {
+		position: relative;
+		margin-bottom: -6rem;
+		background-size: cover;
+
+		&__background {
+			position: absolute;
+			height: 50%;
+			width: 100%;
+			top: 0;
+
+			&--gradient {
+				@include m.absolute_100;
+				z-index: 1;
+				background-image: linear-gradient(
+					to bottom,
+					rgba(v.$color-primary, 1) 30%,
+					rgba(v.$color-secondary, 1) 90%
+				);
+				@extend %clip-path;
+			}
+
+			&--color {
+				@include m.absolute_100;
+				z-index: 2;
+				background: linear-gradient(
+					to right,
+					var(--color-primary--light) 30%,
+					transparent 90%
+				);
+				@extend %clip-path;
+			}
+
+			&--lower {
+				@include m.absolute_100;
+				z-index: 3;
+				background-position: center;
+				background-size: cover;
+				background-repeat: no-repeat;
+				@extend %clip-path;
+			}
+		}
+
+		&__content {
+			position: relative;
+			z-index: 5;
+		}
+	}
+
+	%plan_steps {
+		@include m.displayFlex(column, $cross: center);
+		text-align: center;
+		position: relative;
+		@include m.media-breakpoint-down(md) {
+			margin-bottom: 3rem;
+		}
+	}
+
+	.plan {
+		margin-top: 8rem;
+		&__background {
+			@include m.background-layers;
+			background-position: right;
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+		&__content {
+			z-index: 9;
+			position: relative;
+		}
+		&__step {
+			&--1 {
+				@extend %plan_steps;
+			}
+
+			&--2 {
+				@extend %plan_steps;
+
+				.plan {
+					&__icon {
+						img {
+							aspect-ratio: 1;
+							position: absolute;
+							top: -5rem;
+							left: 0;
+							height: 33.8rem;
+						}
+					}
+				}
+			}
+
+			&--3 {
+				@extend %plan_steps;
+			}
+		}
+
+		&__icon {
+			height: 25.7rem;
+
+			img {
+				height: 100%;
+				width: 100%;
+				object-fit: contain;
+			}
+		}
+		&__headline {
+			margin-top: 2rem;
+			margin-bottom: 1.5rem;
+			font-weight: 700;
+			color: var(--color-secondary);
+			font-size: 2.4rem;
+		}
+
+		&__description {
+			font-size: 1.35em;
+		}
+	}
+</style>
+<section id="cta" class="cta" style=`background-image: url(${ctaBgImage.src});`>
+	<div class="cta__background">
+		<div class="cta__background--gradient"></div>
+		<div class="cta__background--color"></div>
+		<div class="cta__background--lower"></div>
+		<div class="cta__background--upper"></div>
+	</div>
+	<div class="cta__content container">
+		<div class="row my-5">
+			<div class="col">
+				<YouTubeVideo videoId="ln57UDtpws8" coverImage={ytCover} />
+			</div>
+		</div>
+		<div class="row">
+			<div class="container">
+				<div class="row row-cols-1 row-cols-md-3 plan">
+					{
+						plan.map((step, index) => (
+							<div class={`col plan__step--${index + 1}`}>
+								<div class="plan__icon">
+									<Image
+										src={step.icon}
+										alt=""
+										aria-hidden="true"
+										data-aos="fade-right"
+										data-aos-delay={(index + 1) * 150}
+									/>
+								</div>
+								<h3 class="plan__headline">{step.headline}</h3>
+								<p class="plan__description">
+									{step.description}
+								</p>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</div>
+		<div class="row justify-content-center my-5">
+			<SanDiegoButton
+				color="black"
+				variant="outline"
+				classes="me-5 my-5"
+			/>
+			<InlandEmpireButton
+				color="black"
+				variant="outline"
+				classes="my-5"
+			/>
+		</div>
+	</div>
+</section>

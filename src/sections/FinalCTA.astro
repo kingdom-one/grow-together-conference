@@ -1,0 +1,183 @@
+---
+import { Image } from 'astro:assets';
+import mugGrey from '../assets/svg/icons/mug--grey.svg';
+import phoneGrey from '../assets/svg/icons/phone--grey.svg';
+import chartGrey from '../assets/svg/icons/chart--grey.svg';
+import paperGrey from '../assets/svg/icons/paper--grey.svg';
+import shieldGrey from '../assets/svg/icons/shield--grey.svg';
+import ctaBG from '../assets/png/bg-images/final-cta.png';
+import SanDiegoButton from '../components/SanDiegoButton.astro';
+import InlandEmpireButton from '../components/InlandEmpireButton.astro';
+
+const icons = [
+	{ name: 'mug', src: mugGrey },
+	{ name: 'phone', src: phoneGrey },
+	{ name: 'chart', src: chartGrey },
+	{ name: 'paper', src: paperGrey },
+	{ name: 'shield', src: shieldGrey },
+];
+---
+
+<style lang="scss">
+	@use '../styles/abstracts/mixins' as m;
+	.final-cta {
+		background-size: cover;
+		@include m.media-breakpoint-up(xl) {
+			padding: 14rem 0;
+		}
+
+		%icons {
+			position: absolute;
+			height: 8rem;
+			width: 8rem;
+
+			@include m.media-breakpoint-down(lg) {
+				bottom: -6rem;
+			}
+
+			@include m.media-breakpoint-down(md) {
+				bottom: -9rem;
+				height: 6rem;
+				width: 6rem;
+			}
+		}
+
+		&__icons {
+			&--mug {
+				@extend %icons;
+
+				@include m.media-breakpoint-up(sm) {
+					right: 0rem;
+				}
+
+				@include m.media-breakpoint-up(lg) {
+					right: 4rem;
+				}
+
+				@include m.media-breakpoint-up(xl) {
+					bottom: 0rem;
+					right: 36rem;
+				}
+			}
+
+			&--phone {
+				@extend %icons;
+
+				@include m.media-breakpoint-up(sm) {
+					right: 8rem;
+				}
+
+				@include m.media-breakpoint-up(lg) {
+					right: 12rem;
+				}
+
+				@include m.media-breakpoint-up(xl) {
+					bottom: 8rem;
+					right: 20rem;
+				}
+			}
+
+			&--chart {
+				@extend %icons;
+
+				@include m.media-breakpoint-up(sm) {
+					right: 16rem;
+				}
+
+				@include m.media-breakpoint-up(lg) {
+					right: 20rem;
+				}
+
+				@include m.media-breakpoint-up(xl) {
+					bottom: 18rem;
+					right: 24rem;
+				}
+			}
+
+			&--paper {
+				@extend %icons;
+
+				@include m.media-breakpoint-up(sm) {
+					right: 24rem;
+				}
+
+				@include m.media-breakpoint-up(lg) {
+					right: 28rem;
+				}
+
+				@include m.media-breakpoint-up(xl) {
+					bottom: 30rem;
+					right: 10rem;
+				}
+			}
+
+			&--shield {
+				@extend %icons;
+
+				@include m.media-breakpoint-up(sm) {
+					right: 32rem;
+				}
+
+				@include m.media-breakpoint-up(lg) {
+					right: 36rem;
+				}
+
+				@include m.media-breakpoint-up(xl) {
+					bottom: 14rem;
+					right: 5rem;
+				}
+			}
+		}
+
+		&__background {
+			@include m.background-layers;
+			background-position: left;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		&__content {
+			z-index: 9;
+			position: relative;
+		}
+	}
+</style>
+<section class="final-cta" style={`background-image:url(${ctaBG.src})`}>
+	<div class="container">
+		<div class="row my-5 justify-content-between">
+			<div class="col-xl-8">
+				<p class="display-1 text-secondary fw-bold mb-5">
+					Get a headstart on your 2024 ministry goals, gain actionable
+					insights, ad network with like-minded peers.
+				</p>
+				<p class="fw-bold fs-2">
+					Join us in San Diego, CA on January 25th or Rancho
+					Cucamonga, CA on February 8th.
+				</p>
+				<div class="row my-5">
+					<SanDiegoButton
+						color="black"
+						variant="outline"
+						classes="me-5 my-5"
+					/>
+					<InlandEmpireButton
+						color="black"
+						variant="outline"
+						classes="my-5"
+					/>
+				</div>
+			</div>
+			<div class="final-cta__icons--container col-xl-3 d-sm-block d-none">
+				{
+					icons.map((icon) => (
+						<Image
+							data-aos="zoom-in"
+							src={icon.src}
+							alt=""
+							class={`final-cta__icons--${icon.name}`}
+						/>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</section>
