@@ -7,7 +7,6 @@ import InlandEmpireButton from '../components/InlandEmpireButton.astro';
 
 // Images
 import ctaBgImage from '../assets/png/bg-images/cta.png';
-import ytCover from '../assets/png/video-bg-3.png';
 import stepOne from '../assets/svg/step-1-icon.svg';
 import stepTwo from '../assets/svg/step-2-icon.svg';
 import stepThree from '../assets/svg/step-3-icon.svg';
@@ -158,6 +157,7 @@ const plan = [
 		}
 	}
 </style>
+
 <section id="cta" class="cta" style=`background-image: url(${ctaBgImage.src});`>
 	<div class="cta__background">
 		<div class="cta__background--gradient"></div>
@@ -168,7 +168,7 @@ const plan = [
 	<div class="cta__content container">
 		<div class="row my-5">
 			<div class="col">
-				<YouTubeVideo videoId="ln57UDtpws8" coverImage={ytCover} />
+				<YouTubeVideo videoId="ln57UDtpws8"  />
 			</div>
 		</div>
 		<div class="row">
@@ -210,6 +210,7 @@ const plan = [
 		</div>
 	</div>
 </section>
+
 <script>
 	import AOS from 'aos/dist/aos.js';
 	AOS.init();

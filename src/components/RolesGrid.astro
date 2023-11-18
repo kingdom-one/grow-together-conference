@@ -1,5 +1,8 @@
 ---
+// Components
 import { Image } from 'astro:assets';
+
+// Images
 import mugWhite from '../assets/svg/icons/mug--white.svg';
 import badgeWhite from '../assets/svg/icons/badge--white.svg';
 import megaphoneWhite from '../assets/svg/icons/megaphone--white.svg';
@@ -89,6 +92,7 @@ const { classes } = Astro.props;
 		}
 	}
 </style>
+
 <div class={`${classes} roles-grid`}>
 	{
 		roles.map((role) => (
@@ -102,6 +106,7 @@ const { classes } = Astro.props;
 		))
 	}
 </div>
+
 <script>
 	import AOS from 'aos';
 	AOS.init();

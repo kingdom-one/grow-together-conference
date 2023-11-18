@@ -62,10 +62,8 @@ const { accordionClass, accordionTitle, items } = Astro.props;
 							data-bs-parent={`#${accordionClass}-accordion`}
 						>
 							<div class="accordion-body">
-								<>
-									<strong>Presenter: {item.presenter}</strong>
-									<br />
-								</>
+								<strong>Presenter: {item.presenter}</strong>
+								<br />
 								{item.content}
 							</div>
 						</div>
