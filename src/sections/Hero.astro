@@ -1,6 +1,7 @@
 ---
 // Components
 import { Image } from 'astro:assets';
+import k1Logo from '../assets/svg/K1 Logo_White (SVG).svg';
 
 // Images
 import logo from '../assets/png/conference-logo.png';
@@ -103,10 +104,22 @@ const words = [
 		<div class="hero__background--upper"></div>
 	</div>
 	<div class="hero__content container position-relative z-3 overflow-hidden">
-		<div class="row">
-			<div class="col">
+		<div class="row justify-content-between">
+			<div class="col-6 col-md-3">
 				<Image class="logo" src={logo} alt="Grow Together Conference" />
 			</div>
+			<a
+				href="https://kingdomone.co"
+				target="_blank"
+				class="col-6 col-md-3"
+				aria-label="link to kingdom one homepage"
+			>
+				<Image
+					src={k1Logo}
+					alt="Kingdom One Logo"
+					class="object-fit-contain w-100 h-50"
+				/>
+			</a>
 		</div>
 		<div class="row">
 			<div class="col col-xl-11">
