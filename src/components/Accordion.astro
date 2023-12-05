@@ -40,7 +40,9 @@ const { accordionClass, accordionTitle, items, indexOffset } = Astro.props;
 	<div class="accordion" id={`${accordionClass}-accordion`}>
 		{
 			items.map((item, index) => {
-				const target = index + 1 + indexOffset;
+				const target = Math.floor(
+					Math.random() * 300 + (index + 1) * indexOffset
+				);
 				return (
 					<div class="accordion-item">
 						<h4 class="accordion-header">
@@ -52,7 +54,7 @@ const { accordionClass, accordionTitle, items, indexOffset } = Astro.props;
 								aria-expanded="true"
 								aria-controls={`collapse${target}`}
 							>
-								{item.title}{' '}
+								{`${item.title} `}
 								<div class="accordion-expander">+</div>
 							</button>
 						</h4>
