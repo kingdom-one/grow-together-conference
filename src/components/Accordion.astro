@@ -4,7 +4,7 @@ export type items = {
 	presenter: string;
 	content: string;
 };
-const { accordionClass, accordionTitle, items } = Astro.props;
+const { accordionClass, accordionTitle, items, indexOffset } = Astro.props;
 ---
 
 <style lang="scss">
@@ -40,7 +40,7 @@ const { accordionClass, accordionTitle, items } = Astro.props;
 	<div class="accordion" id={`${accordionClass}-accordion`}>
 		{
 			items.map((item, index) => {
-				const target = Math.floor(Math.random() * 300 * (index + 1));
+				const target = index + 1 + indexOffset;
 				return (
 					<div class="accordion-item">
 						<h4 class="accordion-header">
