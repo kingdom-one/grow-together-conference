@@ -38,7 +38,6 @@ $enable-shadows: true;
 @import "bootstrap/scss/images";
 @import "bootstrap/scss/containers";
 @import "bootstrap/scss/grid";
-@import "bootstrap/scss/vendor/rfs";
 
 // Useful Bootstrap Utilities
 @import "bootstrap/scss/buttons";
@@ -52,7 +51,7 @@ $enable-shadows: true;
 // @import "bootstrap/scss/badge";
 // @import "bootstrap/scss/breadcrumb";
 // @import "bootstrap/scss/button-group";
-@import "bootstrap/scss/card";
+// @import "bootstrap/scss/card";
 // @import 'bootstrap/scss/carousel';
 // @import "bootstrap/scss/code";
 // @import "bootstrap/scss/custom-forms";

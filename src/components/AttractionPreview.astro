@@ -2,22 +2,16 @@
 export interface Props {
 	attraction: {
 		name: string;
-		image: string;
-		imageAlt: string;
+		url?: string;
 	};
 }
 const { attraction } = Astro.props;
 ---
 
-<div class="attraction">
-	<img
-		src={attraction.image}
-		class="card-img-top"
-		alt={attraction.imageAlt}
-	/>
+<li class="attraction">
 	<div class="card-body">
 		<h4 class="card-title fw-normal fs-5">
 			{attraction.name}
 		</h4>
 	</div>
-</div>
+</li>

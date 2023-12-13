@@ -4,6 +4,8 @@ import LocationPin from '../components/LocationPin.astro';
 import sandiego from '../assets/svg/san-diego-skyline.svg';
 import AttractionPreview from '../components/AttractionPreview.astro';
 import SanDiegoButton from '../components/SanDiegoButton.astro';
+import Button from '../components/Button.astro';
+import NearbyHotel from '../components/NearbyHotel.astro';
 
 const attractions = [
 	{
@@ -44,18 +46,42 @@ const attractions = [
 		</div>
 		<div class="row my-5">
 			<div class="col-lg-7">
-				<h2 class="fs-1">San Diego</h2>
-				<p class="fs-5">
-					It takes a coordinated effort to get ministry teams aligned
-					and working towards a common goal. Continuing education,
-					networking & exposure to new ministry opportunities don't
-					happen too often. The Grow Together Conference propels your
-					ministry team to gain actionable insights, sharpen their
-					skill, and expand their network. Get a jump on your 2024
-					ministry health by purchasing your tickets today.
-				</p>
-				<h3 class="fs-2 mt-5">Date & Time</h3>
-				<p>Thursday, January 25, 2024 • 8:30am &ndash; 4pm PST</p>
+				<div class="row">
+					<h2 class="fs-1">San Diego</h2>
+					<p class="fs-5">
+						It takes a coordinated effort to get ministry teams
+						aligned and working towards a common goal. Continuing
+						education, networking & exposure to new ministry
+						opportunities don't happen too often. The Grow Together
+						Conference propels your ministry team to gain actionable
+						insights, sharpen their skill, and expand their network.
+						Get a jump on your 2024 ministry health by purchasing
+						your tickets today.
+					</p>
+				</div>
+				<div class="row">
+					<h3 class="fs-2 mt-5">Date & Time</h3>
+					<p class="fs-5">
+						Thursday, January 25, 2024 • 8:30am &ndash; 4pm PST
+					</p>
+				</div>
+				<div class="row my-5">
+					<div class="col-lg-8">
+						<NearbyHotel
+							href="https://www.google.com/maps/search/Hotel/@34.1168531,-117.5563928,13z/data=!3m1!4b1!4m7!2m6!3m5!2sONE%26ALL+Church,+Rancho+Cucamonga,+7576+Etiwanda+Ave,+Etiwanda,+CA+91739!3s0x80c34a21e31008c3:0x1b2e17a43fe0775f!4m2!1d-117.525493!2d34.1167854?entry=ttu"
+						/>
+					</div>
+				</div>
+				<div class="row">
+					<h3 class="fs-2">Local Attractions</h3>
+					<ul class="row ms-4">
+						{
+							attractions.map((attraction) => (
+								<AttractionPreview attraction={attraction} />
+							))
+						}
+					</ul>
+				</div>
 			</div>
 			<div class="col-lg-5 mt-5 mt-lg-0">
 				<h3>Location</h3>
@@ -76,26 +102,6 @@ const attractions = [
 					location="Skyline Church"
 					address="11330 Campo Rd, La Mesa, CA 91941"
 				/>
-			</div>
-		</div>
-		<div class="row my-5">
-			<div class="col-lg-8">
-				<h3 class="fs-2">Nearby Hotels</h3>
-				<div class="row row-cols-lg-3">
-					<div class="card p-4">1</div>
-					<div class="card p-4">2</div>
-					<div class="card p-4">3</div>
-				</div>
-			</div>
-			<div class="col-lg-4">
-				<h3 class="fs-2">Local Attractions</h3>
-				<div class="row row-cols-lg-3">
-					{
-						attractions.map((attraction) => (
-							<AttractionPreview attraction={attraction} />
-						))
-					}
-				</div>
 			</div>
 		</div>
 		<div class="row my-5 justify-content-center">

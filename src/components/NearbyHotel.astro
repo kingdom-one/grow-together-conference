@@ -1,0 +1,14 @@
+---
+import Button from './Button.astro';
+const { href } = Astro.props;
+---
+
+<h3 class="fs-2">Find A Hotel Nearby</h3>
+<Button
+	href={href}
+	color="white"
+	variant="outline"
+	isExternal={true}
+	text="Click Here"
+	classes="btn btn-secondary btn-lg"
+/>
