@@ -1,0 +1,132 @@
+---
+import { Image } from 'astro:assets';
+import LocationPin from '../components/LocationPin.astro';
+import inlandEmpire from '../assets/svg/inland-empire-skyline.svg';
+import InlandEmpireButton from '../components/InlandEmpireButton.astro';
+import AttractionPreview from '../components/AttractionPreview.astro';
+
+const attractions = [
+	{
+		name: 'Victoria Gardens',
+		image: '...',
+		imageAlt: '...',
+	},
+	{
+		name: 'Etiwanda Falls Trailhead',
+		image: '...',
+		imageAlt: '...',
+	},
+	{
+		name: 'K1 Speed — Indoor Go Karts',
+		image: '...',
+		imageAlt: '...',
+	},
+];
+---
+
+<style lang="scss">
+	.inland-empire {
+		margin-top: -15.2rem;
+	}
+</style>
+<section class="inland-empire">
+	<div class="inland-empire__background clip-color-left-top">
+		<div class="inland-empire__background--color bg-grey"></div>
+		<div class="inland-empire__background--lower"></div>
+	</div>
+	<div class="container text-white position-relative z-3 my-5">
+		<div class="row">
+			<Image
+				src={inlandEmpire}
+				alt="An outline of the Rancho Cucamonga mountains."
+				class="w-auto"
+			/>
+		</div>
+		<div class="row my-5">
+			<div class="col-lg-7">
+				<h2 class="fs-1">Inland Empire</h2>
+				<p class="fs-5">
+					It takes a coordinated effort to get ministry teams aligned
+					and working towards a common goal. Continuing education,
+					networking & exposure to new ministry opportunities don't
+					happen too often. The Grow Together Conference propels your
+					ministry team to gain actionable insights, sharpen their
+					skill, and expand their network. Get a jump on your 2024
+					ministry health by purchasing your tickets today.
+				</p>
+				<h3 class="fs-2 mt-5">Date & Time</h3>
+				<p>Thursday, January 8, 2024 • 8:30am &ndash; 4pm PST</p>
+			</div>
+			<div class="col-lg-5 mt-5 mt-lg-0">
+				<h3>Location</h3>
+				<div
+					class="embed-container border rounded-5 overflow-hidden ratio ratio-1x1"
+				>
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.1546739403034!2d-117.53036927678396!3d34.11678974484491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c34a21e31008c3%3A0x1b2e17a43fe0775f!2sONE%26ALL%20Church%2C%20Rancho%20Cucamonga!5e0!3m2!1sen!2sus!4v1702437315012!5m2!1sen!2sus"
+						width="100%"
+						height="100%"
+						style="border:0;"
+						allowfullscreen=""
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+				<LocationPin
+					classes="mt-3"
+					location="ONE&ALL Church"
+					address="7576 Etiwanda Avenue, Rancho Cucamonga, CA 91739"
+				/>
+			</div>
+		</div>
+		<div class="row my-5">
+			<div class="col-lg-8">
+				<h3 class="fs-2">Nearby Hotels</h3>
+				<div class="row row-cols-lg-3">
+					<div class="card">
+						<img src="..." class="card-img-top" alt="..." />
+						<div class="card-body">
+							<p class="card-text">
+								Some quick example text to build on the card
+								title and make up the bulk of the card's
+								content.
+							</p>
+						</div>
+					</div>
+					<div class="card">
+						<img src="..." class="card-img-top" alt="..." />
+						<div class="card-body">
+							<p class="card-text">
+								Some quick example text to build on the card
+								title and make up the bulk of the card's
+								content.
+							</p>
+						</div>
+					</div>
+					<div class="card">
+						<img src="..." class="card-img-top" alt="..." />
+						<div class="card-body">
+							<p class="card-text">
+								Some quick example text to build on the card
+								title and make up the bulk of the card's
+								content.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<h3 class="fs-2">Local Attractions</h3>
+				<div class="row row-cols-lg-3">
+					{
+						attractions.map((attraction) => (
+							<AttractionPreview attraction={attraction} />
+						))
+					}
+				</div>
+			</div>
+		</div>
+		<div class="row my-5 justify-content-center">
+			<InlandEmpireButton color="white" variant="outline" />
+		</div>
+	</div>
+</section>

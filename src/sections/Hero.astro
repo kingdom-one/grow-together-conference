@@ -36,7 +36,7 @@ const words = [
 		}
 
 		&__background {
-			@include m.background-layers($opacity: 0.15);
+			@include m.background-layers($opacity: 0.5);
 
 			&--gradient {
 				background: linear-gradient(
@@ -55,9 +55,7 @@ const words = [
 			}
 
 			&--lower {
-				background-position: center;
-				background-size: cover;
-				background-repeat: no-repeat;
+				background-color: black;
 			}
 
 			&.color-right {
@@ -98,9 +96,10 @@ const words = [
 	}
 </style>
 <section id="hero" class="hero text-white">
-	<div class="hero__background color-left">
+	<div class="hero__background color-right">
 		<div class="hero__background--gradient"></div>
 		<div class="hero__background--color"></div>
+		<div class="hero__background--lower"></div>
 		<div class="hero__background--upper"></div>
 	</div>
 	<div class="hero__content container position-relative z-3 overflow-hidden">
@@ -139,7 +138,7 @@ const words = [
 				</p>
 			</div>
 			<div class="col-12 col-xl-6">
-				<YouTubeVideo videoId="BeKmeuwrwaU" />
+				<YouTubeVideo videoId={`BeKmeuwrwaU`} quality="hqdefault" />
 			</div>
 		</div>
 		<div class="row my-5 mx-0">
