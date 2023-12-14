@@ -1,15 +1,16 @@
 ---
 // Components
 import { Image } from 'astro:assets';
-import k1Logo from '../assets/svg/K1 Logo_White (SVG).svg';
 
 // Images
+import k1Logo from '../assets/svg/K1 Logo_White (SVG).svg';
 import logo from '../assets/png/conference-logo.png';
 import SanDiegoButton from '../components/SanDiegoButton.astro';
 import InlandEmpireButton from '../components/InlandEmpireButton.astro';
 import leadership from '../assets/svg/Leadership.svg';
 import people from '../assets/svg/People.svg';
 import practices from '../assets/svg/practices.svg';
+import YouTubeVideo from '../components/YouTubeVideo.astro';
 
 const words = [
 	{ word: 'Courageous', svg: leadership, alt: 'leadership' },
@@ -35,7 +36,7 @@ const words = [
 		}
 
 		&__background {
-			@include m.background-layers($opacity: 0.15);
+			@include m.background-layers($opacity: 0.5);
 
 			&--gradient {
 				background: linear-gradient(
@@ -54,9 +55,7 @@ const words = [
 			}
 
 			&--lower {
-				background-position: center;
-				background-size: cover;
-				background-repeat: no-repeat;
+				background-color: black;
 			}
 
 			&.color-right {
@@ -96,11 +95,11 @@ const words = [
 		}
 	}
 </style>
-
 <section id="hero" class="hero text-white">
-	<div class="hero__background color-left">
+	<div class="hero__background color-right">
 		<div class="hero__background--gradient"></div>
 		<div class="hero__background--color"></div>
+		<div class="hero__background--lower"></div>
 		<div class="hero__background--upper"></div>
 	</div>
 	<div class="hero__content container position-relative z-3 overflow-hidden">
@@ -121,10 +120,10 @@ const words = [
 				/>
 			</a>
 		</div>
-		<div class="row">
-			<div class="col col-xl-11">
+		<div class="row my-5 pt-5">
+			<div class="col-12 col-xl-6">
 				<h2>Inspire Your Ministry Team to Grow</h2>
-				<p class="fs-3">
+				<p class="fs-5">
 					Ministry has unique challenges; your team's engagement
 					shouldn't be one of them! The Grow Together conference gives
 					your ministry teams the right tools to stay engaged and meet
@@ -137,15 +136,18 @@ const words = [
 					grows, stays united, and finds a helpful community committed
 					to seeing all ministries grow together.
 				</p>
-				<div class="row my-5 mx-0">
-					<SanDiegoButton
-						color="secondary"
-						variant="outline"
-						classes="me-5 mb-5 mb-lg-0"
-					/>
-					<InlandEmpireButton color="secondary" variant="outline" />
-				</div>
 			</div>
+			<div class="col-12 col-xl-6">
+				<YouTubeVideo videoId={`BeKmeuwrwaU`} quality="hqdefault" />
+			</div>
+		</div>
+		<div class="row my-5 mx-0">
+			<SanDiegoButton
+				color="secondary"
+				variant="outline"
+				classes="me-5 mb-5 mb-lg-0"
+			/>
+			<InlandEmpireButton color="secondary" variant="outline" />
 		</div>
 		<div class="row row-cols-xl-3 my-5 hero__words justify-content-evenly">
 			{
@@ -168,7 +170,3 @@ const words = [
 		</div>
 	</div>
 </section>
-<script>
-	import AOS from 'aos/dist/aos.js';
-	AOS.init();
-</script>

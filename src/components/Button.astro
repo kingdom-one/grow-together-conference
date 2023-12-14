@@ -8,7 +8,14 @@ interface Props {
 	classes?: string;
 }
 
-const { href, text, isExternal, color, variant, classes } = Astro.props;
+const {
+	href,
+	text,
+	isExternal = true,
+	color = 'primary',
+	variant = 'solid',
+	classes = '',
+} = Astro.props;
 ---
 
 {

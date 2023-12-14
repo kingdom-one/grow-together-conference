@@ -1,5 +1,14 @@
 ---
-const { videoId } = Astro.props;
+export interface Props {
+	videoId: string;
+	quality?:
+		| 'default'
+		| 'mqdefault'
+		| 'hqdefault'
+		| 'sddefault'
+		| 'maxresdefault';
+}
+const { videoId, quality = 'maxresdefault' } = Astro.props;
 ---
 
 <style>
@@ -8,7 +17,8 @@ const { videoId } = Astro.props;
 		max-width: unset;
 	}
 </style>
-<lite-youtube videoid={videoId} posterquality="maxresdefault"></lite-youtube>
+<lite-youtube videoid={videoId} posterquality={quality} params="enablejsapi=1"
+></lite-youtube>
 <script>
 	import '@justinribeiro/lite-youtube';
 </script>
