@@ -24,15 +24,12 @@ const words = [
 	@use '../styles/abstracts/mixins' as m;
 
 	.hero {
-		position: relative;
 		padding: 6.5rem 0;
 
 		.logo {
 			width: 40rem;
-			height: auto;
 			max-width: 100%;
 			max-height: 30rem;
-			object-fit: contain;
 		}
 
 		&__background {
@@ -54,10 +51,6 @@ const words = [
 				);
 			}
 
-			&--lower {
-				background-color: black;
-			}
-
 			&.color-right {
 				@include m.clip-path('right-bottom');
 			}
@@ -66,46 +59,23 @@ const words = [
 				@include m.clip-path('left-bottom');
 			}
 		}
-
-		&__content {
-			z-index: 4;
-
-			&--headline {
-				color: white;
-				font-family: var(--font-poppins);
-			}
-
-			&--subheadline {
-				font-size: 1.35em;
-				color: white;
-			}
-		}
-
-		&__words {
-			.col {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-			&--word {
-				font-weight: 700;
-				font-size: 2.5rem;
-				margin-inline-end: 10px;
-			}
-		}
 	}
 </style>
-<section id="hero" class="hero text-white">
+<section id="hero" class="hero text-white position-relative">
 	<div class="hero__background color-right">
 		<div class="hero__background--gradient"></div>
 		<div class="hero__background--color"></div>
 		<div class="hero__background--lower"></div>
 		<div class="hero__background--upper"></div>
 	</div>
-	<div class="hero__content container position-relative z-3 overflow-hidden">
+	<div class="container position-relative z-3 overflow-hidden">
 		<div class="row justify-content-between">
 			<div class="col-6 col-md-3">
-				<Image class="logo" src={logo} alt="Grow Together Conference" />
+				<Image
+					class="logo h-auto object-fit-contain"
+					src={logo}
+					alt="Grow Together Conference"
+				/>
 			</div>
 			<a
 				href="https://kingdomone.co"
@@ -122,8 +92,8 @@ const words = [
 		</div>
 		<div class="row my-5 pt-5">
 			<div class="col-12 col-xl-6">
-				<h2>Inspire Your Ministry Team to Grow</h2>
-				<p class="fs-5">
+				<h2 class="text-white">Inspire Your Ministry Team to Grow</h2>
+				<p class="fs-5 text-white">
 					Ministry has unique challenges; your team's engagement
 					shouldn't be one of them! The Grow Together conference gives
 					your ministry teams the right tools to stay engaged and meet
@@ -149,18 +119,19 @@ const words = [
 			/>
 			<InlandEmpireButton color="secondary" variant="outline" />
 		</div>
-		<div class="row row-cols-xl-3 my-5 hero__words justify-content-evenly">
+		<div class="row row-cols-1 row-cols-lg-3 my-5 justify-content-around">
 			{
 				words.map((word, index) => {
 					const delay = (index + 1) * 150;
 					return (
 						<div
-							class="col"
+							class="col d-flex text-center align-items-center justify-content-lg-center"
 							data-aos="fade-right"
 							data-aos-delay={delay}
 						>
-							<span class="hero__words--word">
-								{word.word}&nbsp;
+							<span class="fw-bold fs-4 me-2">
+								{word.word}
+								<br class="d-none d-lg-block d-xxl-none" />
 								<Image src={word.svg} alt={word.alt} />
 							</span>
 						</div>
