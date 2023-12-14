@@ -10,11 +10,67 @@ import Testimonial from '../sections/Testimonial.astro';
 import FinalCTA from '../sections/FinalCTA.astro';
 import Sponsors from '../sections/Sponsors.astro';
 import Footer from '../sections/Footer.astro';
+import LocationDetails from '../sections/LocationDetails.astro';
 
 // Styles
 import 'aos/dist/aos.css';
-import SanDiego from '../sections/SanDiego.astro';
-import InlandEmpire from '../sections/InlandEmpire.astro';
+
+// Assets
+import inlandEmpire from '../assets/svg/inland-empire-skyline.svg';
+import sanDiego from '../assets/svg/san-diego-skyline.svg';
+
+const locations = [
+	{
+		name: 'San Diego',
+		description: `San Diego, California, offers an idyllic climate and diverse attractions, from the lush Balboa Park and famous San Diego Zoo to its stunning beaches and vibrant Gaslamp Quarter. Visitors can enjoy outdoor adventures, rich history, and a lively culinary scene in this sun-kissed coastal city.`,
+		bgColor: 'bg-dark',
+		hotelsLink: `https://www.google.com/maps/search/Hotel/@32.7427563,-116.9936538,8z/data=!3m1!4b1!4m7!2m6!3m5!2sSkyline+Church,+11330+Campo+Rd,+La+Mesa,+CA+91941!3s0x80d95a38d4ee797d:0xb8cc5bce4570e13!4m2!1d-116.9524542!2d32.7426819?entry=ttu`,
+		iframe: {
+			src: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7344.667341873558!2d-116.9586396371053!3d32.742006675234755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d95a38d4ee797d%3A0xb8cc5bce4570e13!2sSkyline%20Church!5e0!3m2!1sen!2sus!4v1702435571681!5m2!1sen!2sus`,
+			title: `Embedded Google Map of the area around Skyline Church`,
+		},
+		locationDetails: {
+			name: 'Skyline Church',
+			address: '11330 Campo Rd, La Mesa, CA 91941',
+		},
+		date: 'Thursday, January 25, 2024 • 8:30am – 4pm PST',
+		image: {
+			src: sanDiego,
+			alt: 'San Diego Skyline',
+		},
+		className: 'san-diego',
+		attractions: [
+			'Seaport Village',
+			'San Diego Zoo',
+			'Sea World San Diego',
+		],
+	},
+	{
+		name: 'Inland Empire',
+		bgColor: 'bg-grey',
+		description: `Nestled at the base of the majestic San Gabriel Mountains, Rancho Cucamonga, California, beckons with its scenic beauty, thriving vineyards, and a blend of urban sophistication and suburban charm. Explore this hidden gem where outdoor adventures meet cultural delights, offering a unique and memorable experience for every visitor.`,
+		className: 'inland-empire',
+		date: 'Thursday, January 8, 2024 • 8:30am – 4pm PST',
+		image: {
+			src: inlandEmpire,
+			alt: 'An outline of the Rancho Cucamonga mountains.',
+		},
+		hotelsLink: `https://www.google.com/maps/search/Hotel/@34.1168531,-117.5563928,13z/data=!3m1!4b1!4m7!2m6!3m5!2sONE%26ALL+Church,+Rancho+Cucamonga,+7576+Etiwanda+Ave,+Etiwanda,+CA+91739!3s0x80c34a21e31008c3:0x1b2e17a43fe0775f!4m2!1d-117.525493!2d34.1167854?entry=ttu`,
+		iframe: {
+			src: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.1546739403034!2d-117.53036927678396!3d34.11678974484491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c34a21e31008c3%3A0x1b2e17a43fe0775f!2sONE%26ALL%20Church%2C%20Rancho%20Cucamonga!5e0!3m2!1sen!2sus!4v1702437315012!5m2!1sen!2sus`,
+			title: `Embedded Google Map of the area around One&ALL Church`,
+		},
+		locationDetails: {
+			name: 'One&ALL Church',
+			address: '7576 Etiwanda Ave, Rancho Cucamonga, CA 91739',
+		},
+		attractions: [
+			'Victoria Gardens',
+			'Etiwanda Falls Trailhead',
+			'K1 Speed — Indoor Go Karts',
+		],
+	},
+];
 ---
 
 <Layout title="Grow Together Conference 2024">
@@ -27,13 +83,7 @@ import InlandEmpire from '../sections/InlandEmpire.astro';
 		<Testimonial />
 		<Sponsors />
 		<FinalCTA />
-		<SanDiego />
-		<InlandEmpire />
+		{locations.map((location) => <LocationDetails location={location} />)}
 		<Footer />
 	</article>
 </Layout>
-
-<script>
-	import AOS from 'aos/dist/aos.js';
-	AOS.init();
-</script>

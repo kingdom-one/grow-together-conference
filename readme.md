@@ -2,7 +2,23 @@
 
 A landing page for the **Growing Together** conference in 2024. Built with Bootstrap, Astro, Swiper and AOS.
 
+## Quickstart
+
+1. Install Dependencies: `npm i`
+2. Start your local server: `npm run start`
+
+Site is built & deployed on push to `main`, so if you're making significant change, start an issue and create a PR.
+
+---
+
 # Changelog
+
+## 2.1.2
+
+-   Fixed overflow issue on mobile
+-   Refactored sections for more standard markup generation
+-   Fixed wonky `hero` display on mobile
+-   Reduced custom SCSS for bootstrap utility classes
 
 ## 2.1.1
 

@@ -1,9 +1,6 @@
 ---
 export interface Props {
-	attraction: {
-		name: string;
-		url?: string;
-	};
+	attraction: string;
 }
 const { attraction } = Astro.props;
 ---
@@ -11,7 +8,7 @@ const { attraction } = Astro.props;
 <li class="attraction">
 	<div class="card-body">
 		<h4 class="card-title fw-normal fs-5">
-			{attraction.name}
+			{attraction}
 		</h4>
 	</div>
 </li>
