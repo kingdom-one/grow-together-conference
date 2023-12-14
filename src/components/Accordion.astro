@@ -36,7 +36,7 @@ const { accordionClass, accordionTitle, items, indexOffset } = Astro.props;
 </script>
 
 <div class={accordionClass}>
-	<h3 class="text-white">{accordionTitle}</h3>
+	<h3 class="text-primary">{accordionTitle}</h3>
 	<div class="accordion" id={`${accordionClass}-accordion`}>
 		{
 			items.map((item, index) => {

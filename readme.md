@@ -4,9 +4,16 @@ A landing page for the **Growing Together** conference in 2024. Built with Boots
 
 # Changelog
 
+## 2.1.1
+
+-   Rebuilt in Astro@v4
+-   Added new sections
+-   Added Bootstrap Modals w/ lots of Youtube videos
+-   Even more accessible website!
+
 ## 2.0
 
-- Rebuilt in Astro!
+-   Rebuilt in Astro!
 
 ## v1.1.5
 
