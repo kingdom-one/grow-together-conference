@@ -5,6 +5,7 @@ export interface Props {
 	title: string;
 	videoId?: string;
 	posterQuality?:
+		| string
 		| 'default'
 		| 'mqdefault'
 		| 'hqdefault'
@@ -14,75 +15,134 @@ export interface Props {
 const { title, videoId, id, posterQuality = 'maxresdefault' } = Astro.props;
 ---
 
-<style>
+<style lang="scss">
 	.bi-play-circle {
-		width: 3rem;
-		height: 3rem;
+		--size: 2.4rem;
+		width: var(--size);
+		height: var(--size);
 		color: var(--color-secondary);
 	}
-</style>
-<div class="learn-more d-flex align-items-center mt-auto">
-	{
-		videoId && (
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				fill="currentColor"
-				class="bi bi-play-circle"
-				viewBox="0 0 16 16"
-			>
-				<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-				<path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
-			</svg>
-		)
+
+	learn-more-modal {
+		position: relative;
+
+		a {
+			position: relative;
+			z-index: 2;
+		}
+
+		.modal.show {
+			z-index: 1200;
+		}
+
+		.modal-body {
+			padding: 2px;
+		}
 	}
+</style>
+<learn-more-modal data-id={id}>
 	<a
 		role="button"
-		class="text-secondary fw-bold fs-5 ms-2"
 		data-bs-toggle="modal"
 		data-bs-target={`#${id}`}
+		class="learn-more d-flex align-items-center mt-auto"
 	>
-		{videoId ? 'Learn More' : 'Coming Soon!'}
+		{
+			videoId && (
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="currentColor"
+					class="bi bi-play-circle"
+					viewBox="0 0 16 16"
+				>
+					<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+					<path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
+				</svg>
+			)
+		}
+		<span class="text-secondary fw-bold fs-5 ms-2">
+			{videoId ? 'Learn More' : 'Coming Soon!'}
+		</span>
 	</a>
-</div>
 
-{
-	videoId && (
-		<div
-			class="modal fade"
-			id={id}
-			tabindex="-1"
-			aria-labelledby={`${id}Label`}
-			aria-hidden="true"
-			data-bs-backdrop="false"
-		>
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h1
-							class="modal-title fs-5 text-primary text-uppercase"
-							id={`${id}Label`}
-						>
-							{title}
-						</h1>
-						<button
-							type="button"
-							class="btn-close"
-							data-bs-dismiss="modal"
-							aria-label="Close"
-						/>
-					</div>
-					<div class="modal-body">
-						<YouTubeVideo
-							videoId={videoId}
-							quality={posterQuality}
-						/>
+	{
+		videoId && (
+			<div
+				class="modal fade"
+				id={id}
+				tabindex="-1"
+				aria-labelledby={`${id}Label`}
+				aria-hidden="true"
+				data-bs-backdrop="false"
+			>
+				<div class="modal-dialog modal-dialog-centered modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h1
+								class="modal-title fs-5 text-primary text-uppercase"
+								id={`${id}Label`}
+							>
+								{title}
+							</h1>
+							<button
+								type="button"
+								class="btn-close"
+								data-bs-dismiss="modal"
+								aria-label="Close"
+							/>
+						</div>
+						<div class="modal-body">
+							<YouTubeVideo
+								videoId={videoId}
+								quality={posterQuality}
+							/>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	)
-}
+		)
+	}
+</learn-more-modal>
 
+<script is:inline src="https://www.youtube.com/iframe_api"></script>
 <script>
 	import Modal from 'bootstrap/js/dist/modal';
+
+	class LearnMoreModal extends HTMLElement {
+		modal;
+		constructor() {
+			super();
+			this.modal = this.querySelector(`#${this.dataset.id}`);
+			if (!this.modal) {
+				return;
+			}
+			this.modal.addEventListener('show.bs.modal', () => {
+				this.modal.style.backgroundColor = 'rgba(0,0,0,.5)';
+			});
+			this.addEventListener(
+				'liteYoutubeIframeLoaded',
+				this.handleYouTubeEvent.bind(this)
+			);
+			this.addEventListener('click', (ev) => {
+				if (ev.target.id === this.dataset.id) {
+					this.modal.querySelector('.btn-close').click();
+				}
+			});
+		}
+
+		handleYouTubeEvent(event) {
+			const youtubeIFrame =
+				event.target.shadowRoot.querySelector('iframe');
+			const player = new YT.Player(youtubeIFrame, {
+				events: {
+					onReady: () => {},
+					onStateChange: () => {},
+				},
+			});
+			this.modal.addEventListener('hide.bs.modal', () => {
+				player.pauseVideo();
+			});
+		}
+	}
+	customElements.define('learn-more-modal', LearnMoreModal);
 </script>

@@ -14,7 +14,6 @@ import dollarWhite from '../assets/svg/icons/dollar--white.svg';
 import shieldWhite from '../assets/svg/icons/shield--white.svg';
 import lineGradient from '../assets/png/line-gradient.png';
 import LearnMoreVideoModal from './LearnMoreVideoModal.astro';
-import { prefetch } from 'astro:prefetch';
 
 const roles = [
 	{
@@ -51,6 +50,7 @@ const roles = [
 		role: 'HR Foundations',
 		id: 'hr-foundations',
 		videoId: 'OXnOyePXp_s',
+		posterQuality: 'hqdefault',
 	},
 	{
 		image: phoneWhite,
@@ -83,31 +83,12 @@ const { classes } = Astro.props;
 
 		@include m.media-breakpoint-up(md) {
 			grid-template-columns: repeat(3, 1fr);
-			gap: 2rem;
-		}
-
-		&__container {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			text-align: center;
-		}
-
-		&__role {
-			margin: 2rem auto;
-			font-size: 3rem;
-			text-transform: uppercase;
+			gap: 4rem;
 		}
 
 		&__line-gradient {
 			height: 10rem;
 			width: 0.2rem;
-		}
-
-		&__image {
-			img {
-				height: 8rem;
-			}
 		}
 	}
 </style>
@@ -115,16 +96,24 @@ const { classes } = Astro.props;
 <div class={`${classes} roles-grid`}>
 	{
 		roles.map((role) => (
-			<div class="roles-grid__container">
+			<div class="d-flex flex-column align-items-center">
 				<div class="roles-grid__image">
-					<Image src={role.image} alt="" data-aos="zoom-in" />
+					<Image
+						src={role.image}
+						alt=""
+						data-aos="zoom-in"
+						class="h-auto"
+					/>
 				</div>
-				<p class="fw-bold roles-grid__role">{role.role}</p>
-				<Image src={lineGradient} alt="" />
+				<p class="fw-bold fs-4 text-uppercase text-center my-3">
+					{role.role}
+				</p>
+				<Image src={lineGradient} alt="" class="mt-auto" />
 				<LearnMoreVideoModal
 					title={role.role}
 					videoId={role.videoId}
 					id={role.id}
+					posterQuality={role.posterQuality ?? 'maxresdefault'}
 				/>
 			</div>
 		))

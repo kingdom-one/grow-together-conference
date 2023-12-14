@@ -27,8 +27,20 @@ const attractions = [
 ---
 
 <style lang="scss">
+	@use '../styles/abstracts/mixins' as m;
 	.inland-empire {
-		margin-top: -15.2rem;
+		margin-top: -11rem;
+		@include m.media-breakpoint-up(sm) {
+			margin-top: -11.4rem;
+		}
+
+		@include m.media-breakpoint-up(md) {
+			margin-top: -12.8rem;
+		}
+
+		@include m.media-breakpoint-up(lg) {
+			margin-top: -19.2rem;
+		}
 	}
 </style>
 <section class="inland-empire">
