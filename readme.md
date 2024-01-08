@@ -13,6 +13,10 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 2.2.0
+
+-   Remove San Diego
+
 ## 2.1.2
 
 -   Fixed overflow issue on mobile

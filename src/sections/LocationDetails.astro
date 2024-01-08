@@ -2,7 +2,6 @@
 import { Image } from 'astro:assets';
 import LocationPin from '../components/LocationPin.astro';
 import InlandEmpireButton from '../components/InlandEmpireButton.astro';
-import SanDiegoButton from '../components/SanDiegoButton.astro';
 import AttractionPreview from '../components/AttractionPreview.astro';
 import NearbyHotel from '../components/NearbyHotel.astro';
 
@@ -110,13 +109,7 @@ const {
 			</div>
 		</div>
 		<div class="row my-5 justify-content-center">
-			{
-				name === 'San Diego' ? (
-					<SanDiegoButton color="white" variant="outline" />
-				) : (
-					<InlandEmpireButton color="white" variant="outline" />
-				)
-			}
+			<InlandEmpireButton color="white" variant="outline" />
 		</div>
 	</div>
 </section>
