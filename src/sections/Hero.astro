@@ -10,6 +10,7 @@ import leadership from '../assets/svg/Leadership.svg';
 import people from '../assets/svg/People.svg';
 import practices from '../assets/svg/practices.svg';
 import YouTubeVideo from '../components/YouTubeVideo.astro';
+import Button from '../components/Button.astro';
 
 const words = [
 	{ word: 'Courageous', svg: leadership, alt: 'leadership' },
@@ -70,11 +71,13 @@ const words = [
 	<div class="container position-relative z-3 overflow-hidden">
 		<div class="row justify-content-between">
 			<div class="col-6 col-md-3">
-				<Image
-					class="logo h-auto object-fit-contain"
-					src={logo}
-					alt="Grow Together Conference"
-				/>
+				<a href="/">
+					<Image
+						class="logo h-auto object-fit-contain"
+						src={logo}
+						alt="Grow Together Conference"
+					/>
+				</a>
 			</div>
 			<a
 				href="https://kingdomone.co"
@@ -112,6 +115,7 @@ const words = [
 		</div>
 		<div class="row my-5 mx-0">
 			<InlandEmpireButton color="secondary" variant="outline" />
+			<Button color='secondary' variant='outline' href='/schedule' text="Vew Schedule" classes='ms-2'/>
 		</div>
 		<div class="row row-cols-1 row-cols-lg-3 my-5 justify-content-around">
 			{
