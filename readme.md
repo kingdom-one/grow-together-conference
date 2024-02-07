@@ -13,6 +13,13 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 3.0.0
+
+-   Add map to schedule page
+-   Refactor Hero to allow for custom content text
+-   Add new Schedule & Home Hero components
+-   Add new button styles & update the API **(breaking!)**
+
 ## 2.2.0
 
 -   Remove San Diego
