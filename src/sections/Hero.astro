@@ -1,22 +1,12 @@
 ---
-// Components
-import { Image } from 'astro:assets';
 
-// Images
+import {Image} from "astro:assets";
+
+
 import k1Logo from '../assets/svg/K1 Logo_White (SVG).svg';
 import logo from '../assets/png/conference-logo.png';
-import InlandEmpireButton from '../components/InlandEmpireButton.astro';
-import leadership from '../assets/svg/Leadership.svg';
-import people from '../assets/svg/People.svg';
-import practices from '../assets/svg/practices.svg';
-import YouTubeVideo from '../components/YouTubeVideo.astro';
-import Button from '../components/Button.astro';
+const {slot} = Astro.props;
 
-const words = [
-	{ word: 'Courageous', svg: leadership, alt: 'leadership' },
-	{ word: 'Healthy', svg: people, alt: 'people' },
-	{ word: 'Effective', svg: practices, alt: 'practices' },
-];
 ---
 
 <style lang="scss">
@@ -92,50 +82,6 @@ const words = [
 				/>
 			</a>
 		</div>
-		<div class="row my-5 pt-5">
-			<div class="col-12 col-xl-6">
-				<h2 class="text-white">Inspire Your Ministry Team to Grow</h2>
-				<p class="fs-5 text-white">
-					Ministry has unique challenges; your team's engagement
-					shouldn't be one of them! The Grow Together conference gives
-					your ministry teams the right tools to stay engaged and meet
-					their goals together. How? We are so glad you asked! Grow
-					Together focuses on equipping your team with high-quality
-					training from ministry professionals who care about your
-					health, growth, and culture. We aim to grow the church by
-					providing best practices your team can easily implement.
-					Now's your chance to sign up for an event where your team
-					grows, stays united, and finds a helpful community committed
-					to seeing all ministries grow together.
-				</p>
-			</div>
-			<div class="col-12 col-xl-6">
-				<YouTubeVideo videoId={`BeKmeuwrwaU`} quality="hqdefault" />
-			</div>
-		</div>
-		<div class="row my-5 mx-0">
-			<InlandEmpireButton color="secondary" variant="outline" />
-			<Button color='secondary' variant='outline' href='/schedule' text="Vew Schedule" classes='ms-2'/>
-		</div>
-		<div class="row row-cols-1 row-cols-lg-3 my-5 justify-content-around">
-			{
-				words.map((word, index) => {
-					const delay = (index + 1) * 150;
-					return (
-						<div
-							class="col d-flex text-center align-items-center justify-content-lg-center"
-							data-aos="fade-right"
-							data-aos-delay={delay}
-						>
-							<span class="fw-bold fs-4 me-2">
-								{word.word}
-								<br class="d-none d-lg-block d-xxl-none" />
-								<Image src={word.svg} alt={word.alt} />
-							</span>
-						</div>
-					);
-				})
-			}
-		</div>
+		<slot />
 	</div>
 </section>
