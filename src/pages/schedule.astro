@@ -1,17 +1,34 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Hero from "../sections/Hero.astro";
-import Footer from "../sections/Footer.astro";
-import FinalCTA from "../sections/FinalCTA.astro";
+import { Image } from 'astro:assets';
 
+import Layout from '../layouts/Layout.astro';
+
+import Footer from '../sections/Footer.astro';
+import SchedEmbed from '../components/SchedEmbed.astro';
+import FinalCTA from '../sections/FinalCTA.astro';
+
+import map from '../assets/jpg/campus-map.jpg';
+import ScheduleHero from '../sections/heros/ScheduleHero.astro';
 ---
 
 <Layout title="Schedule">
-	<Hero />
-		<main>
-			<a id="sched-embed" href="//growtogether2024.sched.com/">View the Grow Together 2024 schedule &amp; directory.</a>
-			<script type="text/javascript" src="https://growtogether2024.sched.com/js/embed.js" is:inline></script>
-			<FinalCTA />
-			<Footer />
-		</main>
+	<ScheduleHero />
+	<main>
+		<SchedEmbed />
+		<section id="map" class="text-bg-primary">
+			<div class="container my-5">
+				<h2 class="display-1 text-center">Campus Map</h2>
+				<div class="ratio ratio-16x9">
+					<Image
+						src={map}
+						alt="Campus map"
+						class="object-fit-contain"
+					/>
+				</div>
+			</div>
+		</section>
+
+		<FinalCTA />
+		<Footer />
+	</main>
 </Layout>

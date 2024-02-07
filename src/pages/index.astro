@@ -1,7 +1,7 @@
 ---
 // Components
 import Layout from '../layouts/Layout.astro';
-import Hero from '../sections/Hero.astro';
+
 import About from '../sections/About.astro';
 import CTA from '../sections/CTA.astro';
 import TeamMembers from '../sections/TeamMembers.astro';
@@ -17,6 +17,7 @@ import 'aos/dist/aos.css';
 
 // Assets
 import inlandEmpire from '../assets/svg/inland-empire-skyline.svg';
+import HomepageHero from '../sections/heros/HomepageHero.astro';
 
 const locations = [
 	{
@@ -50,7 +51,7 @@ const locations = [
 <Layout title="Grow Together Conference 2024">
 	
 	<article>
-		<Hero />
+		<HomepageHero />
 		<About />
 		<CTA />
 		<TeamMembers />

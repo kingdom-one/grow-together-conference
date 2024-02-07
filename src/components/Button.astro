@@ -4,7 +4,7 @@ interface Props {
 	href: string;
 	isExternal?: boolean;
 	color?: 'primary' | 'secondary' | 'black' | 'white';
-	variant?: 'solid' | 'outline';
+	variant?: 'fill' | 'outline';
 	classes?: string;
 }
 
@@ -13,7 +13,7 @@ const {
 	text,
 	isExternal = true,
 	color = 'primary',
-	variant = 'solid',
+	variant = 'fill',
 	classes = '',
 } = Astro.props;
 ---
@@ -99,7 +99,26 @@ const {
 				}
 			}
 		}
+
 		&__secondary {
+			&--fill {
+				@extend %btn;
+				background-color: var(--color-secondary);
+				border-color: var(--color-secondary);
+				color: black;
+
+				&:hover,
+				&:active,
+				&:focus {
+					background-color: transparent;
+					border-color: var(--color-secondary);
+					color: var(--color-secondary);
+
+					a {
+						color: var(--color-secondary);
+					}
+				}
+			}
 			&--outline {
 				@extend %btn;
 				border-color: var(--color-secondary);
