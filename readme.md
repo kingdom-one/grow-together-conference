@@ -13,6 +13,11 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 4.0.0
+
+-   Update site for the in-between time of 2024 and 2025
+-   Breaking: Refactored Button component to `<slot />` text instead of passing it as a param
+
 ## 3.0.0
 
 -   Add map to schedule page
