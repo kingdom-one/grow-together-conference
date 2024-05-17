@@ -1,6 +1,5 @@
 ---
 interface Props {
-	text: string;
 	href: string;
 	isExternal?: boolean;
 	color?: 'primary' | 'secondary' | 'black' | 'white';
@@ -10,7 +9,6 @@ interface Props {
 
 const {
 	href,
-	text,
 	isExternal = true,
 	color = 'primary',
 	variant = 'fill',
@@ -21,20 +19,23 @@ const {
 {
 	isExternal ? (
 		<a
-			target="_blank"
+			target='_blank'
 			href={href}
 			class={`btn__${color}--${variant} ${classes}`}
 		>
-			{text}
+			<slot />
 		</a>
 	) : (
-		<a href={href} class={`btn__${color}--${variant} ${classes}`}>
-			{text}
+		<a
+			href={href}
+			class={`btn__${color}--${variant} ${classes}`}
+		>
+			<slot />
 		</a>
 	)
 }
 
-<style lang="scss">
+<style lang='scss'>
 	@use '../styles/abstracts/functions' as fn;
 
 	%btn {

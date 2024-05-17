@@ -3,21 +3,15 @@
 import Layout from '../layouts/Layout.astro';
 
 import About from '../sections/About.astro';
-import CTA from '../sections/CTA.astro';
-import TeamMembers from '../sections/TeamMembers.astro';
-import TrackInfo from '../sections/TrackInfo.astro';
-import Testimonial from '../sections/Testimonial.astro';
-import FinalCTA from '../sections/FinalCTA.astro';
 import Sponsors from '../sections/Sponsors.astro';
 import Footer from '../sections/Footer.astro';
-import LocationDetails from '../sections/LocationDetails.astro';
 
 // Styles
 import 'aos/dist/aos.css';
 
 // Assets
 import inlandEmpire from '../assets/svg/inland-empire-skyline.svg';
-import HomepageHero from '../sections/heros/HomepageHero.astro';
+import MidTermHero from '../sections/heros/MidTermHero.astro';
 
 const locations = [
 	{
@@ -48,18 +42,9 @@ const locations = [
 ];
 ---
 
-<Layout title="Grow Together Conference 2024">
-	
-	<article>
-		<HomepageHero />
-		<About />
-		<CTA />
-		<TeamMembers />
-		<TrackInfo />
-		<Testimonial />
-		<Sponsors />
-		<FinalCTA />
-		{locations.map((location) => <LocationDetails location={location} />)}
-		<Footer />
-	</article>
+<Layout title='Grow Together Conference 2024'>
+	<MidTermHero />
+	<About />
+	<Sponsors />
+	<Footer />
 </Layout>
