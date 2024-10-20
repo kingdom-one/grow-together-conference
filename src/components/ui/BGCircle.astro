@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets';
+
+import yellow from '../../assets/png/circles/bg-circle--yellow.png';
+import dark from '../../assets/png/circles/bg-circle--dark.png';
+import green from '../../assets/png/circles/bg-circle--green.png';
+import white from '../../assets/png/circles/bg-circle--white.png';
+
+export interface Props {
+	color: 'yellow' | 'dark' | 'green' | 'white';
+}
+
+const { color } = Astro.props;
+
+const srcMap = {
+	yellow,
+	dark,
+	green,
+	white,
+};
+---
+
+<Image
+	src={srcMap[color]}
+	alt=''
+	class:list={['w-100', 'h-100', 'object-fit-contain']}
+	aria-hidden='true'
+	data-aos='zoom-in'
+/>
+
+<script>
+	import AOS from 'aos';
+	AOS.init();
+</script>

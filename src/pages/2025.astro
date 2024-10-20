@@ -1,0 +1,98 @@
+---
+// Components
+import Layout from '../layouts/Layout.astro';
+import Hero from '../sections/heros/2025Hero.astro';
+import About from '../sections/About.astro';
+import CTA from '../sections/2025/CTA.astro';
+import SectionOverview from '../sections/2025/SectionOverview.astro';
+import TrackInfo from '../sections/2025/TrackInfo.astro';
+
+import Sponsors from '../sections/Sponsors.astro';
+import Footer from '../sections/Footer.astro';
+
+// Styles
+import 'aos/dist/aos.css';
+import Partners from '../sections/2025/Partners.astro';
+import Testimonial from '../sections/Testimonial.astro';
+import FinalCTA from '../sections/2025/FinalCTA.astro';
+import LocationDetails from '../sections/LocationDetails.astro';
+import CirclesBG from '../sections/2025/CirclesBG.astro';
+
+// Assets
+---
+
+<Layout title='Grow Together Conference 2025'>
+	<CirclesBG
+		circles={[
+			{
+				color: 'green',
+				position: 'top-right',
+				size: 'large',
+			},
+			{
+				color: 'yellow',
+				position: 'center-left',
+				size: 'medium',
+			},
+			{
+				color: 'dark',
+				position: 'bottom-right',
+				size: 'small',
+			},
+		]}
+	>
+		<Hero />
+		<About />
+	</CirclesBG>
+	<Partners />
+	<CTA />
+	<SectionOverview />
+	<TrackInfo />
+	<Testimonial />
+	<Sponsors />
+	<CirclesBG
+		circles={[
+			{
+				color: 'dark',
+				position: 'top-left',
+				size: 'medium',
+			},
+			{
+				color: 'yellow',
+				position: 'top-right',
+				size: 'large',
+			},
+			{
+				color: 'green',
+				position: 'center-left',
+				size: 'medium',
+			},
+		]}
+	>
+		<FinalCTA />
+		<LocationDetails
+			location={{
+				name: 'San Dimas',
+				description: `It takes a coordinated effort to get ministry teams aligned and working towards a common goal. Continuing education, networking & exposure to new ministry opportunities don't happen too often. The Grow Together Conference propels your ministry team to gain actionable insights, sharpen their skill, and expand their network. `,
+				date: 'Thursday, February 8, 2024 • 8:30am – 4pm PST',
+
+				hotelsLink: `https://www.google.com/maps/search/Hotels/@34.1007971,-117.8355881,14.91z/data=!4m8!2m7!3m6!1sHotels!2sONE%26ALL+Church,+San+Dimas,+1404+W+Covina+Blvd,+San+Dimas,+CA+91773!3s0x80c328cdd9ffd539:0xb3be8d1e218251f1!4m2!1d-117.8365508!2d34.0984172?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D`,
+				iframe: {
+					src: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d973.9834712109318!2d-117.83685611397642!3d34.09840109523141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c328cdd9ffd539%3A0xb3be8d1e218251f1!2sONE%26ALL%20Church%2C%20San%20Dimas!5e0!3m2!1sen!2sus!4v1729370013239!5m2!1sen!2sus`,
+					title: `Embedded Google Map of the area around ONE&ALL Church, San Dimas`,
+				},
+				locationDetails: {
+					name: 'ONE&ALL Church, San Dimas',
+					address: '1404 W Covina Blvd San Dimas, CA 91773',
+				},
+				attractions: [
+					'Universal Studios',
+					'Knotts Berry Farm',
+					'Disneyland',
+				],
+			}}
+		/>
+	</CirclesBG>
+
+	<Footer />
+</Layout>

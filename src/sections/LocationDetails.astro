@@ -1,83 +1,51 @@
 ---
-import { Image } from 'astro:assets';
 import LocationPin from '../components/LocationPin.astro';
-import InlandEmpireButton from '../components/InlandEmpireButton.astro';
+import { TICKETS_URL } from '../consts';
 import AttractionPreview from '../components/AttractionPreview.astro';
 import NearbyHotel from '../components/NearbyHotel.astro';
+import InlandEmpireMountains from '../components/svg/inland-empire-mountains.astro';
 
 const { location } = Astro.props;
 const {
 	name,
 	description,
-	bgColor,
 	hotelsLink,
 	iframe,
 	locationDetails,
 	date,
-	image,
-	className,
 	attractions,
 } = location;
 ---
 
-<style lang="scss">
-	@use '../styles/abstracts/mixins' as m;
-	.inland-empire {
-		margin-top: -11rem;
-		@include m.media-breakpoint-up(sm) {
-			margin-top: -11.4rem;
-		}
-
-		@include m.media-breakpoint-up(md) {
-			margin-top: -12.8rem;
-		}
-
-		@include m.media-breakpoint-up(lg) {
-			margin-top: -19.2rem;
-		}
-	}
-
-	.san-diego {
-		margin-top: -10rem;
-	}
-</style>
-<section class={`location-details ${className} overflow-x-hidden`}>
-	<div class="location-details__background clip-color-left-top">
-		<div class={`location-details__background--color ${bgColor}`}></div>
-		<div class="location-details__background--lower"></div>
-	</div>
-	<div class="container text-white position-relative z-3 my-5">
-		<div class="row">
-			<div class="col-12">
-				<Image
-					src={image.src}
-					alt={image.alt}
-					style={{ maxWidth: '100%' }}
-				/>
+<section class='location-details inland-empire overflow-x-hidden py-5'>
+	<div class='container position-relative'>
+		<div class='row'>
+			<div class='col-12'>
+				<InlandEmpireMountains color='var(--bs-dark)' />
 			</div>
 		</div>
-		<div class="row my-5">
-			<div class="col-lg-7">
-				<div class="row">
-					<h2 class="fs-1">{name}</h2>
-					<p class="fs-5">
+		<div class='row my-5'>
+			<div class='col-lg-7'>
+				<div class='row'>
+					<h2 class='fs-1'>{name}</h2>
+					<p class='fs-5'>
 						{description}
 					</p>
 				</div>
-				<div class="row">
-					<h3 class="fs-2 mt-5">Date & Time</h3>
-					<p class="fs-5">
+				<div class='row'>
+					<h3 class='fs-2 mt-5'>Date & Time</h3>
+					<p class='fs-5'>
 						{date}
 					</p>
 				</div>
-				<div class="row my-5">
-					<div class="col-lg-8">
+				<div class='row my-5'>
+					<div class='col-lg-8'>
 						<NearbyHotel href={hotelsLink} />
 					</div>
 				</div>
-				<div class="row">
-					<h3 class="fs-2">Local Attractions</h3>
-					<ul class="row ms-4">
+				<div class='row'>
+					<h3 class='fs-2'>Local Attractions</h3>
+					<ul class='row ms-4'>
 						{
 							attractions.map((attraction) => (
 								<AttractionPreview attraction={attraction} />
@@ -86,30 +54,37 @@ const {
 					</ul>
 				</div>
 			</div>
-			<div class="col-lg-5 mt-5 mt-lg-0">
+			<div class='col-lg-5 mt-5 mt-lg-0'>
 				<h3>Location</h3>
 				<div
-					class="embed-container border rounded-5 overflow-hidden ratio ratio-1x1 w-100"
+					class='border rounded-5 overflow-hidden ratio ratio-1x1 w-100'
 				>
 					<iframe
 						src={iframe.src}
-						width="100%"
-						height="100%"
-						style="border:0;"
-						allowfullscreen=""
+						width='100%'
+						height='100%'
+						style='border:0;'
+						allowfullscreen=''
 						title={iframe.title}
-						loading="lazy"
-						referrerpolicy="no-referrer-when-downgrade"></iframe>
+						loading='lazy'
+						referrerpolicy='no-referrer-when-downgrade'
+					></iframe>
 				</div>
 				<LocationPin
-					classes="mt-3"
+					classes='mt-3'
 					location={locationDetails.name}
 					address={locationDetails.address}
 				/>
 			</div>
 		</div>
-		<div class="row my-5 justify-content-center">
-			<InlandEmpireButton color="white" variant="outline" />
+		<div class='row justify-content-center'>
+			<div class='col text-center'>
+				<a
+					href={TICKETS_URL}
+					class='btn btn-outline-dark rounded-pill'
+					>Get Tickets</a
+				>
+			</div>
 		</div>
 	</div>
 </section>

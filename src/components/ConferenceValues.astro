@@ -1,0 +1,26 @@
+---
+const words = [
+	{ word: 'Courageous Leadership' },
+	{ word: 'Healthy People' },
+	{ word: 'Effective Practices' },
+];
+---
+
+<div class='row row-cols-1 row-cols-lg-3 my-5 justify-content-around'>
+	{
+		words.map(({ word }, index) => {
+			const delay = (index + 1) * 150;
+			return (
+				<div
+					class='col d-flex text-center align-items-center justify-content-lg-center'
+					data-aos='fade-right'
+					data-aos-delay={delay}
+				>
+					<span class='fw-bold fs-4 me-2 text-capitalize'>
+						{word}
+					</span>
+				</div>
+			);
+		})
+	}
+</div>

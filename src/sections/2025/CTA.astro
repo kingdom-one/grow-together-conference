@@ -1,0 +1,211 @@
+---
+// Components
+import { Image } from 'astro:assets';
+import YouTubeVideo from '../../components/YouTubeVideo.astro';
+
+// Images
+import stepOne from '../../assets/svg/step-1-icon.svg';
+import stepTwo from '../../assets/svg/step-2-icon.svg';
+import stepThree from '../../assets/svg/step-3-icon.svg';
+
+const plan = [
+	{
+		icon: stepOne,
+		headline: 'Get Tickets',
+		description: "Purchase your team's tickets today!",
+	},
+	{
+		icon: stepTwo,
+		headline: 'Join Us',
+		description:
+			'Join us in Rancho Cucamonga February 8th at One&All Church!',
+	},
+	{
+		icon: stepThree,
+		headline: 'Jump Start 2024',
+		description:
+			'Begin 2024 feeling more courageous, healthy and effective!',
+	},
+];
+---
+
+<style lang='scss'>
+	@use '../../styles/abstracts/variables' as v;
+	@use '../../styles/abstracts/mixins' as m;
+
+	%clip-path {
+		clip-path: var(--lift-left-bottom);
+	}
+
+	.cta {
+		position: relative;
+		margin-bottom: -6rem;
+		background-size: cover;
+
+		&__background {
+			position: absolute;
+			height: 50%;
+			width: 100%;
+			top: 0;
+
+			&--gradient {
+				@include m.absolute_100;
+				z-index: 1;
+				background-image: linear-gradient(
+					to bottom,
+					rgba(v.$color-primary, 1) 30%,
+					rgba(v.$color-secondary, 1) 90%
+				);
+				@extend %clip-path;
+			}
+
+			&--color {
+				@include m.absolute_100;
+				z-index: 2;
+				background: linear-gradient(
+					to right,
+					var(--color-primary--light) 30%,
+					transparent 90%
+				);
+				@extend %clip-path;
+			}
+
+			&--lower {
+				@include m.absolute_100;
+				z-index: 3;
+				background-position: center;
+				background-size: cover;
+				background-repeat: no-repeat;
+				@extend %clip-path;
+			}
+		}
+
+		&__content {
+			position: relative;
+			z-index: 5;
+		}
+	}
+
+	%plan_steps {
+		@include m.displayFlex(column, $cross: center);
+		text-align: center;
+		position: relative;
+		@include m.media-breakpoint-down(md) {
+			margin-bottom: 3rem;
+		}
+	}
+
+	.plan {
+		margin-top: 8rem;
+		&__background {
+			@include m.background-layers;
+			background-position: right;
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+		&__content {
+			z-index: 9;
+			position: relative;
+		}
+		&__step {
+			&--1 {
+				@extend %plan_steps;
+			}
+
+			&--2 {
+				@extend %plan_steps;
+
+				.plan {
+					&__icon {
+						img {
+							aspect-ratio: 1;
+							position: absolute;
+							top: -5rem;
+							left: 0;
+							height: 33.8rem;
+						}
+					}
+				}
+			}
+
+			&--3 {
+				@extend %plan_steps;
+			}
+		}
+
+		&__icon {
+			height: 25.7rem;
+
+			img {
+				height: 100%;
+				width: 100%;
+				object-fit: contain;
+			}
+		}
+		&__headline {
+			margin-top: 2rem;
+			margin-bottom: 1.5rem;
+			font-weight: 700;
+			color: var(--color-secondary);
+			font-size: 2.4rem;
+		}
+
+		&__description {
+			font-size: 1.35em;
+		}
+	}
+</style>
+
+<section
+	id='cta'
+	class='cta py-5'
+>
+	<div class='container'>
+		<div class='row my-5 justify-content-center'>
+			<div class='col-lg-10'>
+				<p class='text-center fw-bold fs-4'>
+					Growing together is crucial for ministries to actualize
+					their mission. Lack of continuing development and a
+					community of like-minded leaders leads to stagnation and
+					loneliness.
+				</p>
+			</div>
+		</div>
+		<div class='row my-5'>
+			<div class='col'>
+				<YouTubeVideo videoId='ln57UDtpws8' />
+			</div>
+		</div>
+		<div class='row'>
+			<div class='container'>
+				<div class='row row-cols-1 row-cols-md-3 plan'>
+					{
+						plan.map((step, index) => (
+							<div class={`col plan__step--${index + 1}`}>
+								<div class='plan__icon'>
+									<Image
+										src={step.icon}
+										alt=''
+										aria-hidden='true'
+										data-aos='fade-right'
+										data-aos-delay={(index + 1) * 150}
+									/>
+								</div>
+								<h3 class='plan__headline'>{step.headline}</h3>
+								<p class='plan__description'>
+									{step.description}
+								</p>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</div>
+		<div class='row justify-content-center my-5'></div>
+	</div>
+</section>
+
+<script>
+	import AOS from 'aos/dist/aos.js';
+	AOS.init();
+</script>

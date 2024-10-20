@@ -13,6 +13,10 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 5.0.0
+
+-   2025 Update!
+
 ## 4.0.0
 
 -   Update site for the in-between time of 2024 and 2025
