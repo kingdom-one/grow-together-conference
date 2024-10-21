@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+import likewise from '../assets/png/2025-partners/logo__likewise--white.png';
+import xp from '../assets/png/2025-partners/logo__xp-gathering--white.png';
+
+const partners = [
+	{ src: xp, alt: 'XP Gathering' },
+	{ src: likewise, alt: 'Likewise' },
+];
+---
+
+<div
+	class='swiper'
+	id='partners-swiper--2025'
+	style='--swiper-navigation-color: #fff;'
+>
+	<div class='swiper-wrappper'>
+		{
+			partners.map(({ src, alt }) => (
+				<div class='swiper-slide'>
+					<Image
+						src={src}
+						alt={alt}
+						class='w-100 h-100 object-fit-contain'
+					/>
+				</div>
+			))
+		}
+	</div>
+	<div class='swiper-button-prev'></div>
+	<div class='swiper-button-next'></div>
+</div>
+
+<script>
+	import Swiper from 'swiper';
+	import { Navigation, A11y } from 'swiper/modules';
+	import 'swiper/scss';
+	import 'swiper/scss/navigation';
+	import 'swiper/scss/a11y';
+
+	new Swiper('#partners-swiper--2025', {
+		modules: [Navigation, A11y],
+		slidesPerView: 1,
+		spaceBetween: 10,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	});
+</script>

@@ -8,7 +8,7 @@ import phoneGrey from '../../assets/svg/icons/phone--grey.svg';
 import chartGrey from '../../assets/svg/icons/chart--grey.svg';
 import paperGrey from '../../assets/svg/icons/paper--grey.svg';
 import shieldGrey from '../../assets/svg/icons/shield--grey.svg';
-import ctaBG from '../../assets/png/bg-images/final-cta.png';
+import academyLogo from '../../assets/png/k1-academy--black.png';
 import { K1_ACADEMY_ACCESS_LINK } from '../../consts';
 
 const icons = [
@@ -142,12 +142,17 @@ const icons = [
 <section class='final-cta position-relative py-5 overflow-hidden'>
 	<div class='container'>
 		<div class='row my-5 justify-content-start'>
-			<div class='col-lg-9'>
-				<p class='h2 text-spark-yellow'>
+			<div class='col-lg-7'>
+				<Image
+					src={academyLogo}
+					alt='Kingdom One Academy'
+					class='w-100 object-fit-contain h-auto'
+				/>
+				<p class='h2'>
 					While you wait for the conference, you don't have to wait to
 					start growing.
 				</p>
-				<p>
+				<p class='fs-5'>
 					Visit Kingdom One Academy to view courses, see previous Grow
 					Together breakout sessions, gain actionable insights, and
 					pursue legal compliance.

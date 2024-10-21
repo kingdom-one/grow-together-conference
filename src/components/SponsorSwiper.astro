@@ -13,11 +13,6 @@ import acrisure from '../assets/png/slides/acrisurewebsite_logo_raster.png';
 import denison from '../assets/png/slides/Dennison-cpa.png';
 import fivestar from '../assets/svg/fivestarbank-logo--mono.svg';
 
-// Swiper
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/autoplay';
-
 const logos = [
 	{ logo: fivestar, alt: 'Five Star Bank' },
 	{ logo: oneDigital, alt: 'one digital' },
@@ -41,7 +36,7 @@ const logos = [
 ];
 ---
 
-<style lang="scss" define:vars={{ 'swiper-navigation-color': 'white' }}>
+<style lang='scss' define:vars={{ 'swiper-navigation-color': 'white' }}>
 	@use '../styles/abstracts/mixins' as m;
 	.swiper {
 		max-height: 30rem;
@@ -60,27 +55,38 @@ const logos = [
 		object-fit: contain;
 	}
 </style>
-<div class="swiper" id="sponsor-swiper">
-	<div class="swiper-wrapper">
+<div
+	class='swiper'
+	id='sponsor-swiper'
+>
+	<div class='swiper-wrapper'>
 		{
 			logos.map((logo) => (
-				<div class="swiper-slide">
-					<Image src={logo.logo} class="logo" alt={logo.alt} />
-					<div class="swiper-lazy-preloader swiper-lazy-preloader-white" />
+				<div class='swiper-slide'>
+					<Image
+						src={logo.logo}
+						class='logo'
+						alt={logo.alt}
+					/>
+					<div class='swiper-lazy-preloader swiper-lazy-preloader-white' />
 				</div>
 			))
 		}
 	</div>
-	<div class="swiper-button-prev"></div>
-	<div class="swiper-button-next"></div>
+	<div class='swiper-button-prev'></div>
+	<div class='swiper-button-next'></div>
 </div>
 <script>
+	import 'swiper/css';
+	import 'swiper/css/navigation';
+	import 'swiper/css/autoplay';
+	import 'swiper/css/a11y';
 	import Swiper from 'swiper';
-	import { Autoplay, Navigation } from 'swiper/modules';
-	const sponsorSwiper = document.getElementById('sponsor-swiper');
-	const swiper = new Swiper('#sponsor-swiper', {
+	import { Autoplay, Navigation, A11y } from 'swiper/modules';
+
+	new Swiper('#sponsor-swiper', {
 		loop: true,
-		modules: [Autoplay, Navigation],
+		modules: [Autoplay, Navigation, A11y],
 		lazyPreloadPrevNext: 1,
 		speed: 800,
 		autoplay: {

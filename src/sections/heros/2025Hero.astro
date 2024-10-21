@@ -10,8 +10,6 @@ import ConferenceValues from '../../components/ConferenceValues.astro';
 
 <style>
 	.logo {
-		width: 25%;
-		max-width: 100%;
 		max-height: 18.75rem;
 	}
 </style>
@@ -33,7 +31,7 @@ import ConferenceValues from '../../components/ConferenceValues.astro';
 			<a
 				href='https://kingdomone.co'
 				target='_blank'
-				class='ratio ratio-1x1 d-block logo'
+				class='ratio ratio-1x1 d-block logo w-25 mw-100'
 				aria-label='link to kingdom one homepage'
 			>
 				<K1Logo color='black' />
@@ -51,7 +49,7 @@ import ConferenceValues from '../../components/ConferenceValues.astro';
 			<h2 class='text-dark text-capitalize'>
 				Keep Your Ministry Team Engaged
 			</h2>
-			<p>
+			<p class='fs-5'>
 				Culture is changing at a rapid rate, and keeping up with all of
 				the trends necessary to cultivate vitality in your ministry team
 				can be a daunting task. When you attend the 2024 Grow Together
@@ -62,7 +60,7 @@ import ConferenceValues from '../../components/ConferenceValues.astro';
 			<a
 				href={TICKETS_URL}
 				target='_blank'
-				class='btn btn-outline-dark rounded-pill align-self-start border-2'
+				class='btn btn-outline-dark align-self-start text-uppercase'
 				>Get Tickets</a
 			>
 		</div>

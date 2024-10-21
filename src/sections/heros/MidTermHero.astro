@@ -6,9 +6,7 @@ import { Image } from 'astro:assets';
 import leadership from '../../assets/svg/Leadership.svg';
 import people from '../../assets/svg/People.svg';
 import practices from '../../assets/svg/practices.svg';
-import InlandEmpireButton from '../../components/InlandEmpireButton.astro';
 import YouTubeVideo from '../../components/YouTubeVideo.astro';
-import Button from '../../components/Button.astro';
 
 const words = [
 	{ word: 'Courageous', svg: leadership, alt: 'leadership' },
@@ -38,21 +36,21 @@ const words = [
 			/>
 		</div>
 	</div>
-	<div class='row my-5 mx-0'>
-		<Button
-			color='secondary'
-			variant='fill'
-			href='https://academy.kingdomone.co/course/grow-together-conference-library/'
-			classes='ms-2'
-			>Watch Now</Button
-		>
-		<Button
-			color='white'
-			variant='outline'
-			href='http://eepurl.com/iQuU6M'
-			classes='ms-2'
-			>2025 Save the Date</Button
-		>
+	<div class='row my-5 gx-0'>
+		<div class='col'>
+			<a
+				target='_blank'
+				href='https://academy.kingdomone.co/course/grow-together-conference-library'
+				class='btn btn-spark-yellow rounded-pill ms-2 border-3 fw-bold text-uppercase'
+				>Watch Now</a
+			>
+			<a
+				target='_blank'
+				href='http://eepurl.com/iQuU6M'
+				class='btn btn-outline-light rounded-pill ms-2 border-3 fw-bold text-uppercase'
+				>2025 Save the Date</a
+			>
+		</div>
 	</div>
 	<div class='row row-cols-1 row-cols-lg-3 my-5 justify-content-around'>
 		{

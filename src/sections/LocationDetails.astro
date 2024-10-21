@@ -27,14 +27,14 @@ const {
 		<div class='row my-5'>
 			<div class='col-lg-7'>
 				<div class='row'>
-					<h2 class='fs-1'>{name}</h2>
-					<p class='fs-5'>
+					<h2>{name}</h2>
+					<p class='fs-5 fst-italic mark'>
 						{description}
 					</p>
 				</div>
 				<div class='row'>
-					<h3 class='fs-2 mt-5'>Date & Time</h3>
-					<p class='fs-5'>
+					<h3 class='mt-5'>Date & Time</h3>
+					<p class='fs-5 fst-italic mark'>
 						{date}
 					</p>
 				</div>
@@ -44,7 +44,7 @@ const {
 					</div>
 				</div>
 				<div class='row'>
-					<h3 class='fs-2'>Local Attractions</h3>
+					<h3>Local Attractions</h3>
 					<ul class='row ms-4'>
 						{
 							attractions.map((attraction) => (

@@ -45,7 +45,22 @@ import CirclesBG from '../sections/2025/CirclesBG.astro';
 		<About />
 	</CirclesBG>
 	<Partners />
-	<CTA />
+	<CirclesBG
+		circles={[
+			{
+				color: 'dark',
+				position: 'top-left',
+				size: 'small',
+			},
+			{
+				color: 'yellow',
+				position: 'center-right',
+				size: 'medium',
+			},
+		]}
+	>
+		<CTA />
+	</CirclesBG>
 	<SectionOverview />
 	<TrackInfo />
 	<Testimonial />
@@ -73,7 +88,7 @@ import CirclesBG from '../sections/2025/CirclesBG.astro';
 		<LocationDetails
 			location={{
 				name: 'San Dimas',
-				description: `It takes a coordinated effort to get ministry teams aligned and working towards a common goal. Continuing education, networking & exposure to new ministry opportunities don't happen too often. The Grow Together Conference propels your ministry team to gain actionable insights, sharpen their skill, and expand their network. `,
+				description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.`,
 				date: 'Thursday, February 8, 2024 • 8:30am – 4pm PST',
 
 				hotelsLink: `https://www.google.com/maps/search/Hotels/@34.1007971,-117.8355881,14.91z/data=!4m8!2m7!3m6!1sHotels!2sONE%26ALL+Church,+San+Dimas,+1404+W+Covina+Blvd,+San+Dimas,+CA+91773!3s0x80c328cdd9ffd539:0xb3be8d1e218251f1!4m2!1d-117.8365508!2d34.0984172?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D`,
