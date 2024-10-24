@@ -1,72 +1,54 @@
 ---
-export type items = {
-	title: string;
-	presenter: string;
-	content: string;
-};
-const { accordionClass, accordionTitle, items, indexOffset } = Astro.props;
+export interface Props {
+	accordionClass: string;
+	accordionTitle: string;
+	items: Array<{
+		title: string;
+		presenter: string;
+		content: string;
+	}>;
+}
+const { accordionClass, accordionTitle, items } = Astro.props;
 ---
 
-<style lang="scss">
-	.accordion-button {
-		width: 100%;
-		text-align: left;
-		background-color: transparent;
-		border: none;
-		border-top: 2px solid white;
-		color: black;
-		font-size: 1.6rem;
-		padding: 1.2rem 0;
-		display: inline-flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-
-	.accordion-expander {
-		display: block;
-		color: white;
-	}
-
-	.accordion-body {
-		padding-bottom: 2rem;
-	}
-</style>
 <script>
-	import Collapse from 'bootstrap/js/dist/collapse';
+	import 'bootstrap/js/dist/collapse';
 </script>
 
 <div class={accordionClass}>
-	<h3 class="text-primary">{accordionTitle}</h3>
-	<div class="accordion" id={`${accordionClass}-accordion`}>
+	<h3>{accordionTitle}</h3>
+	<div
+		class='accordion'
+		id={`${accordionClass}-accordion`}
+	>
 		{
-			items.map((item, index) => {
-				const target = Math.floor(
-					Math.random() * 300 + (index + 1) * indexOffset
-				);
+			items.map(({ title, presenter, content }, index) => {
 				return (
-					<div class="accordion-item">
-						<h4 class="accordion-header">
+					<div class='accordion-item'>
+						<h4 class='accordion-header'>
 							<button
-								class="accordion-button"
-								type="button"
-								data-bs-toggle="collapse"
-								data-bs-target={`#collapse${target}`}
-								aria-expanded="true"
-								aria-controls={`collapse${target}`}
+								class='accordion-button w-100 text-start bg-transparent border-0 border-2 border-top border-dark text-dark fs-6 d-inline-flex justify-content-between align-items-center py-3'
+								type='button'
+								data-bs-toggle='collapse'
+								data-bs-target={`#collapse-${accordionClass}-${index}`}
+								aria-expanded='true'
+								aria-controls={`collapse-${accordionClass}-${index}`}
 							>
-								{`${item.title} `}
-								<div class="accordion-expander">+</div>
+								{title}
+								<div class='accordion-expander d-block text-dark'>
+									+
+								</div>
 							</button>
 						</h4>
 						<div
-							id={`collapse${target}`}
-							class="accordion-collapse collapse"
+							id={`collapse-${accordionClass}-${index}`}
+							class='accordion-collapse collapse'
 							data-bs-parent={`#${accordionClass}-accordion`}
 						>
-							<div class="accordion-body">
-								<strong>Presenter: {item.presenter}</strong>
+							<div class='accordion-body text-dark px-1'>
+								<strong>Presenter: {presenter}</strong>
 								<br />
-								{item.content}
+								{content}
 							</div>
 						</div>
 					</div>

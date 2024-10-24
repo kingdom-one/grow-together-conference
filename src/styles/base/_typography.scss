@@ -1,15 +1,10 @@
 @use "../abstracts/variables" as v;
 
-h1,
-.h1 {
-	text-transform: lowercase;
-}
+$headings: h1, h2, h3, h4, h5, h6;
 
-.subheadline {
-	// font-family: var(--font-poppins);
-	font-weight: 400;
-}
-
-ul {
-	margin-left: 3rem;
+@each $heading in $headings {
+	#{$heading},
+	.#{$heading} {
+		text-wrap: pretty;
+	}
 }

@@ -1,4 +1,2 @@
-@use "../utilities/backgrounds";
-@use "../utilities/text";
-@use "../utilities/clip-paths";
-@use "../utilities/colors";
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;

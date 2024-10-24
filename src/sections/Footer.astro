@@ -2,48 +2,31 @@
 const thisYear = new Date().getFullYear();
 ---
 
-<style lang="scss">
-	.footer {
-		position: relative;
-		.socials {
-			--svg-size: 6rem;
-
-			.svg-inline--fa {
-				width: var(--svg-size);
-				height: var(--svg-size);
-			}
-		}
-	}
-
-	.footer-nav {
-		ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-
-			a {
-				color: white;
-			}
-		}
-	}
-</style>
-<footer class="container-fluid bg-primary py-5">
-	<div class="container">
-		<div class="row">
-			<div class="col text-center text-white" id="copyright">
+<script>
+	const thisYear = new Date().getFullYear();
+	document.getElementById('copyright-year')!.textContent = `${thisYear}`;
+</script>
+<footer class='text-bg-primary py-5'>
+	<div class='container'>
+		<div class='row'>
+			<div
+				class='col text-center'
+				id='copyright'
+			>
 				<p>
-					&copy; {thisYear}
+					&copy; <span id='copyright-year'>{thisYear}</span>
 					<a
-						class="text-white"
-						href="https://kingdomone.co/"
-						target="_blank">Kingdom One</a
+						class='text-reset'
+						href='https://kingdomone.co/'
+						target='_blank'
+						>Kingdom One</a
 					>
 					<br /> All Rights Reserved.
 				</p>
 				<a
-					class="text-white text-decoration-underline"
-					href="https://kingdomone.co/get-started"
-					target="_blank"
+					class='text-reset'
+					href='https://kingdomone.co/get-started'
+					target='_blank'
 					>Find out how Kingdom One can help your ministry.</a
 				>
 			</div>

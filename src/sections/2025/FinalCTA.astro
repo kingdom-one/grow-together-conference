@@ -1,0 +1,185 @@
+---
+// Components
+import { Image } from 'astro:assets';
+
+// Images
+import mugGrey from '../../assets/svg/icons/mug--grey.svg';
+import phoneGrey from '../../assets/svg/icons/phone--grey.svg';
+import chartGrey from '../../assets/svg/icons/chart--grey.svg';
+import paperGrey from '../../assets/svg/icons/paper--grey.svg';
+import shieldGrey from '../../assets/svg/icons/shield--grey.svg';
+import academyLogo from '../../assets/png/k1-academy--black.png';
+import { K1_ACADEMY_ACCESS_LINK } from '../../consts';
+
+const icons = [
+	{ name: 'mug', src: mugGrey },
+	{ name: 'phone', src: phoneGrey },
+	{ name: 'chart', src: chartGrey },
+	{ name: 'paper', src: paperGrey },
+	{ name: 'shield', src: shieldGrey },
+];
+---
+
+<style lang='scss'>
+	@use '../../styles/abstracts/mixins' as m;
+	.final-cta {
+		%icons {
+			position: absolute;
+			height: 5rem;
+			width: 5rem;
+
+			@include m.media-breakpoint-down(lg) {
+				bottom: -3.75rem;
+			}
+
+			@include m.media-breakpoint-down(md) {
+				bottom: -5.625rem;
+				height: 3.75rem;
+				width: 3.75rem;
+			}
+		}
+
+		&__icons {
+			&--mug {
+				@extend %icons;
+
+				@include m.media-breakpoint-up(sm) {
+					right: 0rem;
+				}
+
+				@include m.media-breakpoint-up(lg) {
+					right: 2.5rem;
+				}
+
+				@include m.media-breakpoint-up(xl) {
+					bottom: 0rem;
+					right: 22.5rem;
+				}
+			}
+
+			&--phone {
+				@extend %icons;
+
+				@include m.media-breakpoint-up(sm) {
+					right: 5rem;
+				}
+
+				@include m.media-breakpoint-up(lg) {
+					right: 7.5rem;
+				}
+
+				@include m.media-breakpoint-up(xl) {
+					bottom: 5rem;
+					right: 12.5rem;
+				}
+			}
+
+			&--chart {
+				@extend %icons;
+
+				@include m.media-breakpoint-up(sm) {
+					right: 10rem;
+				}
+
+				@include m.media-breakpoint-up(lg) {
+					right: 12.5rem;
+				}
+
+				@include m.media-breakpoint-up(xl) {
+					bottom: 11.25rem;
+					right: 15rem;
+				}
+			}
+
+			&--paper {
+				@extend %icons;
+
+				@include m.media-breakpoint-up(sm) {
+					right: 15rem;
+				}
+
+				@include m.media-breakpoint-up(lg) {
+					right: 17.5rem;
+				}
+
+				@include m.media-breakpoint-up(xl) {
+					bottom: 18.75rem;
+					right: 6.25rem;
+				}
+			}
+
+			&--shield {
+				@extend %icons;
+
+				@include m.media-breakpoint-up(sm) {
+					right: 20rem;
+				}
+
+				@include m.media-breakpoint-up(lg) {
+					right: 22.5rem;
+				}
+
+				@include m.media-breakpoint-up(xl) {
+					bottom: 8.75rem;
+					right: 3.125rem;
+				}
+			}
+		}
+
+		&__background {
+			@include m.background-layers;
+			background-position: left;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		&__content {
+			z-index: 9;
+			position: relative;
+		}
+	}
+</style>
+
+<section class='final-cta position-relative py-5 overflow-hidden'>
+	<div class='container'>
+		<div class='row my-5 justify-content-start'>
+			<div class='col-lg-7'>
+				<Image
+					src={academyLogo}
+					alt='Kingdom One Academy'
+					class='w-100 object-fit-contain h-auto'
+				/>
+				<p class='h2'>
+					While you wait for the conference, you don't have to wait to
+					start growing.
+				</p>
+				<p class='fs-5'>
+					Visit Kingdom One Academy to view courses, see previous Grow
+					Together breakout sessions, gain actionable insights, and
+					pursue legal compliance.
+				</p>
+				<a
+					href={K1_ACADEMY_ACCESS_LINK}
+					class='btn btn-outline-dark rounded-pill text-uppercase'
+					>Get Access</a
+				>
+			</div>
+		</div>
+		<div class='final-cta__icons--container col-xl-3 d-sm-block d-none'>
+			{
+				icons.map((icon) => (
+					<Image
+						data-aos='zoom-in'
+						src={icon.src}
+						alt=''
+						class={`final-cta__icons--${icon.name}`}
+					/>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<script>
+	import AOS from 'aos/dist/aos.js';
+	AOS.init();
+</script>

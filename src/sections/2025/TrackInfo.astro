@@ -1,0 +1,95 @@
+---
+// Components
+import { Image } from 'astro:assets';
+import Accordion from '../../components/Accordion.astro';
+
+// Images
+import iconsRow from '../../assets/png/icons-row.png';
+
+const placeholderItems = [
+	{
+		title: 'Track Title #1',
+		presenter: 'TBA',
+		content: 'A description of the first session in this track.',
+	},
+	{
+		title: 'Track Title #2',
+		presenter: 'TBA',
+		content: 'A description of the second session in this track.',
+	},
+	{
+		title: 'Track Title #3',
+		presenter: 'TBA',
+		content: 'A description of the third session in this track.',
+	},
+];
+---
+
+<section
+	id='track-info'
+	class='track-info text-bg-secondary py-5'
+>
+	<Image
+		src={iconsRow}
+		alt=''
+		class='object-fit-contain mw-100 icons-row'
+	/>
+	<div class='container col-xl-10'>
+		<div class='row my-5 flex-column'>
+			<div class='col-lg-7'>
+				<h2>Track Information</h2>
+				<p class='fs-5 fst-italic mark'>
+					[Our conference tracks will educate and inspire your team to
+					jump-start 2025 with action. There is something for everyone
+					at Grow Together 2025.]
+				</p>
+			</div>
+		</div>
+		<div class='row row-cols-1 row-cols-lg-2 row-gap-4'>
+			<div class='col d-flex flex-column row-gap-4'>
+				<Accordion
+					accordionClass='advanced-hr'
+					accordionTitle='Advanced HR'
+					items={placeholderItems}
+				/>
+				<Accordion
+					accordionClass='finance'
+					accordionTitle='Finance'
+					items={placeholderItems}
+				/>
+				<Accordion
+					accordionClass='marcom'
+					accordionTitle='Marketing'
+					items={placeholderItems}
+				/>
+				<Accordion
+					accordionClass='people-management'
+					accordionTitle='People Management'
+					items={placeholderItems}
+				/>
+			</div>
+			<div class='col d-flex flex-column row-gap-4'>
+				<Accordion
+					accordionClass='leadership'
+					accordionTitle='Leadership'
+					items={placeholderItems}
+				/>
+				<Accordion
+					accordionTitle='Business Administration '
+					accordionClass='business-administration'
+					items={placeholderItems}
+				/>
+				<Accordion
+					accordionTitle='Worship & Production'
+					accordionClass='worship-production'
+					items={placeholderItems}
+				/>
+				<Accordion
+					accordionTitle='Youth Ministry'
+					accordionClass='youth'
+					items={placeholderItems}
+				/>
+			</div>
+		</div>
+	</div>
+</section>

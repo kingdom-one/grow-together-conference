@@ -1,9 +1,0 @@
-@use "../abstracts/mixins" as m;
-@use "../abstracts/variables" as v;
-
-.text-poppins {
-	font-family: var(--font-body) !important;
-}
-.text-primary--dark {
-	color: var(--color-primary--dark);
-}

@@ -1,39 +1,183 @@
 @use "../abstracts/variables" as v;
-// Custom.scss
-// Option B: Include parts of Bootstrap
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
-$primary: v.$color-primary;
-$secondary: v.$color-secondary;
-$dark: v.$color-primary--dark;
+$primary: v.$green;
+$secondary: v.$yellow;
+$dark: v.$color-grey;
 
-$font-family-sans-serif: v.$font-poppins;
-$font-size-root: 62.5%;
-$font-size-base: 1.6rem;
-$link-decoration: none;
+$brand-colors: (
+	"spark-yellow": v.$color-secondary,
+	"k1-green": v.$color-primary,
+	"k1-og-green": v.$color-primary--light,
+	"academy-green": v.$color-primary--light,
+	"yellow": v.$yellow,
+	"green": v.$green,
+	"muted-green": v.$muted-green,
+	"light-green": v.$light-green,
+);
+
+// ================================================
+/**
+* Typography
+*/
+
+$body-color: v.$color-grey;
+
+$font-size-base: 1rem;
+$font-family-sans-serif: v.$font-headings;
+$font-family-monospace:
+	Monaspace Neon,
+	"Courier New",
+	monospace;
+
+// LINKS
+$link-color: $secondary;
+$link-hover-color: rgba($secondary, 0.8);
+
+// HEADINGS
+$headings-font-family: v.$font-headings;
 $headings-font-weight: 700;
+$headings-color: v.$color-grey;
 
-$grid-gutter-width: 2.4rem;
-$spacer: 1.6rem;
-$enable-shadows: true;
+/**
+* Minor Third Type Scale
+* @see https://typescale.com/
+*/
+
+$h1-font-size: $font-size-base * 2.986;
+$h2-font-size: $font-size-base * 2.488;
+$h3-font-size: $font-size-base * 2.074;
+$h4-font-size: $font-size-base * 1.728;
+$h5-font-size: $font-size-base * 1.44;
+$h6-font-size: $font-size-base * 1.2;
+
+/**
+* Display Type Scale
+* Perfect Fourth Typescale
+* @see https://typescale.com
+*/
+$display-font-sizes: (
+	1: 5.61rem,
+	2: 4.209rem,
+	3: 3.157rem,
+	4: 2.369rem,
+	5: 1.777rem,
+	6: 1.333rem,
+);
+
+$display-font-family: v.$font-headings;
+$display-font-weight: 700;
+$display-line-height: calc(2ex + 4px);
+
+// ================================================
+
+/**
+* Buttons
+*/
+
+$btn-font-weight: 700;
+$btn-border-width: 2px;
+$btn-border-radius: 50rem;
+$btn-padding-x: 3.75rem;
+$btn-padding-y: 1rem;
+$btn-font-size: 1.44rem;
+
+// ================================================
+
+/**
+* Options
+*/
+
+$enable-shadows: false;
+$enable-dark-mode: false;
+
+// ================================================
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+
 @import "bootstrap/scss/variables";
-@import "bootstrap/scss/variables-dark";
 
 // 4. Include any default map overrides here
+$theme-colors: map-merge($theme-colors, $brand-colors);
 
 // 5. Include remainder of required parts
 @import "bootstrap/scss/maps";
 @import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
 @import "bootstrap/scss/root";
 
-// 6. Optionally include any other parts as needed
-@import "bootstrap/scss/utilities";
-@import "bootstrap/scss/reboot";
+$utilities: map-merge(
+	$utilities,
+	(
+		"float": null,
+		"translate-middle": null,
+		// "border": null,
+		// "border-top": null,
+		// "border-end": null,
+		// "border-bottom": null,
+		// "border-start": null,
+		// "border-color": null,
+		"subtle-border-color": null,
+		// "border-width": null,
+		// "border-opacity": null,
+		"viewport-height": null,
+		"min-viewport-height": null,
+		"order": null,
+		"negative-marin": null,
+		"negative-marin-x": null,
+		"negative-marin-y": null,
+		"negative-marin-top": null,
+		"negative-marin-end": null,
+		"negative-marin-bottom": null,
+		"negative-marin-start": null,
+		// "font-family": null,
+		"white-space": null,
+		"word-wrap": null,
+		"text-opacity": null,
+		"link-opacity": null,
+		"link-offset": null,
+		"link-underline": null,
+		"link-underline-opacity": null,
+		"subtle-background-color": null,
+		"gradient": null,
+		"user-select": null,
+		"pointer-events": null,
+	)
+);
+
+// Useful Bootstrap Utilities (Optional)
+@import "bootstrap/scss/bootstrap-reboot";
+@import "bootstrap/scss/buttons";
+
+// Override Bootstrap Buttons
+@each $color, $value in $theme-colors {
+	.btn-#{$color} {
+		@if $color == "primary" {
+			/**
+			* Override the styles with the `button-variant` mixin
+			* @see https://getbootstrap.com/docs/5.3/components/buttons/#sass-loops
+			*/
+			@include button-variant(
+				$value,
+				$value,
+				$hover-background: white,
+				$hover-color: $value
+			);
+		} @else {
+			@include button-variant($value, $value);
+		}
+	}
+}
+
+@each $color, $value in $theme-colors {
+	.btn-outline-#{$color} {
+		@include button-outline-variant($value);
+	}
+}
+
 @import "bootstrap/scss/type";
 @import "bootstrap/scss/images";
 @import "bootstrap/scss/containers";

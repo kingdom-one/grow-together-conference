@@ -1,0 +1,103 @@
+---
+import BGCircle from '../../components/ui/BGCircle.astro';
+
+export interface Props {
+	class?: string | string[];
+	circles: {
+		color: 'yellow' | 'dark' | 'green' | 'white';
+		position:
+			| 'top-left'
+			| 'top-left--extreme'
+			| 'top-right'
+			| 'bottom-left'
+			| 'bottom-right'
+			| 'center-left'
+			| 'center-right';
+		size: 'small' | 'medium' | 'large';
+		id?: string;
+	}[];
+}
+
+const { class: classList, circles } = Astro.props;
+
+const positionClassMap = {
+	'top-left': 'top-0 start-0',
+	'top-right': 'top-0 end-0',
+	'bottom-left': 'bottom-0 start-0',
+	'bottom-right': 'bottom-0 end-0',
+	'center-left': 'top-50 start-0',
+	'center-right': 'top-50 end-0',
+};
+---
+
+<style lang='scss'>
+	.circle {
+		width: var(--size);
+		height: var(--size);
+
+		&--small {
+			--size: 300px;
+		}
+		&--medium {
+			--size: 600px;
+		}
+		&--large {
+			--size: 900px;
+		}
+
+		&.top-left {
+			transform: translate(-35%, -35%);
+
+			&--extreme {
+				transform: translate(-50%, -50%);
+			}
+		}
+
+		&.top-right {
+			transform: translate(35%, -35%);
+		}
+
+		&.bottom-left {
+			transform: translate(-35%, 35%);
+		}
+
+		&.bottom-right {
+			transform: translate(35%, 35%);
+		}
+
+		&.center-left {
+			transform: translate(-35%, -35%);
+		}
+
+		&.center-right {
+			transform: translate(35%, -35%);
+		}
+	}
+</style>
+<div
+	class:list={[
+		classList,
+		'circles-container',
+		'position-relative',
+		'overflow-hidden',
+	]}
+>
+	{
+		circles.map(({ color, position, size }) => (
+			<div
+				class:list={[
+					'circle',
+					positionClassMap[position],
+					position,
+					`circle--${size}`,
+					'position-absolute',
+					'z-n1',
+				]}
+				style='opacity:.5'
+			>
+				<BGCircle color={color} />
+			</div>
+		))
+	}
+	<slot />
+</div>

@@ -1,18 +1,18 @@
 ---
 import { Image } from 'astro:assets';
+import likewise from '../assets/png/2025-partners/logo__likewise--white.png';
+import xp from '../assets/png/2025-partners/logo__xp-gathering--white.png';
+import rag from '../assets/png/slides/RAG-logo-sm-white.png';
 
-// Logos
-import oneDigital from '../assets/png/2025-sponsors/one-digital-health-and-benefits.png';
-import cla from '../assets/png/2025-sponsors/clifton-larson-allen.png';
-
-const logos = [
-	{ logo: oneDigital, alt: 'one digital' },
-	{ logo: cla, alt: 'clifton larson allen' },
+const partners = [
+	{ src: xp, alt: 'XP Gathering' },
+	{ src: likewise, alt: 'Likewise' },
+	{ src: rag, alt: 'Rescue a Generation' },
 ];
 ---
 
-<style lang='scss' define:vars={{ 'swiper-navigation-color': 'var(--bs-dark)' }}
->
+<style lang='scss' define:vars={{ 'swiper-navigation-color': 'white' }}>
+	@use '../styles/abstracts/mixins' as m;
 	.swiper {
 		max-height: 30rem;
 	}
@@ -22,17 +22,18 @@ const logos = [
 </div>
 <div class='col-10'>
 	<div
-		class='swiper h-auto'
-		id='sponsor-swiper'
+		class='swiper'
+		id='partners-swiper'
 	>
 		<div class='swiper-wrapper align-items-center'>
 			{
-				logos.map((logo) => (
-					<div class='swiper-slide d-flex justify-content-center align-items-center'>
+				partners.map((logo) => (
+					<div class='swiper-slide h-100 d-flex justify-content-center align-items-center'>
 						<Image
-							src={logo.logo}
-							class='logo object-fit-contain h-100 w-100'
+							src={logo.src}
+							class='w-100 h-100 object-fit-contain'
 							alt={logo.alt}
+							style={`${'Rescue a Generation' === logo.alt ? 'max-height: 86px' : ''}`}
 						/>
 						<div class='swiper-lazy-preloader swiper-lazy-preloader-white' />
 					</div>
@@ -41,7 +42,6 @@ const logos = [
 		</div>
 	</div>
 </div>
-
 <div class='col-1 position-relative'>
 	<div class='swiper-button-next'></div>
 </div>
@@ -53,16 +53,15 @@ const logos = [
 	import Swiper from 'swiper';
 	import { Autoplay, Navigation, A11y } from 'swiper/modules';
 
-	new Swiper('#sponsor-swiper', {
+	new Swiper('#partners-swiper', {
 		loop: true,
 		modules: [Autoplay, Navigation, A11y],
 		lazyPreloadPrevNext: 1,
 		speed: 800,
+		spaceBetween: 20,
 		autoplay: {
 			pauseOnMouseEnter: true,
 		},
-		spaceBetween: 20,
-		centerInsufficientSlides: true,
 		breakpoints: {
 			991: {
 				slidesPerView: 2,

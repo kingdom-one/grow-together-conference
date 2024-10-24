@@ -1,0 +1,104 @@
+---
+// Components
+import YouTubeVideo from '../../components/YouTubeVideo.astro';
+
+// Images
+import stepOne from '../../components/svg/cta-icons/step-1.astro';
+import stepTwo from '../../components/svg/cta-icons/step-2.astro';
+import stepThree from '../../components/svg/cta-icons/step-3.astro';
+import { K1_ACADEMY_ACCESS_LINK, TICKETS_URL } from '../../consts';
+
+const plan = [
+	{
+		icon: stepOne,
+		headline: 'Get Tickets',
+		description:
+			'Make the decision to grow your ministry today and click the button below to purchase your Teams Tickets!',
+		button: {
+			text: 'Get Tickets',
+			link: TICKETS_URL,
+		},
+	},
+	{
+		icon: stepTwo,
+		headline: 'Plan Your Day',
+		description:
+			'Learn more about the conference and Review our breakout sessions on the Sched app and start planning your conference day while you wait!',
+		button: {
+			text: 'Get The App',
+			link: 'https://growtogether2025.sched.com/mobile-site',
+		},
+	},
+	{
+		icon: stepThree,
+		headline: 'Start Growing Now',
+		description:
+			'Visit Kingdom One Academy to access the 2024 Grow Together Conference content and start growing today!',
+		button: {
+			text: 'Get Access',
+			link: K1_ACADEMY_ACCESS_LINK,
+		},
+	},
+];
+---
+
+<style>
+	figure.ratio.ratio-1x1 {
+		width: 200px;
+	}
+</style>
+<section
+	id='cta'
+	class='cta py-5'
+>
+	<div class='container'>
+		<div class='row my-5 justify-content-center'>
+			<div class='col-lg-10'>
+				<p class='text-center fw-bold fs-4'>
+					Enroll for the Ministry Network Conference, where you and
+					your team will gain insights from industry experts and build
+					a network of like-minded peers so that your ministry stays
+					relevant in this fast-changing culture.
+				</p>
+			</div>
+		</div>
+		<!-- <div class='row my-5'>
+			<div class='col'>
+				<YouTubeVideo videoId='ln57UDtpws8' />
+			</div>
+		</div> -->
+		<div class='row row-cols-1 row-cols-md-3 align-items-stretch row-gap-5'>
+			{
+				plan.map((step, index) => (
+					<div class='col text-center d-flex flex-column align-items-center'>
+						<figure
+							class='ratio ratio-1x1'
+							data-aos='fade-right'
+							data-aos-delay={(index + 1) * 150}
+						>
+							<step.icon
+								numberBG={'var(--bs-secondary)'}
+								iconBG={'var(--bs-primary)'}
+								iconColor={'var(--bs-dark)'}
+							/>
+						</figure>
+						<h3 class='h2'>{step.headline}</h3>
+						<p class='fs-5 mb-4'>{step.description}</p>
+						<a
+							target='_blank'
+							href={step.button.link}
+							class='btn btn-outline-dark align-self-center mt-auto'
+						>
+							{step.button.text}
+						</a>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<script>
+	import AOS from 'aos/dist/aos.js';
+	AOS.init();
+</script>

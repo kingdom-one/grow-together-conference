@@ -15,7 +15,13 @@ import shieldWhite from '../assets/svg/icons/shield--white.svg';
 import lineGradient from '../assets/png/line-gradient.png';
 import LearnMoreVideoModal from './LearnMoreVideoModal.astro';
 
-const roles = [
+const roles: Array<{
+	image: ImageMetadata;
+	role: string;
+	id: string;
+	videoId?: string;
+	posterQuality?: 'hqdefault' | 'maxresdefault';
+}> = [
 	{
 		image: mugWhite,
 		role: 'Senior Leaders',
@@ -75,15 +81,13 @@ const roles = [
 const { classes } = Astro.props;
 ---
 
-<style lang="scss">
+<style lang='scss'>
 	@use '../styles/abstracts/mixins' as m;
 	.roles-grid {
-		display: grid;
 		place-content: center;
 
 		@include m.media-breakpoint-up(md) {
 			grid-template-columns: repeat(3, 1fr);
-			gap: 4rem;
 		}
 
 		&__line-gradient {
@@ -93,22 +97,26 @@ const { classes } = Astro.props;
 	}
 </style>
 
-<div class={`${classes} roles-grid`}>
+<div class={`${classes} roles-grid d-grid gap-5`}>
 	{
 		roles.map((role) => (
-			<div class="d-flex flex-column align-items-center">
-				<div class="roles-grid__image">
+			<div class='d-flex flex-column align-items-center'>
+				<div class='roles-grid__image'>
 					<Image
 						src={role.image}
-						alt=""
-						data-aos="zoom-in"
-						class="h-auto"
+						alt=''
+						data-aos='zoom-in'
+						class='h-auto'
 					/>
 				</div>
-				<p class="fw-bold fs-4 text-uppercase text-center my-3">
+				<p class='fw-bold fs-4 text-uppercase text-center my-1'>
 					{role.role}
 				</p>
-				<Image src={lineGradient} alt="" class="mt-auto" />
+				<Image
+					src={lineGradient}
+					alt=''
+					class='mt-auto'
+				/>
 				<LearnMoreVideoModal
 					title={role.role}
 					videoId={role.videoId}
