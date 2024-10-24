@@ -7,6 +7,7 @@ export interface Props {
 		color: 'yellow' | 'dark' | 'green' | 'white';
 		position:
 			| 'top-left'
+			| 'top-left--extreme'
 			| 'top-right'
 			| 'bottom-left'
 			| 'bottom-right'
@@ -46,6 +47,10 @@ const positionClassMap = {
 
 		&.top-left {
 			transform: translate(-35%, -35%);
+
+			&--extreme {
+				transform: translate(-50%, -50%);
+			}
 		}
 
 		&.top-right {

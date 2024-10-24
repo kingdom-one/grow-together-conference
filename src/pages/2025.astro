@@ -6,19 +6,32 @@ import About from '../sections/About.astro';
 import CTA from '../sections/2025/CTA.astro';
 import SectionOverview from '../sections/2025/SectionOverview.astro';
 import TrackInfo from '../sections/2025/TrackInfo.astro';
+import Partners from '../sections/2025/Partners.astro';
+import FinalCTA from '../sections/2025/FinalCTA.astro';
+import LocationDetails from '../sections/LocationDetails.astro';
+import CirclesBG from '../sections/2025/CirclesBG.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
 
 import Sponsors from '../sections/Sponsors.astro';
 import Footer from '../sections/Footer.astro';
 
 // Styles
 import 'aos/dist/aos.css';
-import Partners from '../sections/2025/Partners.astro';
-import Testimonial from '../sections/Testimonial.astro';
-import FinalCTA from '../sections/2025/FinalCTA.astro';
-import LocationDetails from '../sections/LocationDetails.astro';
-import CirclesBG from '../sections/2025/CirclesBG.astro';
 
-// Assets
+const testimonials = [
+	{
+		quote: 'Very helpful and informative. Julia was a great presenter, she communicated clearly and was very friendly and helpful.',
+		name: 'S. White',
+	},
+	{
+		quote: 'The information given was valuable. I believe it would have been helpful for those newer to HR to touch on the legal requirements of hiring and onboarding since most of the attendees are California employers. At the very least, a disclaimer to know California law when hiring.',
+		name: 'J. Baker',
+	},
+	{
+		quote: 'Very organized. Sessions were communicated with structure, practical examples, and clarity. ',
+		name: 'L. Faulkner',
+	},
+];
 ---
 
 <Layout title='Grow Together Conference 2025'>
@@ -61,16 +74,33 @@ import CirclesBG from '../sections/2025/CirclesBG.astro';
 	>
 		<CTA />
 	</CirclesBG>
-	<SectionOverview />
-	<TrackInfo />
-	<Testimonial />
+	<!-- <SectionOverview /> -->
+	<!-- <TrackInfo /> -->
+	<!-- <Testimonial /> -->
+	<section
+		id='testimonials'
+		class='text-bg-primary'
+	>
+		<div class='container py-5'>
+			<div class='row row-cols-lg-3 gap-3 gx-0'>
+				{
+					testimonials.map(({ quote, name }) => (
+						<TestimonialCard
+							quote={quote}
+							name={name}
+						/>
+					))
+				}
+			</div>
+		</div>
+	</section>
 	<Sponsors />
 	<CirclesBG
 		circles={[
 			{
 				color: 'dark',
-				position: 'top-left',
-				size: 'medium',
+				position: 'top-left--extreme',
+				size: 'small',
 			},
 			{
 				color: 'yellow',
@@ -89,7 +119,7 @@ import CirclesBG from '../sections/2025/CirclesBG.astro';
 			location={{
 				name: 'San Dimas',
 				description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.`,
-				date: 'Thursday, February 8, 2024 • 8:30am – 4pm PST',
+				date: 'May 7th & 8th, 2025',
 
 				hotelsLink: `https://www.google.com/maps/search/Hotels/@34.1007971,-117.8355881,14.91z/data=!4m8!2m7!3m6!1sHotels!2sONE%26ALL+Church,+San+Dimas,+1404+W+Covina+Blvd,+San+Dimas,+CA+91773!3s0x80c328cdd9ffd539:0xb3be8d1e218251f1!4m2!1d-117.8365508!2d34.0984172?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D`,
 				iframe: {
@@ -108,6 +138,5 @@ import CirclesBG from '../sections/2025/CirclesBG.astro';
 			}}
 		/>
 	</CirclesBG>
-
 	<Footer />
 </Layout>
