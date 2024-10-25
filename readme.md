@@ -13,6 +13,12 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 5.0.1
+
+-   Fixed an issue where the mountain skyline was appearing poorly on mobile views
+-   Fixed an issue where the icons next to the K1 academy callout were poorly positioned across viewport sizes
+-   Alter the github action to compile with bun instead of npm for faster dependency downloads
+
 ## 5.0.0
 
 -   2025 Update!
