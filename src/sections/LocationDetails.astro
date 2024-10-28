@@ -30,7 +30,7 @@ const {
 			<div class='col-lg-7'>
 				<div class='row'>
 					<h2>{name}</h2>
-					<p class='fs-5 fst-italic mark'>
+					<p class='fs-5'>
 						{description}
 					</p>
 				</div>
@@ -47,7 +47,7 @@ const {
 				</div>
 				<div class='row'>
 					<h3>Local Attractions</h3>
-					<ul class='row ms-4'>
+					<ul class='row m-0 p-0 list-unstyled'>
 						{
 							attractions.map((attraction) => (
 								<AttractionPreview attraction={attraction} />
