@@ -13,6 +13,11 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 5.0.4
+
+-   Update final "Get tickets" CTA Location
+-   Set 2025 to homepage!
+
 ## 5.0.3
 
 -   Fix local attraction images' styling

@@ -1,50 +1,147 @@
 ---
 // Components
 import Layout from '../layouts/Layout.astro';
-
+import Hero from '../sections/heros/2025Hero.astro';
 import About from '../sections/About.astro';
+import CTA from '../sections/2025/CTA.astro';
+import SectionOverview from '../sections/2025/SectionOverview.astro';
+import TrackInfo from '../sections/2025/TrackInfo.astro';
+import Partners from '../sections/2025/Partners.astro';
+import FinalCTA from '../sections/2025/FinalCTA.astro';
+import LocationDetails from '../sections/LocationDetails.astro';
+import CirclesBG from '../sections/2025/CirclesBG.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+
 import Sponsors from '../sections/Sponsors.astro';
 import Footer from '../sections/Footer.astro';
 
 // Styles
 import 'aos/dist/aos.css';
 
-// Assets
-import inlandEmpire from '../assets/svg/inland-empire-skyline.svg';
-import MidTermHero from '../sections/heros/MidTermHero.astro';
+// Images
+import disney from '../assets/jpg/disneyland.jpg';
+import farm from '../assets/jpg/knotts-berry-farm.jpg';
+import universal from '../assets/jpg/universal-studios.jpg';
 
-const locations = [
+const testimonials = [
 	{
-		name: 'Inland Empire',
-		bgColor: 'bg-grey',
-		description: `Nestled at the base of the majestic San Gabriel Mountains, Rancho Cucamonga, California, beckons with its scenic beauty, thriving vineyards, and a blend of urban sophistication and suburban charm. Explore this hidden gem where outdoor adventures meet cultural delights, offering a unique and memorable experience for every visitor.`,
-		className: 'inland-empire',
-		date: 'Thursday, February 8, 2024 • 8:30am – 4pm PST',
-		image: {
-			src: inlandEmpire,
-			alt: 'An outline of the Rancho Cucamonga mountains.',
-		},
-		hotelsLink: `https://www.google.com/maps/search/Hotel/@34.1168531,-117.5563928,13z/data=!3m1!4b1!4m7!2m6!3m5!2sONE%26ALL+Church,+Rancho+Cucamonga,+7576+Etiwanda+Ave,+Etiwanda,+CA+91739!3s0x80c34a21e31008c3:0x1b2e17a43fe0775f!4m2!1d-117.525493!2d34.1167854?entry=ttu`,
-		iframe: {
-			src: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.1546739403034!2d-117.53036927678396!3d34.11678974484491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c34a21e31008c3%3A0x1b2e17a43fe0775f!2sONE%26ALL%20Church%2C%20Rancho%20Cucamonga!5e0!3m2!1sen!2sus!4v1702437315012!5m2!1sen!2sus`,
-			title: `Embedded Google Map of the area around One&ALL Church`,
-		},
-		locationDetails: {
-			name: 'One&ALL Church',
-			address: '7576 Etiwanda Ave, Rancho Cucamonga, CA 91739',
-		},
-		attractions: [
-			'Victoria Gardens',
-			'Etiwanda Falls Trailhead',
-			'K1 Speed — Indoor Go Karts',
-		],
+		quote: 'Very helpful and informative. Julia was a great presenter, she communicated clearly and was very friendly and helpful.',
+		name: 'S. White',
+	},
+	{
+		quote: 'The information given was valuable. I believe it would have been helpful for those newer to HR to touch on the legal requirements of hiring and onboarding since most of the attendees are California employers. At the very least, a disclaimer to know California law when hiring.',
+		name: 'J. Baker',
+	},
+	{
+		quote: 'Very organized. Sessions were communicated with structure, practical examples, and clarity. ',
+		name: 'L. Faulkner',
 	},
 ];
 ---
 
-<Layout title='Grow Together Conference 2024'>
-	<MidTermHero />
-	<About />
+<Layout title='Grow Together Conference 2025'>
+	<CirclesBG
+		circles={[
+			{
+				color: 'green',
+				position: 'top-right',
+				size: 'large',
+			},
+			{
+				color: 'yellow',
+				position: 'center-left',
+				size: 'medium',
+			},
+			{
+				color: 'dark',
+				position: 'bottom-right',
+				size: 'small',
+			},
+		]}
+	>
+		<Hero />
+		<About />
+	</CirclesBG>
+	<Partners />
+	<CirclesBG
+		circles={[
+			{
+				color: 'dark',
+				position: 'top-left',
+				size: 'small',
+			},
+			{
+				color: 'yellow',
+				position: 'center-right',
+				size: 'medium',
+			},
+		]}
+	>
+		<CTA />
+	</CirclesBG>
+	<!-- <SectionOverview /> -->
+	<!-- <TrackInfo /> -->
+	<!-- <Testimonial /> -->
+	<section
+		id='testimonials'
+		class='text-bg-primary'
+	>
+		<div class='container py-5'>
+			<div class='row row-cols-lg-3 gap-3 gx-0'>
+				{
+					testimonials.map(({ quote, name }) => (
+						<TestimonialCard
+							quote={quote}
+							name={name}
+						/>
+					))
+				}
+			</div>
+		</div>
+	</section>
 	<Sponsors />
+	<CirclesBG
+		circles={[
+			{
+				color: 'dark',
+				position: 'top-left--extreme',
+				size: 'small',
+			},
+			{
+				color: 'yellow',
+				position: 'top-right',
+				size: 'large',
+			},
+			{
+				color: 'green',
+				position: 'center-left',
+				size: 'medium',
+			},
+		]}
+	>
+		<FinalCTA />
+		<LocationDetails
+			location={{
+				name: 'San Dimas',
+				description: `San Dimas offers a variety of attractions and fantastic hotels just a short distance from the conference venue.`,
+				date: 'May 7th & 8th, 2025',
+
+				hotelsLink: `https://www.google.com/maps/search/Hotels/@34.1007971,-117.8355881,14.91z/data=!4m8!2m7!3m6!1sHotels!2sONE%26ALL+Church,+San+Dimas,+1404+W+Covina+Blvd,+San+Dimas,+CA+91773!3s0x80c328cdd9ffd539:0xb3be8d1e218251f1!4m2!1d-117.8365508!2d34.0984172?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D`,
+				iframe: {
+					src: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d973.9834712109318!2d-117.83685611397642!3d34.09840109523141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c328cdd9ffd539%3A0xb3be8d1e218251f1!2sONE%26ALL%20Church%2C%20San%20Dimas!5e0!3m2!1sen!2sus!4v1729370013239!5m2!1sen!2sus`,
+					title: `Embedded Google Map of the area around ONE&ALL Church, San Dimas`,
+				},
+				locationDetails: {
+					name: 'ONE&ALL Church, San Dimas',
+					address: '1404 W Covina Blvd San Dimas, CA 91773',
+				},
+				attractions: [
+					{ title: 'Universal Studios', src: universal },
+					{ title: 'Knotts Berry Farm', src: farm },
+					{ title: 'Disneyland', src: disney },
+				],
+			}}
+		/>
+	</CirclesBG>
 	<Footer />
 </Layout>
