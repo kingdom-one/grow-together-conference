@@ -13,6 +13,10 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 5.0.3
+
+-   Fix local attraction images' styling
+
 ## 5.0.2
 
 -   Update the intro video

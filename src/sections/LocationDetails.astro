@@ -18,7 +18,7 @@ const {
 ---
 
 <section class='location-details inland-empire overflow-x-hidden py-5'>
-	<div class='container position-relative'>
+	<div class='container position-relative d-flex flex-column row-gap-5 mb-5'>
 		<div class='row'>
 			<div class='col-12'>
 				<figure class='mb-0 w-100'>
@@ -26,37 +26,25 @@ const {
 				</figure>
 			</div>
 		</div>
-		<div class='row my-5'>
-			<div class='col-lg-7'>
-				<div class='row'>
+		<div class='row row-gap-5'>
+			<div class='col-lg-7 d-flex flex-column row-gap-4'>
+				<div class='name'>
 					<h2>{name}</h2>
-					<p class='fs-5'>
+					<p class='fs-5 mb-0'>
 						{description}
 					</p>
 				</div>
-				<div class='row'>
-					<h3 class='mt-5'>Date & Time</h3>
-					<p class='fs-5'>
+				<div class='event-details'>
+					<h3>Date & Time</h3>
+					<p class='fs-5 mb-0'>
 						{date}
 					</p>
 				</div>
-				<div class='row my-5'>
-					<div class='col-lg-8'>
-						<NearbyHotel href={hotelsLink} />
-					</div>
-				</div>
-				<div class='row'>
-					<h3>Local Attractions</h3>
-					<ul class='row m-0 p-0 list-unstyled'>
-						{
-							attractions.map((attraction) => (
-								<AttractionPreview attraction={attraction} />
-							))
-						}
-					</ul>
+				<div class='hotels'>
+					<NearbyHotel href={hotelsLink} />
 				</div>
 			</div>
-			<div class='col-lg-5 mt-5 mt-lg-0'>
+			<div class='col'>
 				<h3>Location</h3>
 				<div
 					class='border rounded-5 overflow-hidden ratio ratio-1x1 w-100'
@@ -79,14 +67,24 @@ const {
 				/>
 			</div>
 		</div>
-		<div class='row justify-content-center'>
-			<div class='col text-center'>
-				<a
-					href={TICKETS_URL}
-					class='btn btn-outline-dark rounded-pill'
-					>Get Tickets</a
-				>
-			</div>
+		<div class='row'>
+			<h3>Local Attractions</h3>
+			<ul class='row m-0 p-0 list-unstyled row-gap-5'>
+				{
+					attractions.map((attraction) => (
+						<AttractionPreview attraction={attraction} />
+					))
+				}
+			</ul>
+		</div>
+	</div>
+	<div class='row justify-content-center'>
+		<div class='col text-center'>
+			<a
+				href={TICKETS_URL}
+				class='btn btn-outline-dark rounded-pill'
+				>Get Tickets</a
+			>
 		</div>
 	</div>
 </section>
