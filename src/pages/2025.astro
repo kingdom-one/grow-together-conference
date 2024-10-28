@@ -18,6 +18,11 @@ import Footer from '../sections/Footer.astro';
 // Styles
 import 'aos/dist/aos.css';
 
+// Images
+import disney from '../assets/jpg/disneyland.jpg';
+import farm from '../assets/jpg/knotts-berry-farm.jpg';
+import universal from '../assets/jpg/universal-studios.jpg';
+
 const testimonials = [
 	{
 		quote: 'Very helpful and informative. Julia was a great presenter, she communicated clearly and was very friendly and helpful.',
@@ -118,7 +123,7 @@ const testimonials = [
 		<LocationDetails
 			location={{
 				name: 'San Dimas',
-				description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.`,
+				description: `San Dimas offers a variety of attractions and fantastic hotels just a short distance from the conference venue.`,
 				date: 'May 7th & 8th, 2025',
 
 				hotelsLink: `https://www.google.com/maps/search/Hotels/@34.1007971,-117.8355881,14.91z/data=!4m8!2m7!3m6!1sHotels!2sONE%26ALL+Church,+San+Dimas,+1404+W+Covina+Blvd,+San+Dimas,+CA+91773!3s0x80c328cdd9ffd539:0xb3be8d1e218251f1!4m2!1d-117.8365508!2d34.0984172?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D`,
@@ -131,9 +136,9 @@ const testimonials = [
 					address: '1404 W Covina Blvd San Dimas, CA 91773',
 				},
 				attractions: [
-					'Universal Studios',
-					'Knotts Berry Farm',
-					'Disneyland',
+					{ title: 'Universal Studios', src: universal },
+					{ title: 'Knotts Berry Farm', src: farm },
+					{ title: 'Disneyland', src: disney },
 				],
 			}}
 		/>

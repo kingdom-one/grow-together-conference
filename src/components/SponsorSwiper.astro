@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 // Logos
 import oneDigital from '../assets/png/2025-sponsors/one-digital-health-and-benefits.png';
 import cla from '../assets/png/2025-sponsors/clifton-larson-allen.png';
+import FivestarLogo from '../components/svg/FivestarLogo.astro';
 
 const logos = [
 	{ logo: oneDigital, alt: 'one digital' },
@@ -38,6 +39,11 @@ const logos = [
 					</div>
 				))
 			}
+			<div
+				class='swiper-slide d-flex justify-content-center align-items-center'
+			>
+				<FivestarLogo style='mono' />
+			</div>
 		</div>
 	</div>
 </div>

@@ -13,6 +13,12 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 5.0.2
+
+-   Update the intro video
+-   Add actual copy to location preview
+-   Add images to location preview
+
 ## 5.0.1
 
 -   Fixed an issue where the mountain skyline was appearing poorly on mobile views

@@ -1,14 +1,26 @@
 ---
+import { Image } from 'astro:assets';
+
 export interface Props {
-	attraction: string;
+	attraction: {
+		title: string;
+		src: ImageMetadata;
+	};
 }
 const { attraction } = Astro.props;
 ---
 
-<li class="attraction">
-	<div class="card-body">
-		<h4 class="card-title fw-normal fs-5">
-			{attraction}
+<li class='attraction col-lg-4'>
+	<div class='card-body rounded-5'>
+		<figure class='ratio ratio-1x1'>
+			<Image
+				class='w-100 h-100 object-fit-cover'
+				src={attraction.src}
+				alt={attraction.title}
+			/>
+		</figure>
+		<h4 class='card-title fs-5 mb-0'>
+			{attraction.title}
 		</h4>
 	</div>
 </li>
