@@ -1,0 +1,36 @@
+---
+import TestimonialCard from '../../components/TestimonialCard.astro';
+
+const testimonials = [
+	{
+		quote: 'Very helpful and informative. Julia was a great presenter, she communicated clearly and was very friendly and helpful.',
+		name: 'S. White',
+	},
+	{
+		quote: 'The information given was valuable. I believe it would have been helpful for those newer to HR to touch on the legal requirements of hiring and onboarding since most of the attendees are California employers. At the very least, a disclaimer to know California law when hiring.',
+		name: 'J. Baker',
+	},
+	{
+		quote: 'Very organized. Sessions were communicated with structure, practical examples, and clarity. ',
+		name: 'L. Faulkner',
+	},
+];
+---
+
+<section
+	id='testimonials'
+	class='text-bg-primary'
+>
+	<div class='container py-5'>
+		<div class='row row-cols-lg-3 gap-3 gx-0'>
+			{
+				testimonials.map(({ quote, name }) => (
+					<TestimonialCard
+						quote={quote}
+						name={name}
+					/>
+				))
+			}
+		</div>
+	</div>
+</section>

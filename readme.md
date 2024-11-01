@@ -13,6 +13,11 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 5.1.0
+
+-   Added 2025 speakers
+-   Update intro video
+
 ## 5.0.4
 
 -   Update final "Get tickets" CTA Location
