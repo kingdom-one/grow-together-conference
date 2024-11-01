@@ -1,0 +1,34 @@
+---
+import PieGraph from './svg/icons/pie-graph.astro';
+import Pen from './svg/icons/pen.astro';
+import Key from './svg/icons/key.astro';
+---
+
+<figure
+	class='mb-0 col-5 col-md-2 row icon-cluster'
+	aria-hidden='true'
+>
+	<div class='col-12 row row-cols-2'>
+		<div data-aos='fade-in'>
+			<PieGraph
+				fill='#2b3636'
+				opacity={0.38}
+			/>
+		</div>
+		<div data-aos='fade-in'>
+			<Pen
+				fill='#2b3636'
+				opacity={0.38}
+			/>
+		</div>
+	</div>
+	<div
+		class='col-5'
+		data-aos='fade-in'
+	>
+		<Key
+			fill='#2b3636'
+			opacity={0.38}
+		/>
+	</div>
+</figure>
