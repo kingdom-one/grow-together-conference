@@ -1,18 +1,8 @@
 ---
 import Hero from '../Hero.astro';
 
-import { Image } from 'astro:assets';
-
-import leadership from '../../assets/svg/Leadership.svg';
-import people from '../../assets/svg/People.svg';
-import practices from '../../assets/svg/practices.svg';
 import YouTubeVideo from '../../components/YouTubeVideo.astro';
-
-const words = [
-	{ word: 'Courageous', svg: leadership, alt: 'leadership' },
-	{ word: 'Healthy', svg: people, alt: 'people' },
-	{ word: 'Effective', svg: practices, alt: 'practices' },
-];
+import ConferenceValues from '../../components/ConferenceValues.astro';
 ---
 
 <Hero>
@@ -52,27 +42,7 @@ const words = [
 			>
 		</div>
 	</div>
-	<div class='row row-cols-1 row-cols-lg-3 my-5 justify-content-around'>
-		{
-			words.map((word, index) => {
-				const delay = (index + 1) * 150;
-				return (
-					<div
-						class='col d-flex text-center align-items-center justify-content-lg-center'
-						data-aos='fade-right'
-						data-aos-delay={delay}
-					>
-						<span class='fw-bold fs-4 me-2'>
-							{word.word}
-							<br class='d-none d-lg-block d-xxl-none' />
-							<Image
-								src={word.svg}
-								alt={word.alt}
-							/>
-						</span>
-					</div>
-				);
-			})
-		}
+	<div class='row'>
+		<div class='col'><ConferenceValues scriptColor='white' /></div>
 	</div>
 </Hero>

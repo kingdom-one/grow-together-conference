@@ -13,6 +13,10 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 5.1.2
+
+-   Set script svg and containing component to be more component-ized.
+
 ## 5.1.1
 
 -   Fix Speakers copy / assets

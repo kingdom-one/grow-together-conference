@@ -1,7 +1,37 @@
 ---
+type ColorValues = {
+	leadership: string;
+	people: string;
+	practices: string;
+};
+export interface Props {
+	scriptColor?: string | ColorValues;
+}
 import People from '../components/svg/people.astro';
 import Practices from '../components/svg/practices.astro';
 import Leadership from '../components/svg/leadership.astro';
+
+const { scriptColor } = Astro.props;
+const colors = {
+	leadership: 'var(--bs-dark)',
+	people: 'var(--bs-dark)',
+	practices: 'var(--bs-dark)',
+};
+
+if (scriptColor) {
+	switch (typeof scriptColor) {
+		case 'string':
+			colors.leadership = scriptColor;
+			colors.people = scriptColor;
+			colors.practices = scriptColor;
+			break;
+		case 'object':
+			colors.leadership = scriptColor.leadership;
+			colors.people = scriptColor.people;
+			colors.practices = scriptColor.practices;
+			break;
+	}
+}
 ---
 
 <div class='row row-cols-1 row-cols-lg-3 my-5 justify-content-around'>
@@ -16,7 +46,7 @@ import Leadership from '../components/svg/leadership.astro';
 			aria-hidden='true'
 			>Courageous</span
 		>
-		<Leadership color='var(--bs-dark)' />
+		<Leadership color={colors.leadership} />
 	</figure>
 	<figure
 		class='col d-flex text-center align-items-center justify-content-lg-center'
@@ -29,7 +59,7 @@ import Leadership from '../components/svg/leadership.astro';
 			aria-hidden='true'
 			>Healthy</span
 		>
-		<Practices color='var(--bs-dark)' />
+		<Practices color={colors.practices} />
 	</figure>
 	<figure
 		class='col d-flex text-center align-items-center justify-content-lg-center'
@@ -42,6 +72,6 @@ import Leadership from '../components/svg/leadership.astro';
 			aria-hidden='true'
 			>Effective</span
 		>
-		<People color='var(--bs-dark)' />
+		<People color={colors.people} />
 	</figure>
 </div>
