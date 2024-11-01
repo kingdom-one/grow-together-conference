@@ -1,26 +1,47 @@
 ---
-const words = [
-	{ word: 'Courageous Leadership' },
-	{ word: 'Healthy People' },
-	{ word: 'Effective Practices' },
-];
+import People from '../components/svg/people.astro';
+import Practices from '../components/svg/practices.astro';
+import Leadership from '../components/svg/leadership.astro';
 ---
 
 <div class='row row-cols-1 row-cols-lg-3 my-5 justify-content-around'>
-	{
-		words.map(({ word }, index) => {
-			const delay = (index + 1) * 150;
-			return (
-				<div
-					class='col d-flex text-center align-items-center justify-content-lg-center'
-					data-aos='fade-right'
-					data-aos-delay={delay}
-				>
-					<span class='fw-bold fs-4 me-2 text-capitalize'>
-						{word}
-					</span>
-				</div>
-			);
-		})
-	}
+	<figure
+		class='col d-flex text-center align-items-center justify-content-lg-center'
+		data-aos='fade-right'
+		data-aos-delay={150}
+		aria-label='Courageous Leadership'
+	>
+		<span
+			class='fw-bold fs-4 me-2 text-capitalize'
+			aria-hidden='true'
+			>Courageous</span
+		>
+		<Leadership color='var(--bs-dark)' />
+	</figure>
+	<figure
+		class='col d-flex text-center align-items-center justify-content-lg-center'
+		data-aos='fade-right'
+		data-aos-delay={250}
+		aria-label='Healthy Practices'
+	>
+		<span
+			class='fw-bold fs-4 me-2 text-capitalize'
+			aria-hidden='true'
+			>Healthy</span
+		>
+		<Practices color='var(--bs-dark)' />
+	</figure>
+	<figure
+		class='col d-flex text-center align-items-center justify-content-lg-center'
+		data-aos='fade-right'
+		data-aos-delay={350}
+		aria-label='Effective People'
+	>
+		<span
+			class='fw-bold fs-4 me-2 text-capitalize'
+			aria-hidden='true'
+			>Effective</span
+		>
+		<People color='var(--bs-dark)' />
+	</figure>
 </div>

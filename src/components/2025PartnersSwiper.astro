@@ -5,9 +5,13 @@ import xp from '../assets/png/2025-partners/logo__xp-gathering--white.png';
 import rag from '../assets/png/slides/RAG-logo-sm-white.png';
 
 const partners = [
-	{ src: xp, alt: 'XP Gathering' },
-	{ src: likewise, alt: 'Likewise' },
-	{ src: rag, alt: 'Rescue a Generation' },
+	{ src: xp, alt: 'XP Gathering', href: 'https://www.xpgathering.com' },
+	{ src: likewise, alt: 'Likewise', href: 'https://www.likewiseworship.com' },
+	{
+		src: rag,
+		alt: 'Rescue a Generation',
+		href: 'https://www.rescueageneration.com',
+	},
 ];
 ---
 
@@ -29,13 +33,20 @@ const partners = [
 			{
 				partners.map((logo) => (
 					<div class='swiper-slide h-100 d-flex justify-content-center align-items-center'>
-						<Image
-							src={logo.src}
-							class='w-100 h-100 object-fit-contain'
-							alt={logo.alt}
-							style={`${'Rescue a Generation' === logo.alt ? 'max-height: 86px' : ''}`}
-						/>
-						<div class='swiper-lazy-preloader swiper-lazy-preloader-white' />
+						<a
+							href={logo.href}
+							target='_blank'
+							class='d-block h-100 w-100'
+							title={`Open ${logo.alt}'s website in a new tab`}
+						>
+							<Image
+								src={logo.src}
+								class='w-100 h-100 object-fit-contain'
+								alt={logo.alt}
+								style={`${'Rescue a Generation' === logo.alt ? 'max-height: 86px' : ''}`}
+							/>
+							<div class='swiper-lazy-preloader swiper-lazy-preloader-white' />
+						</a>
 					</div>
 				))
 			}

@@ -13,6 +13,13 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 5.1.1
+
+-   Fix Speakers copy / assets
+-   Fix overflow issue
+-   Add script font back in for values and make accessible for Screen readers
+-   Add links to partners swiper
+
 ## 5.1.0
 
 -   Added 2025 speakers
