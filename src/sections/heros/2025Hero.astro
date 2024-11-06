@@ -6,6 +6,7 @@ import K1Logo from '../../components/svg/k1-logo.astro';
 import { TICKETS_URL } from '../../consts';
 import YouTubeVideo from '../../components/YouTubeVideo.astro';
 import ConferenceValues from '../../components/ConferenceValues.astro';
+import WaitlistButton from '../../components/WaitlistButton.astro';
 ---
 
 <style>
@@ -52,21 +53,25 @@ import ConferenceValues from '../../components/ConferenceValues.astro';
 				Keep Your Ministry Team Engaged
 			</h2>
 			<p class='fs-5'>
-				Is limited time, resources, and knowledge holding your ministry
-				team back? A team working out of their depth will lead to
-				burnout and frustration. Grow Together 2025 is a resource for
-				your team to safely sharpen their skills, grow, and be
-				challenged in their ministry work.
+				Culture is changing at a rapid rate, and keeping up with all of
+				the trends necessary to cultivate vitality in your ministry team
+				can be a daunting task. When you attend the 2024 Grow Together
+				Conference, you provide your team the space to obtain the
+				knowledge, skills, and network necessary to maintain a culture
+				of health and effectiveness in your ministry.
 			</p>
-			<a
+			<!-- <a
 				href={TICKETS_URL}
 				target='_blank'
 				class='btn btn-outline-dark align-self-start text-uppercase'
 				>Get Tickets</a
-			>
+			> -->
+			<WaitlistButton class={['btn-outline-dark']} />
 		</div>
-	</div>
-	<div class='row'>
-		<div class='col'><ConferenceValues scriptColor='var(--bs-dark)' /></div>
+		<div class='row'>
+			<div class='col'>
+				<ConferenceValues scriptColor='var(--bs-dark)' />
+			</div>
+		</div>
 	</div>
 </section>

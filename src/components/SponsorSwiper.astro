@@ -3,80 +3,73 @@ import { Image } from 'astro:assets';
 
 // Logos
 import oneDigital from '../assets/png/2025-sponsors/one-digital-health-and-benefits.png';
+import paylocity from '../assets/png/2025-sponsors/paylocity.png';
+import forte from '../assets/png/2025-sponsors/forte.png';
 import cla from '../assets/png/2025-sponsors/clifton-larson-allen.png';
 import FivestarLogo from '../components/svg/FivestarLogo.astro';
 
 const logos = [
 	{ logo: oneDigital, alt: 'one digital' },
 	{ logo: cla, alt: 'clifton larson allen' },
+	{ logo: paylocity, alt: 'paylocity' },
+	{ logo: forte, alt: 'forte' },
 ];
 ---
 
-<style lang='scss' define:vars={{ 'swiper-navigation-color': 'var(--bs-dark)' }}
->
-	.swiper {
-		max-height: 30rem;
-	}
-</style>
-<div class='col-1 position-relative'>
-	<div class='swiper-button-prev'></div>
-</div>
-<div class='col-10'>
-	<div
-		class='swiper h-auto'
-		id='sponsor-swiper'
-	>
-		<div class='swiper-wrapper align-items-center'>
-			{
-				logos.map((logo) => (
-					<div class='swiper-slide d-flex justify-content-center align-items-center'>
-						<Image
-							src={logo.logo}
-							class='logo object-fit-contain h-100 w-100'
-							alt={logo.alt}
-						/>
-						<div class='swiper-lazy-preloader swiper-lazy-preloader-white' />
+<div class='row justify-content-center'>
+	<div class='col-lg-10'>
+		<div
+			class='row'
+			style='--swiper-navigation-color:var(--bs-dark)'
+		>
+			<div class='col-1 position-relative'>
+				<div class='swiper-button-prev'></div>
+			</div>
+			<div class='col-10'>
+				<div
+					class='swiper h-auto'
+					id='sponsor-swiper'
+				>
+					<div class='swiper-wrapper align-items-center'>
+						{
+							logos.map((logo) => (
+								<div class='swiper-slide d-flex justify-content-center align-items-center'>
+									<Image
+										src={logo.logo}
+										class='logo object-fit-scale h-100 w-100'
+										alt={logo.alt}
+									/>
+									<div class='swiper-lazy-preloader swiper-lazy-preloader-white' />
+								</div>
+							))
+						}
+						<div
+							class='swiper-slide d-flex justify-content-center align-items-center'
+						>
+							<FivestarLogo style='mono' />
+						</div>
 					</div>
-				))
-			}
-			<div
-				class='swiper-slide d-flex justify-content-center align-items-center'
-			>
-				<FivestarLogo style='mono' />
+				</div>
+			</div>
+			<div class='col-1 position-relative'>
+				<div class='swiper-button-next'></div>
 			</div>
 		</div>
 	</div>
 </div>
-
-<div class='col-1 position-relative'>
-	<div class='swiper-button-next'></div>
-</div>
 <script>
 	import 'swiper/css';
 	import 'swiper/css/navigation';
-	import 'swiper/css/autoplay';
 	import 'swiper/css/a11y';
 	import Swiper from 'swiper';
-	import { Autoplay, Navigation, A11y } from 'swiper/modules';
+	import { Navigation, A11y } from 'swiper/modules';
 
 	new Swiper('#sponsor-swiper', {
 		loop: true,
-		modules: [Autoplay, Navigation, A11y],
-		lazyPreloadPrevNext: 1,
-		speed: 800,
-		autoplay: {
-			pauseOnMouseEnter: true,
-		},
-		spaceBetween: 20,
+		modules: [Navigation, A11y],
+		autoHeight: true,
+		spaceBetween: 0,
 		centerInsufficientSlides: true,
-		breakpoints: {
-			991: {
-				slidesPerView: 2,
-			},
-			1200: {
-				slidesPerView: 3,
-			},
-		},
 		navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
