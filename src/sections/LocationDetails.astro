@@ -2,19 +2,51 @@
 import LocationPin from '../components/LocationPin.astro';
 import { TICKETS_URL } from '../consts';
 import AttractionPreview from '../components/AttractionPreview.astro';
-import NearbyHotel from '../components/NearbyHotel.astro';
+import FeaturedHotel from '../components/FeaturedHotel.astro';
 import InlandEmpireMountains from '../components/svg/inland-empire-mountains.astro';
 
-const { location } = Astro.props;
-const {
-	name,
-	description,
-	hotelsLink,
-	iframe,
-	locationDetails,
-	date,
-	attractions,
-} = location;
+import disney from '../assets/jpg/disneyland.jpg';
+import farm from '../assets/jpg/knotts-berry-farm.jpg';
+import universal from '../assets/jpg/universal-studios.jpg';
+import doubletree from '../assets/jpg/doubletree.jpg';
+import sheraton from '../assets/jpg/sheraton.jpg';
+
+const location = {
+	name: 'San Dimas',
+	description: `Join us in San Dimas, California, for the Grow Together Conference—a destination where inspiration meets opportunity. With sunny spring weather averaging in the comfortable 70s, San Dimas offers the perfect backdrop for meaningful connections and powerful team-building experiences. Attendees can recharge and collaborate at Frank G. Bonelli Regional Park, with opportunities for kayaking, hiking, and lakeside gatherings. For a bit of fun, Raging Waters—California’s largest water park—adds excitement and adventure to the mix. Beyond the conference, San Dimas' cozy downtown provides the ideal setting for deep conversations over coffee or dinner. Conveniently located near Los Angeles, this vibrant community will leave your team motivated, refreshed, and ready to grow together like never before.`,
+	hotels: [
+		{
+			name: 'DoubleTree by Hilton Hotel Claremont',
+			address: '555 W Foothill Blvd, Claremont, CA 91711',
+			rating: 4.3,
+			googleReviews: 1417,
+			image: doubletree,
+		},
+		{
+			name: 'Sheraton Fairplex Suites & Conference Center',
+			address: '601 W McKinley Ave, Pomona, CA 91768',
+			rating: 4.4,
+			googleReviews: 1930,
+			image: sheraton,
+		},
+	],
+	iframe: {
+		src: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d973.9834712109318!2d-117.83685611397642!3d34.09840109523141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c328cdd9ffd539%3A0xb3be8d1e218251f1!2sONE%26ALL%20Church%2C%20San%20Dimas!5e0!3m2!1sen!2sus!4v1729370013239!5m2!1sen!2sus`,
+		title: `Embedded Google Map of the area around ONE&ALL Church, San Dimas`,
+	},
+	locationDetails: {
+		name: 'ONE&ALL Church, San Dimas',
+		address: '1404 W Covina Blvd San Dimas, CA 91773',
+	},
+	attractions: [
+		{ title: 'Universal Studios', src: universal },
+		{ title: 'Knotts Berry Farm', src: farm },
+		{ title: 'Disneyland', src: disney },
+	],
+};
+
+const { name, description, hotels, iframe, locationDetails, attractions } =
+	location;
 ---
 
 <section class='location-details inland-empire overflow-x-hidden py-5'>
@@ -37,7 +69,8 @@ const {
 				<div class='event-details'>
 					<h3>Date & Time</h3>
 					<p class='fs-5'>
-						{date}
+						May 7 from 1 pm &ndash; 5 pm PST <br /> May 8 from 10 am
+						&ndash; 4 pm PST
 					</p>
 					<a
 						href={TICKETS_URL}
@@ -46,7 +79,28 @@ const {
 					>
 				</div>
 				<div class='hotels mt-5'>
-					<NearbyHotel href={hotelsLink} />
+					<div class='row'>
+						<div class='col'>
+							<h3>Nearby Hotels</h3>
+						</div>
+					</div>
+					<div class='row'>
+						{
+							hotels.map((hotel) => (
+								<div class='col-6'>
+									<FeaturedHotel
+										address={hotel.address}
+										name={hotel.name}
+										rating={hotel.rating}
+										address={hotel.address}
+										googleReviews={hotel.googleReviews}
+										image={hotel.image}
+										link={hotel.link}
+									/>
+								</div>
+							))
+						}
+					</div>
 				</div>
 			</div>
 			<div class='col'>

@@ -18,11 +18,9 @@ import Footer from '../sections/Footer.astro';
 import 'aos/dist/aos.css';
 
 // Images
-import disney from '../assets/jpg/disneyland.jpg';
-import farm from '../assets/jpg/knotts-berry-farm.jpg';
-import universal from '../assets/jpg/universal-studios.jpg';
 import Speakers from '../sections/2025/Speakers.astro';
 import Testimonials from '../sections/2025/Testimonials.astro';
+import Waitlist from '../sections/2025/Waitlist.astro';
 ---
 
 <Layout title='Grow Together Conference 2025'>
@@ -63,7 +61,8 @@ import Testimonials from '../sections/2025/Testimonials.astro';
 			},
 		]}
 	>
-		<CTA />
+		<!-- <CTA /> -->
+		<Waitlist />
 	</CirclesBG>
 	<!-- <SectionOverview /> -->
 	<!-- <TrackInfo /> -->
@@ -90,28 +89,7 @@ import Testimonials from '../sections/2025/Testimonials.astro';
 		]}
 	>
 		<FinalCTA />
-		<LocationDetails
-			location={{
-				name: 'San Dimas',
-				description: `San Dimas offers a variety of attractions and fantastic hotels just a short distance from the conference venue.`,
-				date: 'May 7th & 8th, 2025',
-
-				hotelsLink: `https://www.google.com/maps/search/Hotels/@34.1007971,-117.8355881,14.91z/data=!4m8!2m7!3m6!1sHotels!2sONE%26ALL+Church,+San+Dimas,+1404+W+Covina+Blvd,+San+Dimas,+CA+91773!3s0x80c328cdd9ffd539:0xb3be8d1e218251f1!4m2!1d-117.8365508!2d34.0984172?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D`,
-				iframe: {
-					src: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d973.9834712109318!2d-117.83685611397642!3d34.09840109523141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c328cdd9ffd539%3A0xb3be8d1e218251f1!2sONE%26ALL%20Church%2C%20San%20Dimas!5e0!3m2!1sen!2sus!4v1729370013239!5m2!1sen!2sus`,
-					title: `Embedded Google Map of the area around ONE&ALL Church, San Dimas`,
-				},
-				locationDetails: {
-					name: 'ONE&ALL Church, San Dimas',
-					address: '1404 W Covina Blvd San Dimas, CA 91773',
-				},
-				attractions: [
-					{ title: 'Universal Studios', src: universal },
-					{ title: 'Knotts Berry Farm', src: farm },
-					{ title: 'Disneyland', src: disney },
-				],
-			}}
-		/>
+		<!-- <LocationDetails /> -->
 	</CirclesBG>
 	<Footer />
 </Layout>

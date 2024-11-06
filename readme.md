@@ -13,6 +13,12 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 5.2.0
+
+-   Copy updates & new hotels feature
+-   Revert to "Waitlist mode" while things are in flux
+-   Add sponsors
+
 ## 5.1.2
 
 -   Set script svg and containing component to be more component-ized.
