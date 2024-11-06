@@ -13,6 +13,10 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 5.2.1
+
+-   Fix CORS issue
+
 ## 5.2.0
 
 -   Copy updates & new hotels feature
