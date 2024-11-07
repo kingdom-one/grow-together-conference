@@ -13,6 +13,10 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 5.2.5
+
+-   Updated the welcome video
+
 ## 5.2.4
 
 -   Re-init full site version with new location
