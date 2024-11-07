@@ -16,6 +16,16 @@ const logos = [
 ];
 ---
 
+<style>
+	.swiper-slide {
+		img,
+		figure {
+			max-width: 100%;
+			height: clamp(200px, 20vh, 330px);
+			/* max-height: 330px; */
+		}
+	}
+</style>
 <div class='row justify-content-center'>
 	<div class='col-lg-10'>
 		<div
@@ -36,7 +46,7 @@ const logos = [
 								<div class='swiper-slide d-flex justify-content-center align-items-center'>
 									<Image
 										src={logo.logo}
-										class='logo object-fit-scale h-100 w-100'
+										class='logo object-fit-scale'
 										alt={logo.alt}
 									/>
 									<div class='swiper-lazy-preloader swiper-lazy-preloader-white' />
@@ -46,7 +56,14 @@ const logos = [
 						<div
 							class='swiper-slide d-flex justify-content-center align-items-center'
 						>
-							<FivestarLogo style='mono' />
+							<figure
+								class='mb-0 d-flex flex-column justify-content-center'
+							>
+								<FivestarLogo
+									style='mono'
+									class={'w-100 h-100'}
+								/>
+							</figure>
 						</div>
 					</div>
 				</div>
@@ -61,14 +78,19 @@ const logos = [
 	import 'swiper/css';
 	import 'swiper/css/navigation';
 	import 'swiper/css/a11y';
+	import 'swiper/css/autoplay';
 	import Swiper from 'swiper';
-	import { Navigation, A11y } from 'swiper/modules';
+	import { Navigation, A11y, Autoplay } from 'swiper/modules';
 
 	new Swiper('#sponsor-swiper', {
 		loop: true,
-		modules: [Navigation, A11y],
+		modules: [Navigation, A11y, Autoplay],
 		autoHeight: true,
-		spaceBetween: 0,
+		spaceBetween: 20,
+		speed: 500,
+		autoplay: {
+			pauseOnMouseEnter: true,
+		},
 		centerInsufficientSlides: true,
 		navigation: {
 			nextEl: '.swiper-button-next',

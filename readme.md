@@ -13,6 +13,10 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 5.2.2
+
+-   Clean up Swiper styles
+
 ## 5.2.1
 
 -   Fix CORS issue
