@@ -13,6 +13,11 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 5.2.3
+
+-   Fixed a bug where the K1 values got pushed too far to the side.
+-   Updated packages
+
 ## 5.2.2
 
 -   Clean up Swiper styles
