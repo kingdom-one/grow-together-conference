@@ -1,16 +1,17 @@
 ---
 export interface Props {
 	style?: 'mono' | 'color';
+	class?: string | string[];
 }
 
-const { style = 'mono' } = Astro.props;
+const { style = 'mono', class: classList } = Astro.props;
 ---
 
 {
 	'mono' === style ? (
 		<svg
-			width='275'
-			height='52'
+			class:list={[classList]}
+			viewBox='0 0 275 52'
 			xmlns='http://www.w3.org/2000/svg'
 		>
 			<g
@@ -35,8 +36,8 @@ const { style = 'mono' } = Astro.props;
 		</svg>
 	) : (
 		<svg
-			width='275'
-			height='52'
+			class:list={[classList]}
+			viewBox='0 0 275 52'
 			xmlns='http://www.w3.org/2000/svg'
 		>
 			<g
