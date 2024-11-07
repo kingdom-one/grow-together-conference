@@ -10,10 +10,11 @@ import farm from '../assets/jpg/knotts-berry-farm.jpg';
 import universal from '../assets/jpg/universal-studios.jpg';
 import doubletree from '../assets/jpg/doubletree.jpg';
 import sheraton from '../assets/jpg/sheraton.jpg';
+import NearbyHotel from '../components/NearbyHotel.astro';
 
 const location = {
-	name: 'San Dimas',
-	description: `Join us in San Dimas, California, for the Grow Together Conference—a destination where inspiration meets opportunity. With sunny spring weather averaging in the comfortable 70s, San Dimas offers the perfect backdrop for meaningful connections and powerful team-building experiences. Attendees can recharge and collaborate at Frank G. Bonelli Regional Park, with opportunities for kayaking, hiking, and lakeside gatherings. For a bit of fun, Raging Waters—California’s largest water park—adds excitement and adventure to the mix. Beyond the conference, San Dimas' cozy downtown provides the ideal setting for deep conversations over coffee or dinner. Conveniently located near Los Angeles, this vibrant community will leave your team motivated, refreshed, and ready to grow together like never before.`,
+	name: 'Rancho Cucamonga',
+	description: `Join us in Rancho Cucamonga, California, for the Grow Together Conference—a destination nestled at the base of the San Gabriel Mountains. Known for its picturesque vineyards, Rancho Cucamonga is home to the historic Route 66 and the vibrant Victoria Gardens shopping and entertainment center, which features open-air dining, upscale shops, and family-friendly activities.`,
 	hotels: [
 		{
 			name: 'DoubleTree by Hilton Hotel Claremont',
@@ -30,13 +31,14 @@ const location = {
 			image: sheraton,
 		},
 	],
+	hotelsLink: `https://www.google.com/maps/search/Hotel/@34.1168531,-117.5563928,13z/data=!3m1!4b1!4m7!2m6!3m5!2sONE%26ALL+Church,+Rancho+Cucamonga,+7576+Etiwanda+Ave,+Etiwanda,+CA+91739!3s0x80c34a21e31008c3:0x1b2e17a43fe0775f!4m2!1d-117.525493!2d34.1167854?entry=ttu`,
 	iframe: {
-		src: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d973.9834712109318!2d-117.83685611397642!3d34.09840109523141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c328cdd9ffd539%3A0xb3be8d1e218251f1!2sONE%26ALL%20Church%2C%20San%20Dimas!5e0!3m2!1sen!2sus!4v1729370013239!5m2!1sen!2sus`,
+		src: `https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10152.904052737416!2d-117.52715310324994!3d34.11819275881901!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c34a21e31008c3%3A0x1b2e17a43fe0775f!2sONE%26ALL%20Church%2C%20Rancho%20Cucamonga!5e0!3m2!1sen!2sus!4v1730953134722!5m2!1sen!2sus`,
 		title: `Embedded Google Map of the area around ONE&ALL Church, San Dimas`,
 	},
 	locationDetails: {
-		name: 'ONE&ALL Church, San Dimas',
-		address: '1404 W Covina Blvd San Dimas, CA 91773',
+		name: 'ONE&ALL Church, Rancho Cucamonga',
+		address: '7576 Etiwanda Ave, Rancho Cucamonga, CA 91739',
 	},
 	attractions: [
 		{ title: 'Universal Studios', src: universal },
@@ -45,8 +47,15 @@ const location = {
 	],
 };
 
-const { name, description, hotels, iframe, locationDetails, attractions } =
-	location;
+const {
+	name,
+	description,
+	hotels,
+	iframe,
+	locationDetails,
+	attractions,
+	hotelsLink,
+} = location;
 ---
 
 <section class='location-details inland-empire overflow-x-hidden py-5'>
@@ -68,10 +77,7 @@ const { name, description, hotels, iframe, locationDetails, attractions } =
 				</div>
 				<div class='event-details'>
 					<h3>Date & Time</h3>
-					<p class='fs-5'>
-						May 7 from 1 pm &ndash; 5 pm PST <br /> May 8 from 10 am
-						&ndash; 4 pm PST
-					</p>
+					<p class='fs-5'>May 14 & 15</p>
 					<a
 						href={TICKETS_URL}
 						class='btn btn-dark rounded-pill align-self-start'
@@ -81,10 +87,11 @@ const { name, description, hotels, iframe, locationDetails, attractions } =
 				<div class='hotels mt-5'>
 					<div class='row'>
 						<div class='col'>
-							<h3>Nearby Hotels</h3>
+							<!-- <h3>Nearby Hotels</h3> -->
+							<NearbyHotel href={hotelsLink} />
 						</div>
 					</div>
-					<div class='row'>
+					<!-- <div class='row'>
 						{
 							hotels.map((hotel) => (
 								<div class='col-6'>
@@ -100,7 +107,7 @@ const { name, description, hotels, iframe, locationDetails, attractions } =
 								</div>
 							))
 						}
-					</div>
+					</div> -->
 				</div>
 			</div>
 			<div class='col'>
@@ -128,13 +135,18 @@ const { name, description, hotels, iframe, locationDetails, attractions } =
 		</div>
 		<div class='row'>
 			<h3>Local Attractions</h3>
-			<ul class='row m-0 p-0 list-unstyled row-gap-5'>
+			<ul class='ms-4 fs-6'>
+				<li>Victoria Gardens</li>
+				<li>Etiwanda Falls Trailhead</li>
+				<li>K1 Speed — Indoor Go Karts</li>
+			</ul>
+			<!-- <ul class='row m-0 p-0 list-unstyled row-gap-5'>
 				{
 					attractions.map((attraction) => (
 						<AttractionPreview attraction={attraction} />
 					))
 				}
-			</ul>
+			</ul> -->
 		</div>
 	</div>
 </section>

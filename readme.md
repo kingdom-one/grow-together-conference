@@ -13,6 +13,10 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 5.2.4
+
+-   Re-init full site version with new location
+
 ## 5.2.3
 
 -   Fixed a bug where the K1 values got pushed too far to the side.
