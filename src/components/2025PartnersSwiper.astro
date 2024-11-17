@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import likewise from '../assets/png/2025-partners/logo__likewise--white.png';
 import xp from '../assets/png/2025-partners/logo__xp-gathering--white.png';
-import rag from '../assets/png/slides/RAG-logo-sm-white.png';
+import rag from '../assets/png/2025-partners/logo__rag--white.png';
 
 const partners = [
 	{ src: xp, alt: 'XP Gathering', href: 'https://www.xpgathering.com' },
@@ -43,7 +43,6 @@ const partners = [
 								src={logo.src}
 								class='w-100 h-100 object-fit-contain'
 								alt={logo.alt}
-								style={`${'Rescue a Generation' === logo.alt ? 'max-height: 86px' : ''}`}
 							/>
 							<div class='swiper-lazy-preloader swiper-lazy-preloader-white' />
 						</a>

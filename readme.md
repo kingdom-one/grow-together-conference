@@ -13,6 +13,12 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 5.3.0
+
+-   Update RAG partner logo
+-   Add Saltzman & Associates logo
+-   Add Track Info
+
 ## 5.2.6
 
 -   Update hotels & attractions section

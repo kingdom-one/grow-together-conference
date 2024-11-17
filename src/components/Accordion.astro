@@ -35,6 +35,7 @@ const { accordionClass, accordionTitle, items } = Astro.props;
 								aria-controls={`collapse-${accordionClass}-${index}`}
 							>
 								{title}
+
 								<div class='accordion-expander d-block text-dark'>
 									+
 								</div>
@@ -46,11 +47,14 @@ const { accordionClass, accordionTitle, items } = Astro.props;
 							data-bs-parent={`#${accordionClass}-accordion`}
 						>
 							<div class='accordion-body text-dark px-1'>
-								<strong>Presenter: {presenter}</strong>
-								<br />
+								{presenter && (
+									<strong>Presenter: {presenter}</strong>
+									<br />
+								)}
 								{content}
 							</div>
-						</div>
+						</div> 
+						
 					</div>
 				);
 			})
