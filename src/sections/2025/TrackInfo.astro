@@ -1,28 +1,12 @@
 ---
 // Components
 import { Image } from 'astro:assets';
-import Accordion from '../../components/Accordion.astro';
+import Accordion from '../../components/2025Accordion.astro';
 
 // Images
 import iconsRow from '../../assets/png/icons-row.png';
 
-const placeholderItems = [
-	{
-		title: 'Track Title #1',
-		presenter: 'TBA',
-		content: 'A description of the first session in this track.',
-	},
-	{
-		title: 'Track Title #2',
-		presenter: 'TBA',
-		content: 'A description of the second session in this track.',
-	},
-	{
-		title: 'Track Title #3',
-		presenter: 'TBA',
-		content: 'A description of the third session in this track.',
-	},
-];
+import { AccordionItems } from './TrackInfo';
 ---
 
 <section
@@ -32,64 +16,43 @@ const placeholderItems = [
 	<Image
 		src={iconsRow}
 		alt=''
+		aria-hidden='true'
 		class='object-fit-contain mw-100 icons-row'
 	/>
 	<div class='container col-xl-10'>
 		<div class='row my-5 flex-column'>
 			<div class='col-lg-7'>
 				<h2>Track Information</h2>
-				<p class='fs-5 fst-italic mark'>
-					[Our conference tracks will educate and inspire your team to
-					jump-start 2025 with action. There is something for everyone
-					at Grow Together 2025.]
+			</div>
+			<div class='col-12'>
+				<p class='fs-5'>
+					At the Grow Together 2025 Conference, we’re excited to
+					introduce new courses in Worship/Productions and Youth
+					Ministry, alongside our core sessions in HR, Finance, and
+					leadership. These fresh offerings, led by renowned experts
+					from Kingdom One, Likewise Worship, Rescue a Generation, and
+					XP Gathering, will provide you with cutting-edge insights
+					and practical tools to take your ministry to the next level.
+					Whether you’re enhancing your worship and production teams
+					or investing in the next generation of leaders, these
+					expert-led sessions will equip you with the skills and
+					strategies you need to make a lasting impact. Don’t miss
+					this opportunity to learn from the best and connect with
+					others who share your passion for growth and transformation.
 				</p>
 			</div>
 		</div>
 		<div class='row row-cols-1 row-cols-lg-2 row-gap-4'>
-			<div class='col d-flex flex-column row-gap-4'>
-				<Accordion
-					accordionClass='advanced-hr'
-					accordionTitle='Advanced HR'
-					items={placeholderItems}
-				/>
-				<Accordion
-					accordionClass='finance'
-					accordionTitle='Finance'
-					items={placeholderItems}
-				/>
-				<Accordion
-					accordionClass='marcom'
-					accordionTitle='Marketing'
-					items={placeholderItems}
-				/>
-				<Accordion
-					accordionClass='people-management'
-					accordionTitle='People Management'
-					items={placeholderItems}
-				/>
-			</div>
-			<div class='col d-flex flex-column row-gap-4'>
-				<Accordion
-					accordionClass='leadership'
-					accordionTitle='Leadership'
-					items={placeholderItems}
-				/>
-				<Accordion
-					accordionTitle='Business Administration '
-					accordionClass='business-administration'
-					items={placeholderItems}
-				/>
-				<Accordion
-					accordionTitle='Worship & Production'
-					accordionClass='worship-production'
-					items={placeholderItems}
-				/>
-				<Accordion
-					accordionTitle='Youth Ministry'
-					accordionClass='youth'
-					items={placeholderItems}
-				/>
-			</div>
+			{
+				AccordionItems.map(({ title, items }) => (
+					<div class='col d-flex flex-column row-gap-4'>
+						<Accordion
+							title={title}
+							items={items}
+						/>
+					</div>
+				))
+			}
 		</div>
 	</div>
 </section>
