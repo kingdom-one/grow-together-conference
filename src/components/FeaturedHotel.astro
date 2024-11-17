@@ -24,12 +24,16 @@ const { rating, name, address, googleReviews, image, link } = Astro.props;
 	</figure>
 	<div class='card-body'>
 		<div class='row'>
-			<div class='col-auto'>{rating}</div>
+			<div class='col-auto'>⭐️ {rating}</div>
 			<div class='col-auto'>({googleReviews} Google Reviews)</div>
 		</div>
 		<div class='row'>
 			<div class='col'>
-				<a href={link} class='stretched-link'>
+				<a
+					href={link}
+					class='stretched-link text-decoration-none'
+					target='_blank'
+				>
 					<h4 class='fw-bold fs-6'>{name}</h4>
 				</a>
 				<p class='fs-6 mb-0'>{address}</p>
