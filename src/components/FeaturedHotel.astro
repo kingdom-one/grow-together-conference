@@ -29,7 +29,9 @@ const { rating, name, address, googleReviews, image, link } = Astro.props;
 		</div>
 		<div class='row'>
 			<div class='col'>
-				<h4 class='fw-bold fs-6'>{name}</h4>
+				<a href={link} class='stretched-link'>
+					<h4 class='fw-bold fs-6'>{name}</h4>
+				</a>
 				<p class='fs-6 mb-0'>{address}</p>
 			</div>
 		</div>
