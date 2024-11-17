@@ -13,6 +13,11 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 5.2.6
+
+-   Update hotels & attractions section
+-   Update cropping on Steven's photo
+
 ## 5.2.5
 
 -   Updated the welcome video
