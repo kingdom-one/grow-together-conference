@@ -11,6 +11,9 @@ import universal from '../assets/jpg/universal-studios.jpg';
 import doubletree from '../assets/jpg/doubletree.jpg';
 import sheraton from '../assets/jpg/sheraton.jpg';
 import NearbyHotel from '../components/NearbyHotel.astro';
+import mall from '../assets/jpg/ontario-mills-mall.jpg';
+import kart from '../assets/jpg/kart.jpg';
+import vg from '../assets/jpg/vg.jpg';
 
 const location = {
 	name: 'Rancho Cucamonga',
@@ -22,6 +25,7 @@ const location = {
 			rating: 4.3,
 			googleReviews: 1417,
 			image: doubletree,
+			link: 'https://www.hilton.com/en/hotels/ontcldt-doubletree-claremont/'
 		},
 		{
 			name: 'Sheraton Fairplex Suites & Conference Center',
@@ -29,6 +33,7 @@ const location = {
 			rating: 4.4,
 			googleReviews: 1930,
 			image: sheraton,
+			link: 'https://www.marriott.com/en-us/hotels/ontsi-sheraton-fairplex-suites-and-conference-center/overview/'
 		},
 	],
 	hotelsLink: `https://www.google.com/maps/search/Hotel/@34.1168531,-117.5563928,13z/data=!3m1!4b1!4m7!2m6!3m5!2sONE%26ALL+Church,+Rancho+Cucamonga,+7576+Etiwanda+Ave,+Etiwanda,+CA+91739!3s0x80c34a21e31008c3:0x1b2e17a43fe0775f!4m2!1d-117.525493!2d34.1167854?entry=ttu`,
@@ -44,6 +49,9 @@ const location = {
 		{ title: 'Universal Studios', src: universal },
 		{ title: 'Knotts Berry Farm', src: farm },
 		{ title: 'Disneyland', src: disney },
+		{ title: 'Ontario Mills Outlet', src: mall },
+		{ title: 'K1 Speed — Indoor Go Karts', src: kart },
+		{ title: 'Victoria Gardents', src: vg }
 	],
 };
 
@@ -91,7 +99,7 @@ const {
 							<NearbyHotel href={hotelsLink} />
 						</div>
 					</div>
-					<!-- <div class='row'>
+					<div class='row'>
 						{
 							hotels.map((hotel) => (
 								<div class='col-6'>
@@ -107,7 +115,7 @@ const {
 								</div>
 							))
 						}
-					</div> -->
+					</div>
 				</div>
 			</div>
 			<div class='col'>
@@ -135,18 +143,13 @@ const {
 		</div>
 		<div class='row'>
 			<h3>Local Attractions</h3>
-			<ul class='ms-4 fs-6'>
-				<li>Victoria Gardens</li>
-				<li>Etiwanda Falls Trailhead</li>
-				<li>K1 Speed — Indoor Go Karts</li>
-			</ul>
-			<!-- <ul class='row m-0 p-0 list-unstyled row-gap-5'>
+			<ul class='row m-0 p-0 list-unstyled row-gap-5'>
 				{
 					attractions.map((attraction) => (
 						<AttractionPreview attraction={attraction} />
 					))
 				}
-			</ul> -->
+			</ul>
 		</div>
 	</div>
 </section>
