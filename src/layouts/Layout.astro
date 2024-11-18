@@ -1,4 +1,6 @@
 ---
+import ConsentBanner from '../components/ConsentBanner.tsx';
+
 interface Props {
 	title: string;
 }
@@ -36,9 +38,40 @@ const { title } = Astro.props;
 			href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap'
 			rel='stylesheet'
 		/>
+		<script
+			async
+			src='https://www.googletagmanager.com/gtag/js?id=G-CP6KXG986C'
+		></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+			// initialize gtag with default consent
+			gtag('consent', 'default', {
+				ad_storage: 'denied',
+				analytics_storage: 'denied',
+			});
+			// Update consent state based on user preferences
+			const userConsent =
+				JSON.parse(localStorage.getItem('userConsent')) || {};
+			if (userConsent.analytics) {
+				gtag('consent', 'update', {
+					analytics_storage: 'granted',
+				});
+			}
+			if (userConsent.ads) {
+				gtag('consent', 'update', {
+					ad_storage: 'granted',
+				});
+			}
+			gtag('config', 'G-CP6KXG986C');
+		</script>
 	</head>
 	<body>
 		<slot />
+		<ConsentBanner client:only='react' />
 	</body>
 </html>
 
