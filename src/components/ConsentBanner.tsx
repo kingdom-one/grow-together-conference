@@ -11,9 +11,10 @@ export default function ConsentBanner() {
 					<div className="row align-items-center justify-content-between">
 						<div className="col-lg-6">
 							<p className="mb-0">
-								We're use cookies to improve user experience. By
-								clicking "I agree", you consent to our use of
-								cookies. For more information, please read our{' '}
+								We're using Google Analytics to let us know you
+								visited! By click "I agree", you consent to our
+								use of cookies. For more information, please
+								read our{' '}
 								<a
 									href="https://www.kingdomone.co/privacy-policy/"
 									target="_blank"
@@ -39,6 +40,21 @@ export default function ConsentBanner() {
 								}}
 							>
 								I agree
+							</button>
+							<button
+								className="btn btn-outline-secondary fs-base px-3 py-2 fw-normal ms-3"
+								onClick={() => {
+									localStorage.setItem(
+										'userConsent',
+										JSON.stringify({
+											analytics: false,
+											ads: false,
+										})
+									);
+									setConsent(true);
+								}}
+							>
+								Opt Out
 							</button>
 						</div>
 					</div>
