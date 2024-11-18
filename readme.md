@@ -13,6 +13,14 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 5.4.1
+
+-   Update consent banner copy & ux
+
+## 5.4.0
+
+-   add google analytics & consent banner
+
 ## 5.3.1
 
 -   adjusted height of `.icons-row` in Track Info section.
