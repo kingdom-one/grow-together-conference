@@ -9,6 +9,23 @@ import iconsRow from '../../assets/png/icons-row.png';
 import { AccordionItems } from './TrackInfo';
 ---
 
+<style>
+	.icons-row {
+		max-height: 100px;
+
+		@media screen and (min-width: 768px) {
+			& {
+				max-height: 200px;
+			}
+		}
+
+		@media screen and (min-width: 1200.02px) {
+			& {
+				max-height: 300px;
+			}
+		}
+	}
+</style>
 <section
 	id='track-info'
 	class='track-info text-bg-secondary py-5'
