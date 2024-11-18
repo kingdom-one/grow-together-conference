@@ -13,6 +13,10 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 5.3.1
+
+-   adjusted height of `.icons-row` in Track Info section.
+
 ## 5.3.0
 
 -   Update RAG partner logo
