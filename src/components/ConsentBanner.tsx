@@ -6,7 +6,7 @@ export default function ConsentBanner() {
 
 	if (!consent) {
 		return (
-			<div className="consent-banner sticky-bottom text-bg-dark p-3">
+			<div className="consent-banner sticky-bottom text-bg-yellow p-3">
 				<div className="container">
 					<div className="row align-items-center justify-content-between">
 						<div className="col-lg-6">
@@ -16,6 +16,7 @@ export default function ConsentBanner() {
 								use of cookies. For more information, please
 								read our{' '}
 								<a
+									className="text-black"
 									href="https://www.kingdomone.co/privacy-policy/"
 									target="_blank"
 								>

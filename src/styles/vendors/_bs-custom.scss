@@ -4,19 +4,12 @@
 @import "bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
-$primary: v.$green;
-$secondary: v.$yellow;
+$primary: v.$color-primary--light;
+$secondary: v.$color-grey;
 $dark: v.$color-grey;
 
 $brand-colors: (
-	"spark-yellow": v.$color-secondary,
-	"k1-green": v.$color-primary,
-	"k1-og-green": v.$color-primary--light,
-	"academy-green": v.$color-primary--light,
-	"yellow": v.$yellow,
-	"green": v.$green,
-	"muted-green": v.$muted-green,
-	"light-green": v.$light-green,
+	"yellow": v.$color-secondary,
 );
 
 // ================================================
@@ -206,9 +199,9 @@ $utilities: map-merge(
 // @import "bootstrap/scss/jumbotron";
 // @import 'bootstrap/scss/list-group';
 // @import "bootstrap/scss/media";
-@import "bootstrap/scss/modal"; // Requires transitions
-// @import "bootstrap/scss/nav";
-// @import 'bootstrap/scss/navbar'; // Requires nav
+// @import "bootstrap/scss/modal"; // Requires transitions
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar"; // Requires nav
 // @import "bootstrap/scss/pagination";
 // @import "bootstrap/scss/placeholders";
 // @import "bootstrap/scss/popover";

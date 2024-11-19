@@ -1,74 +1,16 @@
 ---
 // Components
 import Layout from '../layouts/Layout.astro';
-import Hero from '../sections/heros/2025Hero.astro';
-import About from '../sections/About.astro';
-import CTA from '../sections/2025/CTA.astro';
-import SectionOverview from '../sections/2025/SectionOverview.astro';
-import TrackInfo from '../sections/2025/TrackInfo.astro';
-import Partners from '../sections/2025/Partners.astro';
-import FinalCTA from '../sections/2025/FinalCTA.astro';
-import LocationDetails from '../sections/LocationDetails.astro';
-import CirclesBG from '../sections/2025/CirclesBG.astro';
+import GrowTogether from '../sections/GrowTogether.astro';
+import CirclesBG from '../sections/CirclesBG.astro';
 
-import Sponsors from '../sections/Sponsors.astro';
 import Footer from '../sections/Footer.astro';
 
 // Styles
 import 'aos/dist/aos.css';
-
-// Images
-import Speakers from '../sections/2025/Speakers.astro';
-import Testimonials from '../sections/2025/Testimonials.astro';
-import Waitlist from '../sections/2025/Waitlist.astro';
 ---
 
 <Layout title='Grow Together Conference 2025'>
-	<CirclesBG
-		circles={[
-			{
-				color: 'green',
-				position: 'top-right',
-				size: 'large',
-			},
-			{
-				color: 'yellow',
-				position: 'center-left',
-				size: 'medium',
-			},
-			{
-				color: 'dark',
-				position: 'bottom-right',
-				size: 'small',
-			},
-		]}
-	>
-		<Hero />
-		<About />
-	</CirclesBG>
-	<Partners />
-	<CirclesBG
-		circles={[
-			{
-				color: 'dark',
-				position: 'top-left',
-				size: 'small',
-			},
-			{
-				color: 'yellow',
-				position: 'center-right',
-				size: 'medium',
-			},
-		]}
-	>
-		<CTA />
-		<!-- <Waitlist /> -->
-	</CirclesBG>
-	<!-- <SectionOverview /> -->
-	<TrackInfo />
-	<Speakers />
-	<Testimonials />
-	<Sponsors />
 	<CirclesBG
 		circles={[
 			{
@@ -88,8 +30,7 @@ import Waitlist from '../sections/2025/Waitlist.astro';
 			},
 		]}
 	>
-		<FinalCTA />
-		<LocationDetails />
+		<GrowTogether />
 	</CirclesBG>
 	<Footer />
 </Layout>

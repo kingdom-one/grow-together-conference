@@ -3,13 +3,12 @@
 import { Image } from 'astro:assets';
 
 // Images
-import mugGrey from '../../assets/svg/icons/mug--grey.svg';
-import phoneGrey from '../../assets/svg/icons/phone--grey.svg';
-import chartGrey from '../../assets/svg/icons/chart--grey.svg';
-import paperGrey from '../../assets/svg/icons/paper--grey.svg';
-import shieldGrey from '../../assets/svg/icons/shield--grey.svg';
-import academyLogo from '../../assets/png/k1-academy--black.png';
-import { K1_ACADEMY_ACCESS_LINK } from '../../consts';
+import mugGrey from '../assets/svg/icons/mug--grey.svg';
+import phoneGrey from '../assets/svg/icons/phone--grey.svg';
+import chartGrey from '../assets/svg/icons/chart--grey.svg';
+import paperGrey from '../assets/svg/icons/paper--grey.svg';
+import shieldGrey from '../assets/svg/icons/shield--grey.svg';
+import academyLogo from '../assets/png/k1-academy--black.png';
 
 const icons = [
 	{ name: 'mug', src: mugGrey },
@@ -21,7 +20,7 @@ const icons = [
 ---
 
 <style lang='scss'>
-	@use '../../styles/abstracts/mixins' as m;
+	@use '../styles/abstracts/mixins' as m;
 	%icons {
 		--size: 3.75rem;
 		height: var(--size);
@@ -140,7 +139,7 @@ const icons = [
 					pursue legal compliance.
 				</p>
 				<a
-					href={K1_ACADEMY_ACCESS_LINK}
+					href=''
 					class='btn btn-outline-dark rounded-pill text-uppercase'
 					>Get Access</a
 				>
