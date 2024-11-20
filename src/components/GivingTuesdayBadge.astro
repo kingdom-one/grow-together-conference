@@ -1,0 +1,36 @@
+---
+import GivingTuesday from './svg/giving-tuesday.astro';
+
+export interface Props {
+	badgeType: 'light' | 'dark';
+	text: string;
+}
+
+const { badgeType, text } = Astro.props;
+const textClass = badgeType === 'light' ? 'text-dark' : 'text-white';
+const badgeBg = badgeType === 'light' ? 'bg-dark' : 'bg-white';
+const borderColor = badgeType === 'light' ? 'border-dark' : 'border-white';
+---
+
+<style>
+	.logo svg {
+		height: 80px;
+	}
+</style>
+<div
+	class:list={[
+		'initiative-badge border border-4 row gx-0 align-items-center col-lg-6',
+		borderColor,
+	]}
+>
+	<div class:list={['logo', 'p-3', 'col-4', badgeBg]}>
+		<GivingTuesday textColor={badgeType === 'light' ? 'white' : 'dark'} />
+	</div>
+	<div
+		class='label col flex-grow-1 d-flex justify-content-center align-items-center'
+	>
+		<p class:list={['fw-bold text-uppercase fs-3 mb-0', textClass]}>
+			{text}
+		</p>
+	</div>
+</div>

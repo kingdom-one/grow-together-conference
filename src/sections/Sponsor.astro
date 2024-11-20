@@ -1,0 +1,76 @@
+---
+import CampaignTracker from '../components/CampaignTracker';
+import InitiativeBox from '../components/InitiativeBox.astro';
+import GivingTuesday from '../components/svg/giving-tuesday.astro';
+
+const initiatives = [
+	{
+		label: 'Initiative One',
+		name: 'Grow Together Conference',
+		body: 'This is a description of the Grow Together Conference.',
+	},
+	{
+		label: 'Initiative Two',
+		name: 'Kingdom One Academy',
+		body: 'This is a description of the Grow Together Conference.',
+	},
+];
+---
+
+<style>
+	.logo-container svg {
+		height: 3rem;
+	}
+</style>
+<section
+	id='sponsor'
+	class='text-bg-dark py-5'
+>
+	<div class='container'>
+		<div class='row justify-content-center'>
+			<div class='col-4 logo-container'>
+				<GivingTuesday textColor='white' />
+				<h2 class='text-yellow text-lowercase text-center mt-4'>
+					sponsor a project
+				</h2>
+			</div>
+		</div>
+		<div class='row justify-content-center'>
+			<div class='col-lg-10'>
+				<p class='text-white fs-5 text-center'>
+					This Giving Tuesday you could give to any non-profit, when
+					you give to Kingdom One you are supporting ministries to
+					engage with a network of people, gain access to tools, and
+					be resourced to be more courageous, healthy, and effective.
+				</p>
+			</div>
+		</div>
+		<div class='row justify-content-center text-bg-primary my-5 py-5 gx-5'>
+			<div class='col-12 my-5'><CampaignTracker client:visible /></div>
+			<div
+				class='col-12 row row-cols-1 row-cols-md-2 row-gap-4 align-items-stretch justify-content-around gx-5'
+			>
+				{
+					initiatives.map((initiative) => (
+						<div class='col-md-5'>
+							<InitiativeBox
+								label={initiative.label}
+								name={initiative.name}
+								body={initiative.body}
+							/>
+						</div>
+					))
+				}
+			</div>
+		</div>
+		<div class='row justify-content-center mt-5'>
+			<div class='col-auto'>
+				<a
+					href='#give'
+					class='btn btn-primary'
+					>Give Now</a
+				>
+			</div>
+		</div>
+	</div>
+</section>

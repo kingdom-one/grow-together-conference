@@ -8,7 +8,11 @@ import phoneGrey from '../assets/svg/icons/phone--grey.svg';
 import chartGrey from '../assets/svg/icons/chart--grey.svg';
 import paperGrey from '../assets/svg/icons/paper--grey.svg';
 import shieldGrey from '../assets/svg/icons/shield--grey.svg';
-import academyLogo from '../assets/png/k1-academy--black.png';
+import logo from '../assets/png/logo__grow-together--black.png';
+
+// Components
+import ConferenceValues from '../components/ConferenceValues.astro';
+import GivingTuesdayBadge from '../components/GivingTuesdayBadge.astro';
 
 const icons = [
 	{ name: 'mug', src: mugGrey },
@@ -32,117 +36,132 @@ const icons = [
 		}
 	}
 
-	.final-cta__icons {
-		&--mug {
-			@extend %icons;
-
-			@include m.media-breakpoint-up(sm) {
-				right: 0rem;
-			}
-
-			@include m.media-breakpoint-up(lg) {
-				right: 2.5rem;
-				bottom: 22rem;
-			}
-
-			@include m.media-breakpoint-up(xl) {
-				right: 2.5rem;
-			}
+	.grow-together {
+		&__logo {
+			height: 240px;
 		}
 
-		&--phone {
-			@extend %icons;
+		&__icons {
+			&--mug {
+				@extend %icons;
 
-			@include m.media-breakpoint-up(sm) {
-				right: 5rem;
+				@include m.media-breakpoint-up(sm) {
+					right: 0rem;
+				}
+
+				@include m.media-breakpoint-up(lg) {
+					right: 2.5rem;
+					bottom: 22rem;
+				}
+
+				@include m.media-breakpoint-up(xl) {
+					right: 2.5rem;
+				}
 			}
 
-			@include m.media-breakpoint-up(lg) {
-				right: 7.5rem;
-				bottom: 5rem;
+			&--phone {
+				@extend %icons;
+
+				@include m.media-breakpoint-up(sm) {
+					right: 5rem;
+				}
+
+				@include m.media-breakpoint-up(lg) {
+					right: 7.5rem;
+					bottom: 5rem;
+				}
+
+				@include m.media-breakpoint-up(xl) {
+					right: 12.5rem;
+				}
 			}
 
-			@include m.media-breakpoint-up(xl) {
-				right: 12.5rem;
-			}
-		}
+			&--chart {
+				@extend %icons;
 
-		&--chart {
-			@extend %icons;
+				@include m.media-breakpoint-up(sm) {
+					right: 10rem;
+				}
 
-			@include m.media-breakpoint-up(sm) {
-				right: 10rem;
-			}
+				@include m.media-breakpoint-up(lg) {
+					right: 12.5rem;
+					bottom: 11.25rem;
+				}
 
-			@include m.media-breakpoint-up(lg) {
-				right: 12.5rem;
-				bottom: 11.25rem;
-			}
-
-			@include m.media-breakpoint-up(xl) {
-				right: 15rem;
-			}
-		}
-
-		&--paper {
-			@extend %icons;
-
-			@include m.media-breakpoint-up(sm) {
-				right: 15rem;
+				@include m.media-breakpoint-up(xl) {
+					right: 15rem;
+				}
 			}
 
-			@include m.media-breakpoint-up(lg) {
-				right: 17.5rem;
-				bottom: 18.75rem;
+			&--paper {
+				@extend %icons;
+
+				@include m.media-breakpoint-up(sm) {
+					right: 15rem;
+				}
+
+				@include m.media-breakpoint-up(lg) {
+					right: 17.5rem;
+					bottom: 18.75rem;
+				}
+
+				@include m.media-breakpoint-up(xl) {
+					right: 9.25rem;
+				}
 			}
 
-			@include m.media-breakpoint-up(xl) {
-				right: 9.25rem;
-			}
-		}
+			&--shield {
+				@extend %icons;
 
-		&--shield {
-			@extend %icons;
+				@include m.media-breakpoint-up(sm) {
+					right: 20rem;
+				}
 
-			@include m.media-breakpoint-up(sm) {
-				right: 20rem;
-			}
+				@include m.media-breakpoint-up(lg) {
+					right: 22.5rem;
+					bottom: 8.75rem;
+				}
 
-			@include m.media-breakpoint-up(lg) {
-				right: 22.5rem;
-				bottom: 8.75rem;
-			}
-
-			@include m.media-breakpoint-up(xl) {
-				right: 3.125rem;
+				@include m.media-breakpoint-up(xl) {
+					right: 3.125rem;
+				}
 			}
 		}
 	}
 </style>
 
-<section class='final-cta position-relative py-5 overflow-hidden'>
+<section
+	id='grow-together'
+	class='grow-together position-relative py-5 overflow-hidden'
+>
 	<div class='container'>
-		<div class='row my-5 justify-content-start'>
-			<div class='col-lg-7'>
-				<Image
-					src={academyLogo}
-					alt='Kingdom One Academy'
-					class='w-100 object-fit-contain h-auto'
+		<div class='row'>
+			<div class='col'>
+				<GivingTuesdayBadge
+					badgeType='light'
+					text='Initiative One'
 				/>
-				<p class='h2'>
-					While you wait for the conference, you don't have to wait to
-					start growing.
-				</p>
+			</div>
+		</div>
+		<div class='row my-5 justify-content-start'>
+			<div class='col-lg-9'>
+				<Image
+					src={logo}
+					alt='Grow Together Conference Logo'
+					class='w-auto object-fit-contain grow-together__logo'
+				/>
+				<h2>Help Send Ministry Leaders to our Conference</h2>
 				<p class='fs-5'>
-					Visit Kingdom One Academy to view courses, see previous Grow
-					Together breakout sessions, gain actionable insights, and
-					pursue legal compliance.
+					Each year, Kingdom One hosts the Grow Together conference to
+					help ministry staff learn healthy ways to grow their
+					ministry, create community, and engage with practices to
+					help them become more effectual. Your donation supports
+					scholarships to invite ministries to become more courageous,
+					healthy, and effective!
 				</p>
-				<a
-					href=''
-					class='btn btn-outline-dark rounded-pill text-uppercase'
-					>Get Access</a
-				>
+			</div>
+			<div class='col-12'>
+				<ConferenceValues />
 			</div>
 		</div>
 		<div class='col-xl-3 d-sm-block d-none'>
@@ -152,7 +171,7 @@ const icons = [
 						data-aos='zoom-in'
 						src={icon.src}
 						alt=''
-						class={`final-cta__icons--${icon.name} position-absolute`}
+						class={`grow-together__icons--${icon.name} position-absolute`}
 					/>
 				))
 			}

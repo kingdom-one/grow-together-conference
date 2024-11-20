@@ -1,0 +1,153 @@
+---
+import K1Logo from '../components/svg/k1-logo.astro';
+
+const sections = [
+	{
+		id: 'grow-together',
+		title: 'Grow Together',
+	},
+	{
+		id: 'k1-academy',
+		title: 'K1 Academy',
+	},
+	{
+		id: 'sponsor',
+		title: 'Sponsor',
+	},
+	{
+		id: 'give',
+		title: 'Give',
+	},
+];
+---
+
+<script>
+	import 'bootstrap/js/dist/offcanvas';
+	document.addEventListener('DOMContentLoaded', () => {
+		const options = {
+			root: null,
+			rootMargin: '0px',
+			threshold: 0.6,
+		};
+
+		const observer = new IntersectionObserver((entries, observer) => {
+			entries.forEach((entry) => {
+				const navLink = document.querySelector(
+					`a[href="#${entry.target.id}"]`
+				);
+				if (entry.isIntersecting) {
+					navLink.classList.add(
+						'border-bottom',
+						'border-light',
+						'border-l'
+					);
+				} else {
+					navLink.classList.remove(
+						'border-bottom',
+						'border-light',
+						'border-l'
+					);
+				}
+			});
+		}, options);
+		const sections = [
+			{
+				id: 'grow-together',
+				title: 'Grow Together',
+			},
+			{
+				id: 'k1-academy',
+				title: 'K1 Academy',
+			},
+			{
+				id: 'sponsor',
+				title: 'Sponsor',
+			},
+			{
+				id: 'give',
+				title: 'Give',
+			},
+		];
+		sections.forEach((section) => {
+			const target = document.getElementById(section.id);
+			if (target) {
+				observer.observe(target);
+			}
+		});
+	});
+</script>
+<style>
+	.navbar-brand {
+		--size: 4rem;
+		width: var(--size);
+		height: var(--size);
+	}
+	.navbar-toggler-icon {
+		filter: invert(1) brightness(120%);
+	}
+</style>
+<header
+	id='site-header'
+	class='sticky-top py-3 text-bg-academy'
+>
+	<div class='container-xxl'>
+		<div class='row justify-content-between align-items-center'>
+			<div class='col-auto'>
+				<a
+					class='navbar-brand d-block'
+					href='#'
+				>
+					<K1Logo color='white' />
+				</a>
+			</div>
+			<div class='col-auto'>
+				<nav class='navbar navbar-expand-lg'>
+					<button
+						class='navbar-toggler border-0'
+						type='button'
+						data-bs-toggle='offcanvas'
+						data-bs-target='#navbarOffcanvasLg'
+						aria-controls='navbarOffcanvasLg'
+						aria-label='Toggle navigation'
+					>
+						<span class='navbar-toggler-icon'></span>
+					</button>
+					<div
+						class='offcanvas offcanvas-end bg-academy'
+						tabindex='-1'
+						id='navbarOffcanvasLg'
+						aria-labelledby='navbarOffcanvasLgLabel'
+					>
+						<div class='offcanvas-header'>
+							<button
+								type='button'
+								class='btn-close btn-close-white'
+								data-bs-dismiss='offcanvas'
+								aria-label='Close'
+							></button>
+						</div>
+						<div class='offcanvas-body'>
+							<ul
+								class='navbar-nav'
+								id='main-menu'
+							>
+								{
+									sections.map(({ id, title }) => (
+										<li class='nav-item'>
+											<a
+												class='nav-link text-white fw-bold'
+												href={`#${id}`}
+											>
+												{title}
+											</a>
+										</li>
+									))
+								}
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</header>

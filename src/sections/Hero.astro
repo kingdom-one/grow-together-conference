@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets';
+
+import GivingTuesday from '../components/svg/giving-tuesday.astro';
+
+import bgImage from '../assets/jpg/bg-image__hero.jpg';
+---
+
+<style lang='scss'>
+	#hero img {
+		object-position: center 30%;
+	}
+</style>
+<section
+	id='hero'
+	class='position-relative py-5 d-flex flex-column justify-content-center align-items-center'
+>
+	<Image
+		src={bgImage}
+		alt=''
+		aria-hidden='true'
+		loading='eager'
+		class='position-absolute top-0 object-fit-cover w-100 h-100'
+	/>
+	<div class='bg-black bg-opacity-75 position-absolute w-100 h-100 top-0'>
+	</div>
+	<div class='container position-relative z-2 d-flex flex-column row-gap-4'>
+		<div class='row'>
+			<div class='col-6 col-md-4'>
+				<GivingTuesday textColor='white' />
+			</div>
+		</div>
+		<div class='row'>
+			<div class='col'>
+				<p class='text-light fs-5 mb-5'>
+					Kingdom One helps ensure the American Church has the
+					community, tools, and knowledge to stay healthy so that
+					future generations have an opportunity to hear the Gospel of
+					Jesus. This Giving Tuesday, we have a couple of great ways
+					that you can join the mission to equip and empower ministry
+					teams and ministry leaders across the country.
+				</p>
+				<a
+					class='btn btn-primary mb-0'
+					href='#give'
+					>Give Now</a
+				>
+			</div>
+		</div>
+	</div>
+</section>
