@@ -1,0 +1,62 @@
+---
+// Components
+import { Image } from 'astro:assets';
+
+// Images
+import logo from '../assets/png/logo__academy--white.png';
+import bgImage from '../assets/jpg/bg-image__academy.jpg';
+
+// Components
+import GivingTuesdayBadge from '../components/GivingTuesdayBadge.astro';
+---
+
+<style>
+	.bg-overlay {
+		position: absolute;
+		inset: 0;
+		background-image: linear-gradient(to left, black 60%, transparent);
+	}
+</style>
+<section
+	id='k1-academy'
+	class='position-relative py-5'
+>
+	<Image
+		src={bgImage}
+		alt=''
+		aria-hidden='true'
+		loading='eager'
+		class='position-absolute top-0 object-fit-cover w-100 h-100'
+	/>
+	<div class='bg-overlay'></div>
+	<div class='container position-relative z-1'>
+		<div class='row justify-content-end'>
+			<GivingTuesdayBadge
+				badgeType='dark'
+				text='Initiative Two'
+			/>
+		</div>
+		<div class='row my-5 justify-content-end'>
+			<div class='col-lg-9 d-flex flex-column row-gap-4 text-lg-end'>
+				<Image
+					src={logo}
+					alt='Grow Together Conference Logo'
+					class='w-100 object-fit-contain h-auto'
+				/>
+				<h2 class='text-white'>
+					Help equip the church with vital resources!
+				</h2>
+				<p class='fs-5 text-white'>
+					Thousands of ministry and non-profit staff use Kingdom One’s
+					learning platform to keep their ministries in compliance and
+					protected BUT also to learn more effective practices to lead
+					their organizations well. Our content is critical to the
+					church and specifically designed to help them become more
+					courageous, healthy, and effective. Your support will allow
+					Kingdom One to continue to equip the church with vital
+					resources to help them grow!
+				</p>
+			</div>
+		</div>
+	</div>
+</section>

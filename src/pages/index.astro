@@ -2,35 +2,26 @@
 // Components
 import Layout from '../layouts/Layout.astro';
 import GrowTogether from '../sections/GrowTogether.astro';
-import CirclesBG from '../sections/CirclesBG.astro';
+import Header from '../sections/Header.astro';
 
 import Footer from '../sections/Footer.astro';
 
 // Styles
 import 'aos/dist/aos.css';
+import Hero from '../sections/Hero.astro';
+import Academy from '../sections/Academy.astro';
+import Sponsor from '../sections/Sponsor.astro';
+import Support from '../sections/Support.astro';
 ---
 
 <Layout title='Grow Together Conference 2025'>
-	<CirclesBG
-		circles={[
-			{
-				color: 'dark',
-				position: 'top-left--extreme',
-				size: 'small',
-			},
-			{
-				color: 'yellow',
-				position: 'top-right',
-				size: 'large',
-			},
-			{
-				color: 'green',
-				position: 'center-left',
-				size: 'medium',
-			},
-		]}
-	>
+	<Header />
+	<main>
+		<Hero />
 		<GrowTogether />
-	</CirclesBG>
+		<Academy />
+		<Sponsor />
+		<Support />
+	</main>
 	<Footer />
 </Layout>
