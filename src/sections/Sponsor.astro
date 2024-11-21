@@ -2,19 +2,6 @@
 import CampaignTracker from '../components/CampaignTracker';
 import InitiativeBox from '../components/InitiativeBox.astro';
 import GivingTuesday from '../components/svg/giving-tuesday.astro';
-
-const initiatives = [
-	{
-		label: 'Initiative One',
-		name: 'Grow Together Conference',
-		body: 'This is a description of the Grow Together Conference.',
-	},
-	{
-		label: 'Initiative Two',
-		name: 'Kingdom One Academy',
-		body: 'This is a description of the Grow Together Conference.',
-	},
-];
 ---
 
 <style>
@@ -50,17 +37,41 @@ const initiatives = [
 			<div
 				class='col-12 row row-cols-1 row-cols-md-2 row-gap-4 align-items-stretch justify-content-around gx-5'
 			>
-				{
-					initiatives.map((initiative) => (
-						<div class='col-md-5'>
-							<InitiativeBox
-								label={initiative.label}
-								name={initiative.name}
-								body={initiative.body}
-							/>
-						</div>
-					))
-				}
+				<div class='col-md-5'>
+					<InitiativeBox
+						label='Initiative One'
+						name='Grow Together Conference'
+					>
+						<ul>
+							<li>
+								$1 &mdash; Support our Grow Together Conference
+							</li>
+							<li>
+								$190 1 church staff member will receive{' '}
+								<strong>free</strong> admission
+							</li>
+							<li>
+								$1,000 1 church staff team will receive{' '}
+								<strong>free</strong> admission
+							</li>
+						</ul>
+					</InitiativeBox>
+				</div>
+				<div class='col-md-5'>
+					<InitiativeBox
+						label='Initiative Two'
+						name='Kingdom One Academy'
+					>
+						<ul>
+							<li>$1 &mdash; Support our Kingdom One Academy</li>
+							<li>$200 supports a course module creation</li>
+							<li>
+								$1,000 sponsors a new learning pathway and
+								improves the user experience
+							</li>
+						</ul>
+					</InitiativeBox>
+				</div>
 			</div>
 		</div>
 		<div class='row justify-content-center mt-5'>
