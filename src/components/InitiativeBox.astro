@@ -2,10 +2,9 @@
 export interface Props {
 	label: string;
 	name: string;
-	body: string;
 }
 
-const { label, name, body } = Astro.props;
+const { label, name } = Astro.props;
 ---
 
 <div class='initiative-box border border-4 border-dark h-100'>
@@ -15,11 +14,11 @@ const { label, name, body } = Astro.props;
 		</h3>
 	</div>
 	<div class='initiative-box-body py-3 px-4'>
-		<h4 class='text-white text-uppercase'>
+		<h4 class='text-black text-uppercase'>
 			{name}
 		</h4>
-		<p class='text-white'>
-			{body}
-		</p>
+		<div class='text-black'>
+			<slot />
+		</div>
 	</div>
 </div>
