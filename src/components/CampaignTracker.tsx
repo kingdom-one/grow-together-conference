@@ -20,27 +20,11 @@ export default function CampaignTracker() {
         fetchData();
     }, []);
 
-    const progressBarWidth = () => {
-        if (!campaign) return 20;
-
-        const progress = (campaign.raised / campaign.goal) * 100;
-        return progress > 20 ? progress : 20;
-    };
-
     return (
-        <div
-            className="progress"
-            role="progressbar"
-            aria-label="Basic example"
-            aria-valuenow={0}
-            aria-valuemin={0}
-            aria-valuemax={100}
-        >
-            {campaign && (
-                <div className="progress-bar" style={{ width: `${progressBarWidth()}%` }}>
-                    {(campaign.raised / campaign.goal) * 100}% of ${campaign.goal}
-                </div>
-            )}
-        </div>
+		<div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
+			 <givebutter-widget id="L0A30g"></givebutter-widget>
+			 <givebutter-widget id="pAwGOL" style={{display: 'flex', justifyContent: 'center'
+			 }}></givebutter-widget>
+		</div>
     );
 }
