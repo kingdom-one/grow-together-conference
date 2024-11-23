@@ -8,10 +8,13 @@ import GivingTuesday from '../components/svg/giving-tuesday.astro';
 	.logo-container svg {
 		height: 3rem;
 	}
+	.max-width-100 {
+		max-width: 100%;
+	}
 </style>
 <section
 	id='sponsor'
-	class='text-bg-dark py-5'
+	class='text-bg-dark py-5 col-12'
 >
 	<div class='container'>
 		<div class='row justify-content-center'>
@@ -32,7 +35,7 @@ import GivingTuesday from '../components/svg/giving-tuesday.astro';
 				</p>
 			</div>
 		</div>
-		<div class='row justify-content-center text-bg-primary my-5 py-5 gx-5'>
+		<div class='row justify-content-center text-bg-primary my-5 py-5 gx-5 max-width-100'>
 			<div class='col-12 my-5'><CampaignTracker client:visible /></div>
 			<div
 				class='col-12 row row-cols-1 row-cols-md-2 row-gap-4 align-items-stretch justify-content-around gx-5'
