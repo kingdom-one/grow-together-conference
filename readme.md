@@ -13,6 +13,10 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 5.4.2
+
+-   Add Sponsor
+
 ## 5.4.1
 
 -   Update consent banner copy & ux
