@@ -13,6 +13,10 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 5.5.1
+
+-   Capitalize the track names
+
 ## 5.5.0
 
 -   Added course tracks
