@@ -5,17 +5,17 @@ export const AccordionItems: TrackInfo[] = [
 	{
 		title: 'HR',
 		items: [
-			'Interviewing 101',
+			'Beyond the Questions: Aligning Values and Uncovering Talent in Interviews',
 			'Kickstarting Culture & Engagement',
-			'Ministers 101 ✝️',
+			'Minister Matters: Compensation Essentials for Ministers',
 		],
 	},
 	{
 		title: 'Finance',
 		items: [
 			'Oops, we did it again: Epic failures, foibles, and fumbles',
-			'Budgeting 101',
-			'Financial Modeling',
+			'Stewarding Resources: A Guide to Church Budgeting',
+			'Building for Growth: Financial Modeling for Church Sustainability',
 		],
 	},
 	{
@@ -30,27 +30,28 @@ export const AccordionItems: TrackInfo[] = [
 	{
 		title: 'Senior Leaders',
 		items: [
-			'Coaching Related',
-			'Leading your Leaders - How to effectively lead your people managers',
+			'How to Identify & Fix the Right Problem',
+			'Stories behind the Real Data',
+			'Leading with Purpose: Shaping the Leader Behind the Role',
+			'Leading Your Leaders: How to effectively lead your people managers',
 		],
 	},
 
 	{
 		title: 'People Managers',
 		items: [
-			'Performance Management + HR Technology',
-			'Caring for Staff and their Mental Wellness ',
-			'Employee Recognition',
-			"Leading Effective 1:1's",
+			'Empowering Excellence: Mastering Performance Management Success',
+			'Caring for the Caregivers: Fostering Mental Health and Wellness for Pastors and Ministry Staff',
+			'Beyond Thank You: Transforming Workplace Culture with Meaningful Recognition',
+			'Chat Smarter, Lead Better: Mastering Meaningful One-on-Ones',
 		],
 	},
 	{
 		title: 'Business Admin/Legal',
 		items: [
-			'Prepping for an Audit',
-			'Dashboard Confessionals',
+			'Stewarding Integrity: Navigating Your Church’s Audit with Confidence',
+			'Getting Stuff Done: Project Management 101',
 			'When tithing is not enough: preparing your church for a titheless world',
-			'Legal Things',
 		],
 	},
 	{
