@@ -13,6 +13,12 @@ Site is built & deployed on push to `main`, so if you're making significant chan
 
 # Changelog
 
+## 5.5.2
+
+-   Fixed package security issues
+-   Fixed `sass:map` issue in `_bs_breakpoints.scss`
+-   Added sponsor logo to swiper
+
 ## 5.5.1
 
 -   Capitalize the track names
