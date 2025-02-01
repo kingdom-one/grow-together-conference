@@ -1,0 +1,221 @@
+---
+// Components
+import { Image } from 'astro:assets';
+import Speaker from '../../components/Speaker.astro';
+
+// Images
+import oneDigitalLogo from '../../assets/png/2025-sponsors/One-Digital.png';
+import IconCluster from '../../components/IconCluster.astro';
+import ForteLogo from '../../assets/png/2025-sponsors/forte-logo.png';
+import CLALogo from '../../assets/png/2025-sponsors/clifton-larson-allen.png';
+import CirclesBG from './CirclesBG.astro';
+
+---
+
+<style lang='scss'>
+	@use '../../styles/abstracts/mixins' as m;
+	:global(.icon-cluster) {
+		position: absolute;
+		z-index: 1;
+
+		&:nth-of-type(1) {
+			top: 2%;
+			right: 0;
+		}
+
+		&:nth-of-type(2) {
+			top: 52%;
+			left: 0;
+		}
+
+		&:nth-of-type(3) {
+			bottom: -5%;
+			right: -10%;
+		}
+	}
+
+	.card {
+		display: flex;
+		max-width: 1400px;
+		background: white;
+		border-radius: 24px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		overflow: hidden;
+		margin-left: 0; /* Left-align the card */
+	}
+
+	.card-image {
+		flex: 1;
+		background: url(../../assets/png/2025-sponsors/OD-Hero-image-SL.png) no-repeat center;
+		background-size: contain;
+		min-height: 700px;
+		padding: 1rem; /* Optional to ensure spacing */
+	}
+
+	.card-image-forte {
+		flex: 1;
+		background: url(../../assets/png/2025-sponsors/forte-hero.png) no-repeat left;
+		background-size: cover;
+		min-height: 800px;
+		padding: 1rem; /* Optional to ensure spacing */
+	}
+
+	.card-image-cla {
+		flex: 1;
+		background: url(../../assets/png/2025-sponsors/cla-hero.png) no-repeat left;
+		background-size: cover;
+		min-height: 700px;
+		padding: 1rem; /* Optional to ensure spacing */
+	}
+
+	.card-content {
+		flex: 1;
+		padding: 5em 5em 5em 3em;
+		background-color: #f5f5f5;
+		display: flex;
+		flex-direction: column;
+		text-align: left; /* Ensure left alignment of text */
+	}
+
+	.card-title {
+		font-size: 2.25rem;
+		font-weight: bold;
+		margin-bottom: 1rem;
+		color: #333;
+		padding: 1em 0;
+	}
+
+	.card-text {
+		font-size: 1rem;
+		line-height: 1.5;
+		color: #555;
+	}
+
+	.section-heading {
+		text-align: left; /* Left-align the heading */
+		margin-bottom: 2rem;
+	}
+</style>
+
+<section
+	id='speakers'
+	class='speakers text-bg-green py-5 position-relative overflow-hidden mx-auto'
+>
+	<div class='container'>
+		<div class='row'>
+			<div class='col-xl-8 d-flex flex-column'>
+				<h2 class='fs-1' style={{ color: 'slate', fontWeight: 200 }}>
+					<span style={{ fontWeight: 'bold' }}>One Digital</span> | Health & Benefits
+				</h2>
+			</div>
+		</div>
+		<div class='d-flex flex-column row-gap-5 justify-content-center my-5' style={{ alignSelf: "center"}}>
+			<IconCluster />
+			<div class="card ">
+				<div class="card-image"></div>
+				<div class="card-content">
+					<Image src={oneDigitalLogo} alt="One Digital Hero" width={500} />
+					<h3 class="card-title">
+						Fierce advocates of health, success and financial security
+					</h3>
+					<p class="card-text">
+						OneDigital is a steward of business growth and people potential. Our team of fierce advocates helps businesses and individuals achieve their aspirations of health, success, and financial security. Our insurance, financial services, and HR platform provides personalized, tech-enabled solutions for a contemporary work-life experience. Nationally recognized for our culture of caring, OneDigital’s teams enable employers and individuals to do their best work and live their best lives.
+					</p>
+					<div class="card-icon">
+						<a href="https://www.onedigital.com/">
+							<img src="src/assets/png/website-icon.png" alt="Icon" />
+						</a>
+					</div>
+				</div>
+			</div>
+			<IconCluster />
+			<IconCluster />
+		</div>
+	</div>
+	
+</section>
+<CirclesBG
+circles={[
+	{
+		color: 'dark',
+		position: 'top-left--extreme',
+		size: 'small',
+	},
+	{
+		color: 'yellow',
+		position: 'top-right',
+		size: 'large',
+	},
+	{
+		color: 'green',
+		position: 'center-left',
+		size: 'medium',
+	},
+]}
+>
+	<div class='container' 
+		style={{ padding: '3em 0' }}>
+		<div class='row'>
+			<div class='col-xl-8 d-flex flex-column'>
+				<h2 class='fs-1' style={{ color: 'slate', fontWeight: 200 }}>
+					<span style={{ fontWeight: 'bold' }}>CLA</span> | Clifton Larson Allen
+				</h2>
+			</div>
+		</div>
+		<div class='d-flex flex-column row-gap-5 justify-content-center my-5' style={{ alignSelf: "center"}}>
+			<div class="card ">
+				<div class="card-image-cla"></div>
+				<div class="card-content">
+					<Image src={CLALogo} alt="One Digital Hero" width={500} />
+					<h3 class="card-title">
+						Services That Create Opportunities
+					</h3>
+					<p class="card-text">
+						At CLA, we're experienced in delivering integrated wealth advisory, outsourcing, audit, tax, and consulting services to help clients succeed professionally and personally. We deliver integrated wealth advisory, outsourcing, audit, tax, and consulting services to help clients succeed professionally and personally. Our industry-focused teams offer services that create opportunities, protect wealth, and help you succeed professionally and personally. With a virtual headquarters, our team approach allows us to have professionals conveniently located in communities across the country. Our people come to work each and every day with a clear-cut purpose: to create opportunities for our clients, our people, and our communities.
+					</p>
+					<div class="card-icon">
+						<a href="https://www.claconnect.com/">
+							<img src="src/assets/png/website-icon.png" alt="Icon" />
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</CirclesBG>
+<section
+	id='speakers'
+	class='speakers text-bg-green py-5 position-relative overflow-hidden mx-auto'
+>
+<div class='container'>
+	<div class='row'>
+		<div class='col-xl-8 d-flex flex-column' style={{ width: "100%"}}>
+			<h2 class='fs-1' style={{ color: 'white', fontWeight: 200, textAlign: 'right', width: '100%' }}>
+				<span style={{ fontWeight: 'bold' }}>Forte </span>| Health & Benefits
+			</h2>
+		</div>
+	</div>
+	<div class='d-flex flex-column row-gap-5 justify-content-center my-5' style={{ alignSelf: "center"}}>
+		<IconCluster />
+		<div class="card ">
+			<div class="card-image-forte"></div>
+			<div class="card-content">
+				<Image src={ForteLogo} alt="Forte Hero" width={150} />
+				<h3 class="card-title">
+					Strengthening culture through human connection
+				</h3>
+				<p class="card-text">
+					Ministry leaders lack access to affordable, accessible & scalable mental wellness benefits. Forte provides staff members with access to additional well-being resources, including newsletters, e-courses, challenges, and webinars led by industry experts. With Forte, church leaders have unlimited, 1:1 access to confidential conversations with a Guide for 30, 45, or 60 minute audio calls. With comprehensive anonymized data reports, employers gain valuable insights into te topics that matter most to your people.
+				</p>
+				<div class="card-icon">
+					<a href="https://www.getforte.com/">
+						<img src="src/assets/png/website-icon.png" alt="Icon" />
+					</a>
+				</div>
+			</div>
+		</div>
+		<IconCluster />
+		<IconCluster />
+	</div>
+</div>
+</section>

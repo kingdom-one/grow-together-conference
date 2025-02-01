@@ -1,0 +1,72 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../../assets/svg/conference-logo--black.svg';
+import K1Logo from '../../components/svg/k1-logo.astro';
+
+import { TICKETS_URL } from '../../consts';
+import YouTubeVideo from '../../components/YouTubeVideo.astro';
+import ConferenceValues from '../../components/ConferenceValues.astro';
+import WaitlistButton from '../../components/WaitlistButton.astro';
+---
+
+<style>
+	.logo {
+		max-height: 18.75rem;
+	}
+</style>
+<section class='container position-relative py-5'>
+	<div class='row justify-content-between'>
+		<div class='col-6 col-md-3'>
+			<a
+				href='/'
+				class='d-block'
+			>
+				<Image
+					class='h-auto w-100 object-fit-contain'
+					src={logo}
+					alt='Grow Together Conference'
+				/>
+			</a>
+		</div>
+		<div class='col-6 col-md-3'>
+			<a
+				href='https://kingdomone.co'
+				target='_blank'
+				class='ratio ratio-1x1 d-block logo w-25 mw-100'
+				aria-label='link to kingdom one homepage'
+			>
+				<K1Logo color='black' />
+			</a>
+		</div>
+	</div>
+	<div
+		class='row row-cols-1 row-cols-lg-2 row-gap-4 flex-row-reverse align-items-center'
+	>
+		<div class='col'>
+			<YouTubeVideo
+				videoId={`FaaiSuHwwag`}
+				quality='hqdefault'
+			/>
+		</div>
+		<div class='col'>
+			<h2 class='text-dark text-capitalize'>
+				Joined By Great Sponsors
+			</h2>
+			<p class='fs-5'>
+				We couldn't be more proud to partner in growing the kingdom together with our amazing sponsors. Learn more below about those incredible ministries that are helping us provide this great conference.
+			</p>
+			<a
+				href={TICKETS_URL}
+				target='_blank'
+				class='btn btn-outline-dark align-self-start text-uppercase'
+				>Get Tickets</a
+			>
+			<!-- <WaitlistButton class={['btn-outline-dark']} /> -->
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col'>
+			<ConferenceValues scriptColor='var(--bs-dark)' />
+		</div>
+	</div>
+</section>
