@@ -96,6 +96,31 @@ import worldIcon from '../../assets/png/website-icon.png';
 		text-align: left; /* Left-align the heading */
 		margin-bottom: 2rem;
 	}
+
+	@media (max-width: 1000px) {
+		.card {
+			max-width: 90vw;
+			margin: 0 auto;
+			z-index: 999;
+		}
+		.card-content {
+			width: 90%;
+		}
+		.card-content img {
+			max-width: 200px;
+			height:auto;
+		}
+        .card-image, .card-image-forte, .card-image-cla {
+            display: none;
+        }
+		.icon-cluster {
+            display: none;
+        }
+		h2 {
+			padding: 0 1em;
+			opacity: 1;
+		}
+    }
 </style>
 
 <section
@@ -105,7 +130,7 @@ import worldIcon from '../../assets/png/website-icon.png';
 	<div class='container'>
 		<div class='row'>
 			<div class='col-xl-8 d-flex flex-column'>
-				<h2 class='fs-1' style={{ color: 'slate', fontWeight: 200 }}>
+				<h2 class='fs-1' style={{ color: 'white', fontWeight: 200 }}>
 					<span style={{ fontWeight: 'bold' }}>One Digital</span> | Health & Benefits
 				</h2>
 			</div>
