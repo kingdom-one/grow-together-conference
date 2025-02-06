@@ -1,17 +1,14 @@
 ---
 import { Image } from 'astro:assets';
-import likewise from '../assets/png/2025-partners/logo__likewise--white.png';
-import xp from '../assets/png/2025-partners/logo__xp-gathering--white.png';
-import rag from '../assets/png/2025-partners/logo__rag--white.png';
+import paylocity from '../assets/png/2025-sponsors/paylocity.png';
+import forte from '../assets/png/2025-sponsors/forte.png';
+import thrivent from '../assets/png/2025-sponsors/thrivent.png';
+
 
 const partners = [
-	{ src: xp, alt: 'XP Gathering', href: 'https://www.xpgathering.com' },
-	{ src: likewise, alt: 'Likewise', href: 'https://www.likewiseworship.com' },
-	{
-		src: rag,
-		alt: 'Rescue a Generation',
-		href: 'https://www.rescueageneration.com',
-	},
+	{ logo: paylocity, alt: 'paylocity', href: 'https://www.paylocity.com/' },
+	{ logo: forte, alt: 'forte', href: 'https://www.getforte.com/' },
+	{ logo: thrivent, alt: 'Strategically Connected', href: 'https://www.thrivent.com/' },
 ];
 ---
 
@@ -20,6 +17,31 @@ const partners = [
 	.swiper {
 		max-height: 30rem;
 	}
+
+    .partner-logo{
+        max-height: 250px;
+    }
+
+	.partner-logo img {
+		max-height: 250px;
+		max-width: 100%;
+	}
+
+	.partners-swiper {
+        display: flex;
+        align-items: center; /* Vertically align the text */
+        justify-content: center; /* Optionally center horizontally */
+        height: 100%; /* Ensure it takes full height of the container */
+    }
+
+	.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+	
 </style>
 <div class='col-1 position-relative'>
 	<div class='swiper-button-prev'></div>
@@ -36,11 +58,11 @@ const partners = [
 						<a
 							href={logo.href}
 							target='_blank'
-							class='d-block h-100 w-100'
+							class='d-block h-100 w-100 partner-logo'
 							title={`Open ${logo.alt}'s website in a new tab`}
 						>
 							<Image
-								src={logo.src}
+								src={logo.logo}
 								class='w-100 h-100 object-fit-contain'
 								alt={logo.alt}
 							/>
