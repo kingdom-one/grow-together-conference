@@ -1,12 +1,11 @@
 ---
 // Components
 import { Image } from 'astro:assets';
-import Speaker from '../../components/Speaker.astro';
 
 // Images
 import oneDigitalLogo from '../../assets/png/2025-sponsors/One-Digital.png';
 import IconCluster from '../../components/IconCluster.astro';
-import ForteLogo from '../../assets/png/2025-sponsors/forte-logo.png';
+
 import CLALogo from '../../assets/png/2025-sponsors/clifton-larson-allen.png';
 import CirclesBG from './CirclesBG.astro';
 import worldIcon from '../../assets/png/website-icon.png';
@@ -52,15 +51,6 @@ import worldIcon from '../../assets/png/website-icon.png';
 		min-height: 700px;
 		padding: 1rem; /* Optional to ensure spacing */
 	}
-
-	.card-image-forte {
-		flex: 1;
-		background: url(../../assets/png/2025-sponsors/forte-hero.png) no-repeat left;
-		background-size: cover;
-		min-height: 800px;
-		padding: 1rem; /* Optional to ensure spacing */
-	}
-
 	.card-image-cla {
 		flex: 1;
 		background: url(../../assets/png/2025-sponsors/cla-hero.png) no-repeat left;
@@ -209,39 +199,4 @@ circles={[
 		</div>
 	</div>
 </CirclesBG>
-<section
-	id='speakers'
-	class='speakers text-bg-green py-5 position-relative overflow-hidden mx-auto'
->
-<div class='container'>
-	<div class='row'>
-		<div class='col-xl-8 d-flex flex-column' style={{ width: "100%"}}>
-			<h2 class='fs-1' style={{ color: 'white', fontWeight: 200, textAlign: 'right', width: '100%' }}>
-				<span style={{ fontWeight: 'bold' }}>Forte </span>| Health & Benefits
-			</h2>
-		</div>
-	</div>
-	<div class='d-flex flex-column row-gap-5 justify-content-center my-5' style={{ alignSelf: "center"}}>
-		<IconCluster />
-		<div class="card ">
-			<div class="card-image-forte"></div>
-			<div class="card-content">
-				<Image src={ForteLogo} alt="Forte Hero" width={150} />
-				<h3 class="card-title">
-					Strengthening culture through human connection
-				</h3>
-				<p class="card-text">
-					Ministry leaders lack access to affordable, accessible & scalable mental wellness benefits. Forte provides staff members with access to additional well-being resources, including newsletters, e-courses, challenges, and webinars led by industry experts. With Forte, church leaders have unlimited, 1:1 access to confidential conversations with a Guide for 30, 45, or 60 minute audio calls. With comprehensive anonymized data reports, employers gain valuable insights into te topics that matter most to your people.
-				</p>
-				<div class="card-icon">
-					<a href="https://www.getforte.com/">
-						<img src={worldIcon.src} alt="Icon" />
-					</a>
-				</div>
-			</div>
-		</div>
-		<IconCluster />
-		<IconCluster />
-	</div>
-</div>
-</section>
+
