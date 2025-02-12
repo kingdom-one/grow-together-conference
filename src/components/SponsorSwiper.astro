@@ -8,7 +8,7 @@ import forte from '../assets/png/2025-sponsors/forte.png';
 import cla from '../assets/png/2025-sponsors/clifton-larson-allen.png';
 import strategicallyConnected from '../assets/png/2025-sponsors/strategically-connected.png';
 import thrivent from '../assets/png/2025-sponsors/thrivent.png';
-import FivestarLogo from '../components/svg/FivestarLogo.astro';
+import FivestarLogo from '../assets/png/2025-sponsors/five-star-bank.png';
 import SaltzmanLogo from '../components/svg/SaltzmanLogo.astro';
 
 const logos = [
@@ -63,9 +63,10 @@ const logos = [
 							<figure
 								class='mb-0 d-flex flex-column justify-content-center'
 							>
-								<FivestarLogo
-									style='mono'
-									class={'h-100'}
+								<Image 
+									src={FivestarLogo} 
+									class='logo object-fit-scale'
+									alt='Five Star Bank' 
 								/>
 							</figure>
 						</div>
