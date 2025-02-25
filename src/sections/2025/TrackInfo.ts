@@ -64,12 +64,10 @@ export const AccordionItems: TrackInfo[] = [
 		],
 	},
 	{
-		title: 'Worship / Productions',
+		title: 'Worship',
 		items: [
 			'Foundation for Healthy Ministries',
 			'Gaining Awareness: Rest, Trust, Discipleship',
-			'Production for Pastors',
-			'Should I Hire a Production Director?',
 		],
 	},
 ];
