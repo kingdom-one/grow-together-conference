@@ -13,9 +13,10 @@ export const AccordionItems: TrackInfo[] = [
 	{
 		title: 'Finance',
 		items: [
-			'Oops, we did it again: Epic failures, foibles, and fumbles',
+			'Dashboard Confessionals: Telling the Story Behind the Numbers',
 			'Stewarding Resources: A Guide to Church Budgeting',
 			'Building for Growth: Financial Modeling for Church Sustainability',
+			'Preparing for retirement - Finances for Faith Leaders',
 		],
 	},
 	{
@@ -68,6 +69,8 @@ export const AccordionItems: TrackInfo[] = [
 		items: [
 			'Foundation for Healthy Ministries',
 			'Gaining Awareness: Rest, Trust, Discipleship',
+			'You are a Vocal Athlete: Strengthening and Caring for Your Voice',
+			'Song Selection: How to Intentionally Choose Songs for Sunday',
 		],
 	},
 ];
