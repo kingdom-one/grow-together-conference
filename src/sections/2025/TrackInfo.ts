@@ -33,7 +33,7 @@ export const AccordionItems: TrackInfo[] = [
 			'How to Identify & Fix the Right Problem',
 			'Stories behind the Real Data',
 			'Leading with Purpose: Shaping the Leader Behind the Role',
-			'Leading Your Leaders: How to effectively lead your people managers',
+			'What if it is about you, and that\'s a good thing? How our sense of Identity (Beliefs) drive our activites (Behaviors), and influence outcomes (Results)',
 		],
 	},
 
