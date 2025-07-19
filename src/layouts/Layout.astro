@@ -9,38 +9,32 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang="en">
 	<head>
-		<meta charset='UTF-8' />
-		<meta
-			http-equiv='X-UA-Compatible'
-			content='IE=edge'
-		/>
-		<meta
-			name='viewport'
-			content='width=device-width, initial-scale=1.0'
-		/>
+		<!-- JavaScript redirect -->
+		<script is:inline>
+			if (typeof window !== 'undefined') {
+				window.location.href = 'https://growtogether.kingdomone.com';
+			}
+		</script>
+
+		<!-- Meta refresh redirect -->
+		<meta http-equiv="refresh" content="0; url=https://growtogether.kingdomone.com" />
+
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>{title}</title>
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			rel='icon'
-			href='/favicon.ico'
-		/>
-		<link
-			rel='preconnect'
-			href='https://fonts.googleapis.com'
-		/>
-		<link
-			rel='preconnect'
-			href='https://fonts.gstatic.com'
-			crossorigin
-		/>
-		<link
-			href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap'
-			rel='stylesheet'
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+			rel="stylesheet"
 		/>
 		<script
 			async
-			src='https://www.googletagmanager.com/gtag/js?id=G-CP6KXG986C'
+			src="https://www.googletagmanager.com/gtag/js?id=G-CP6KXG986C"
 		></script>
 		<script is:inline>
 			window.dataLayer = window.dataLayer || [];
@@ -71,11 +65,11 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<slot />
-		<ConsentBanner client:only='react' />
+		<ConsentBanner client:only="react" />
 	</body>
 </html>
 
-<style is:global lang='scss'>
+<style is:global lang="scss">
 	@use '../styles/vendors/bs-custom.scss';
 	@use '../styles/main.scss';
 	body {
